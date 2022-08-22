@@ -16,6 +16,7 @@ import {
   flattenAccounts,
   isAccountBalanceUnconfirmed,
 } from "../../account";
+import measures from "./performanceMeasures";
 import { getCryptoCurrencyById } from "../../currencies";
 import { getOperationAmountNumber } from "../../operation";
 import {
@@ -166,11 +167,43 @@ export function testBridge<T extends TransactionCommon>(
         FIXME_ignoreOperationFields,
         FIXME_ignorePreloadFields,
       } = currencyData;
+
+      const spans = {};
+      const currencyBridgeMesurements = measures.startTransaction({
+        name: currency.id + " currency bridge",
+      });
+
+      beforeEach(() => {
+        const testName = expect
+          .getState()
+          .currentTestName.replace(currency.id + " currency bridge", "");
+
+        spans[testName] = currencyBridgeMesurements.startChild({
+          op: testName,
+          data: {
+            currency: currency.id,
+          },
+        });
+      });
+
+      afterEach(() => {
+        const testName = expect
+          .getState()
+          .currentTestName.replace(currency.id + " currency bridge", "");
+
+        spans[testName].finish();
+      });
+
+      afterAll(() => {
+        currencyBridgeMesurements.finish();
+      });
+
       test("functions are defined", () => {
         expect(typeof bridge.scanAccounts).toBe("function");
         expect(typeof bridge.preload).toBe("function");
         expect(typeof bridge.hydrate).toBe("function");
       });
+
       test("preload and rehydrate", async () => {
         const data1 = await bridge.preload(currency);
         const data1filtered = omit(data1, FIXME_ignorePreloadFields || []);
@@ -210,8 +243,44 @@ export function testBridge<T extends TransactionCommon>(
               FIXME_ignoreAccountFields.join(", ")
           );
         }
-
         describe("scanAccounts", () => {
+          const subSpans = {};
+          const scanAccountsMeasures = measures.startTransaction({
+            name: currency.id + " currency bridge → scanAccounts",
+            parent: currencyBridgeMesurements,
+          });
+
+          beforeEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                currency.id + " currency bridge scanAccounts",
+                ""
+              );
+
+            subSpans[testName] = scanAccountsMeasures.startChild({
+              op: testName,
+              data: {
+                currency: currency.id,
+              },
+            });
+          });
+
+          afterEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                currency.id + " currency bridge scanAccounts",
+                ""
+              );
+
+            subSpans[testName].finish();
+          });
+
+          afterAll(() => {
+            scanAccountsMeasures.finish();
+          });
+
           scanAccounts.forEach((sa) => {
             // we start running the scan accounts in parallel!
             test(sa.name, async () => {
@@ -265,10 +334,30 @@ export function testBridge<T extends TransactionCommon>(
                 await testFn(expect, accounts, bridge);
               }
             });
+
             test("estimateMaxSpendable is between 0 and account balance", async () => {
+              const subAccountTransaction = measures.startTransaction({
+                name: "estimateMaxSpendable is between 0 and account balance",
+                parent: scanAccountsMeasures.id,
+              });
+              const scanAccountsCachedSpan = subAccountTransaction.startChild({
+                op: "scanAccountsCached",
+                data: {
+                  account: sa.name,
+                },
+              });
               const accounts = await scanAccountsCached(sa.apdus);
+              scanAccountsCachedSpan.finish();
 
               for (const account of accounts) {
+                const estimateAccountMaxSpendableSpan =
+                  subAccountTransaction.startChild({
+                    op: "Account estimateMaxSpendableSpan",
+                    data: {
+                      account: account.id,
+                    },
+                  });
+
                 const accountBridge = getAccountBridge(account);
                 const estimation = await accountBridge.estimateMaxSpendable({
                   account,
@@ -276,13 +365,23 @@ export function testBridge<T extends TransactionCommon>(
                 expect(estimation.gte(0)).toBe(true);
                 expect(estimation.lte(account.spendableBalance)).toBe(true);
 
+                estimateAccountMaxSpendableSpan.finish();
+
                 for (const sub of account.subAccounts || []) {
+                  const estimateSubAccountMaxSpendableSpan =
+                    subAccountTransaction.startChild({
+                      op: "SubAccount estimateMaxSpendableSpan",
+                      data: {
+                        account: sub.id,
+                      },
+                    });
                   const estimation = await accountBridge.estimateMaxSpendable({
                     parentAccount: account,
                     account: sub,
                   });
                   expect(estimation.gte(0)).toBe(true);
                   expect(estimation.lte(sub.balance)).toBe(true);
+                  estimateSubAccountMaxSpendableSpan.finish();
                 }
               }
             });
@@ -358,6 +457,7 @@ export function testBridge<T extends TransactionCommon>(
       }
     }
   });
+
   accountsRelated
     .map(({ account, ...rest }) => {
       const bridge = getAccountBridge(account, null);
@@ -378,7 +478,6 @@ export function testBridge<T extends TransactionCommon>(
     })
     .forEach((arg) => {
       const { getSynced, bridge, initialAccount, accountData, impl } = arg;
-
       const makeTest = (name, fn) => {
         if (
           accountData.FIXME_tests &&
@@ -394,7 +493,60 @@ export function testBridge<T extends TransactionCommon>(
       };
 
       describe(impl + " bridge on account " + initialAccount.name, () => {
+        let bridgeMesurements;
+        beforeAll(() => {
+          bridgeMesurements = measures.startTransaction({
+            name: impl + " bridge on account " + initialAccount.name,
+          });
+        });
+
+        afterAll(() => {
+          bridgeMesurements.finish();
+        });
+
         describe("sync", () => {
+          let syncMeasures;
+          const spans = {};
+
+          beforeAll(() => {
+            syncMeasures = measures.startTransaction({
+              name: "sync",
+            });
+          });
+
+          beforeEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl + " bridge on account " + initialAccount.name + " sync",
+                ""
+              );
+
+            spans[testName] = syncMeasures.startChild({
+              op: testName,
+              data: {
+                account: {
+                  name: initialAccount.name,
+                  id: initialAccount.id,
+                },
+              },
+            });
+          });
+
+          afterEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl + " bridge on account " + initialAccount.name + " sync",
+                ""
+              );
+            spans[testName].finish();
+          });
+
+          afterAll(() => {
+            syncMeasures.finish();
+          });
+
           makeTest("succeed", async () => {
             const account = await getSynced();
             const [account2] = implicitMigration([account]);
@@ -506,7 +658,56 @@ export function testBridge<T extends TransactionCommon>(
             });
           });
         });
+
         describe("createTransaction", () => {
+          let createTransactionMeasures;
+          const spans = {};
+
+          beforeAll(() => {
+            createTransactionMeasures = measures.startTransaction({
+              name: "createTransaction",
+            });
+          });
+
+          beforeEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " createTransaction",
+                ""
+              );
+
+            spans[testName] = createTransactionMeasures.startChild({
+              op: testName,
+              data: {
+                account: {
+                  name: initialAccount.name,
+                  id: initialAccount.id,
+                },
+              },
+            });
+          });
+
+          afterEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " createTransaction",
+                ""
+              );
+            spans[testName].finish();
+          });
+
+          afterAll(() => {
+            createTransactionMeasures.finish();
+          });
+
           makeTest(
             "empty transaction is an object with empty recipient and zero amount",
             () => {
@@ -538,7 +739,56 @@ export function testBridge<T extends TransactionCommon>(
             }
           );
         });
+
         describe("prepareTransaction", () => {
+          let prepareTransactionMeasures;
+          const spans = {};
+
+          beforeAll(() => {
+            prepareTransactionMeasures = measures.startTransaction({
+              name: "prepareTransaction",
+            });
+          });
+
+          beforeEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " prepareTransaction",
+                ""
+              );
+
+            spans[testName] = prepareTransactionMeasures.startChild({
+              op: testName,
+              data: {
+                account: {
+                  name: initialAccount.name,
+                  id: initialAccount.id,
+                },
+              },
+            });
+          });
+
+          afterEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " prepareTransaction",
+                ""
+              );
+            spans[testName].finish();
+          });
+
+          afterAll(() => {
+            prepareTransactionMeasures.finish();
+          });
+
           // stability: function called twice will return the same object reference (=== convergence so we can stop looping, typically because transaction will be a hook effect dependency of prepareTransaction)
           async function expectStability(account, t) {
             const t2 = await bridge.prepareTransaction(account, t);
@@ -580,7 +830,56 @@ export function testBridge<T extends TransactionCommon>(
             }
           );
         });
+
         describe("getTransactionStatus", () => {
+          let getTransactionStatusMeasures;
+          const spans = {};
+
+          beforeAll(() => {
+            getTransactionStatusMeasures = measures.startTransaction({
+              name: "getTransactionStatus",
+            });
+          });
+
+          beforeEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " getTransactionStatus",
+                ""
+              );
+
+            spans[testName] = getTransactionStatusMeasures.startChild({
+              op: testName,
+              data: {
+                account: {
+                  name: initialAccount.name,
+                  id: initialAccount.id,
+                },
+              },
+            });
+          });
+
+          afterEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " getTransactionStatus",
+                ""
+              );
+            spans[testName].finish();
+          });
+
+          afterAll(() => {
+            getTransactionStatusMeasures.finish();
+          });
+
           makeTest("can be called on an empty transaction", async () => {
             const account = await getSynced();
             const t = bridge.createTransaction(account);
@@ -769,7 +1068,56 @@ export function testBridge<T extends TransactionCommon>(
             }
           );
         });
+
         describe("signOperation and broadcast", () => {
+          let signAndBroadcastMeasures;
+          const spans = {};
+
+          beforeAll(() => {
+            signAndBroadcastMeasures = measures.startTransaction({
+              name: "signOperation and broadcast",
+            });
+          });
+
+          beforeEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " signOperation and broadcast",
+                ""
+              );
+
+            spans[testName] = signAndBroadcastMeasures.startChild({
+              op: testName,
+              data: {
+                account: {
+                  name: initialAccount.name,
+                  id: initialAccount.id,
+                },
+              },
+            });
+          });
+
+          afterEach(() => {
+            const testName = expect
+              .getState()
+              .currentTestName.replace(
+                impl +
+                  " bridge on account " +
+                  initialAccount.name +
+                  " signOperation and broadcast",
+                ""
+              );
+            spans[testName].finish();
+          });
+
+          afterAll(() => {
+            signAndBroadcastMeasures.finish();
+          });
+
           makeTest("method is available on bridge", async () => {
             expect(typeof bridge.signOperation).toBe("function");
             expect(typeof bridge.broadcast).toBe("function");
