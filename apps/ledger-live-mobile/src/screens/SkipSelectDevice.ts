@@ -32,11 +32,12 @@ export default function SkipSelectDevice({ onResult, route }: Props) {
     ) {
       // timeout so we have the time to detect usb connection
       usbTimeout = setTimeout(() => {
-        NativeModules.BluetoothHelperModule.prompt()
-          .then(() => onResult(lastConnectedDevice))
-          .catch(() => {
-            /* ignore */
-          });
+        onResult(lastConnectedDevice);
+        // NativeModules.BluetoothHelperModule.prompt()
+        //   .then(() => onResult(lastConnectedDevice))
+        //   .catch(() => {
+        //     /* ignore */
+        //   });
       }, 500);
     } else {
       clearTimeout(usbTimeout);

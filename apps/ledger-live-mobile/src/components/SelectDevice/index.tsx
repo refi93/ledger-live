@@ -65,7 +65,7 @@ export default function SelectDevice({
       const { modelId, wired } = deviceInfo;
 
       dispatch(setLastConnectedDevice(deviceInfo));
-      if (wired) {
+      if (wired || deviceInfo.deviceId.includes("httpdebug|ws://")) {
         track("Device selection", {
           modelId,
           connectionType: "USB",
@@ -101,16 +101,16 @@ export default function SelectDevice({
       button: "Pair with bluetooth",
       screen: route.name,
     });
-    NativeModules.BluetoothHelperModule.prompt()
-      .then(() =>
-        // @ts-expect-error navigation issue
-        navigation.navigate(ScreenName.PairDevices, {
-          onDone: autoSelectOnAdd ? handleOnSelect : null,
-        }),
-      )
-      .catch(() => {
-        /* ignore */
-      });
+    // NativeModules.BluetoothHelperModule.prompt()
+    //   .then(() =>
+    // @ts-expect-error navigation issue
+    navigation.navigate(ScreenName.PairDevices, {
+      onDone: autoSelectOnAdd ? handleOnSelect : null,
+    });
+    // )
+    // .catch(() => {
+    //   /* ignore */
+    // });
   }, [autoSelectOnAdd, navigation, handleOnSelect]);
 
   const renderItem = useCallback(
