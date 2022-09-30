@@ -91,7 +91,7 @@ export function Widget({ provider, type }: Props) {
             );
             break;
           case "closeWidget":
-            navigation.pop();
+            navigation.navigate("SwapForm");
             break;
           default:
             break;
