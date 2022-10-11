@@ -237,16 +237,16 @@
     "form" : {
       "changeCTA" : "تغيير",
       "rates" : {
-        "title" : "المزودين",
+        "title" : "Quotes",
         "registration" : "التسجيل مطلوب ",
         "noRegistration" : "التسجيل غير مطلوب",
         "fixed" : "ثابت",
-        "float" : "متغيّر",
+        "float" : "Floating",
         "update" : "تم تحديث المُعدلات في",
         "loading" : "جاري التحميل ...",
         "name" : {
           "title" : "المزود",
-          "tooltip" : "اعتماداً على المزوّد، يتعين عليك تسجيل الدخول لديهم من خلال إنشاء حساب."
+          "tooltip" : "Depending on the provider, you have to register with them by creating an account."
         },
         "rate" : {
           "title" : "مُعدّل التبادل",
@@ -1182,6 +1182,10 @@
     "blackfriday" : {
       "title" : "الجمعة السوداء ",
       "description" : "استمتع بخصم %40 على محفظة أجهزة Ledger باستخدام كود الخصم BLACKFRIDAY20"
+    },
+    "referralProgram" : {
+      "title" : "رشّح واكسب 10$",
+      "description" : "قم بترشيح صديق بنجاح وكلاكما سيكسب ما قيمته 10$ من بيتكوين."
     }
   },
   "signmessage" : {
@@ -5021,6 +5025,9 @@
     },
     "StellarSourceHasMultiSign" : {
       "title" : "يرجى تعطيل التوقيع المتعدد لإجراء معاملات Stellar"
+    },
+    "HederaAddAccountError" : {
+      "title" : "Your account has not been added. Please try again."
     }
   },
   "cryptoOrg" : {
