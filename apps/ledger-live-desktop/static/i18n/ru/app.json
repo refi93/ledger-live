@@ -237,7 +237,7 @@
     "form" : {
       "changeCTA" : "Изменить",
       "rates" : {
-        "title" : "Операторы",
+        "title" : "Курсы",
         "registration" : "Необходима регистрация ",
         "noRegistration" : "Регистрация не нужна",
         "fixed" : "Фиксированный",
@@ -246,7 +246,7 @@
         "loading" : "Загружаем...",
         "name" : {
           "title" : "Оператор",
-          "tooltip" : "Некоторые операторы требуют авторизацию с помощью учётной записи."
+          "tooltip" : "Некоторые операторы требуют регистрации путём создания учётной записи."
         },
         "rate" : {
           "title" : "Курс",
@@ -820,7 +820,7 @@
     }
   },
   "lend" : {
-    "title" : "Кредитовать криптовалюты",
+    "title" : "Кредитование",
     "tabs" : {
       "dashboard" : "Консоль",
       "opened" : "Активные займы",
@@ -1185,7 +1185,7 @@
     }
   },
   "signmessage" : {
-    "title" : "Подписание транзакции",
+    "title" : "Подписание операции",
     "steps" : {
       "summary" : {
         "title" : "Сводка"
@@ -1454,7 +1454,7 @@
     }
   },
   "addAccounts" : {
-    "title" : "Добавить счета",
+    "title" : "Добавление счёта",
     "breadcrumb" : {
       "informations" : "Криптоактив",
       "connectDevice" : "Устройство",
@@ -1484,7 +1484,7 @@
     "cta" : {
       "addMore" : "Добавить ещё",
       "add" : "Добавить счёт",
-      "add_plural" : "Добавить счета",
+      "add_plural" : "Добавление счетов",
       "addAccountName" : "Добавить счёт {{currencyName}}",
       "receive" : "Получить"
     },
@@ -1965,7 +1965,7 @@
         "title" : "Устройство"
       },
       "details" : {
-        "utxoLag" : "Подтверждение и подписание транзакции может занять много времени ввиду большого количества монет на счету.",
+        "utxoLag" : "Подтверждение и подписание операции может занять много времени ввиду большого количества монет на счету.",
         "subaccountsWarning" : "Чтобы отправлять токены с этого счёта, вам нужно пополнить его за {{ currency }}",
         "from" : "Откуда",
         "to" : "Куда",
@@ -2011,7 +2011,7 @@
     }
   },
   "sign" : {
-    "title" : "Подписание транзакции"
+    "title" : "Подписание операции"
   },
   "releaseNotes" : {
     "title" : "Сведения о версии",
@@ -3360,7 +3360,7 @@
       "featureFlagsOverride" : "Переопределить",
       "addLocalApp" : "Добавить локальное приложение",
       "addLocalAppDesc" : "Просматривать локальные файлы и добавлять локальные приложения посредством локального манифеста",
-      "addLocalAppButton" : "Осмотритесь",
+      "addLocalAppButton" : "Добавить",
       "runLocalAppDeleteButton" : "Удалить",
       "runLocalAppOpenButton" : "Открыть",
       "enableLearnStagingUrl" : "Промежуточный URL страницы Образование",
@@ -4763,7 +4763,7 @@
     },
     "EthAppNftNotSupported" : {
       "title" : "Операция недоступна на этом устройстве",
-      "description" : "Send NFT feature is only available for Nano X and Nano S+. Please visit our customer support platform to know how to send a NFT with a Nano S."
+      "description" : "Функция отправки NFT доступна только в Nano X и Nano S Plus. Пожалуйста, обратитесь в Поддержку, чтобы узнать, как отправлять NFT с Nano S."
     },
     "CantScanQRCode" : {
       "title" : "Не удалось сканировать этот QR-код: этот адрес не поддерживает автопроверку."
@@ -5021,6 +5021,9 @@
     },
     "StellarSourceHasMultiSign" : {
       "title" : "Отключите функцию мультиподписи, чтобы проводить транзакции в Stellar"
+    },
+    "HederaAddAccountError" : {
+      "title" : "Не удалось добавить счёт. Пожалуйста, попробуйте ещё раз."
     }
   },
   "cryptoOrg" : {
