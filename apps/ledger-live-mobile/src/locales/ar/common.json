@@ -285,7 +285,7 @@
     },
     "EthAppNftNotSupported" : {
       "title" : "العملية غير متوفرة لهذا الجهاز",
-      "description" : "Send NFT feature is only available for Nano X and Nano S+. Please visit our customer support platform to know how to send a NFT with a Nano S."
+      "description" : "خاصية إرسال NFT متوفرة فقط لـ Nano X و +Nano S. يرجى زيارة منصة دعم العملاء لدينا لمعرفة كيفية إرسال NFT عن طريق Nano S."
     },
     "Touch ID Error" : {
       "title" : "فشل التوثيق البيومتري",
@@ -412,6 +412,10 @@
     "NotEnoughBalance" : {
       "title" : "عفواً، الأموال المتوفرة غير كافية",
       "description" : "يرجى التأكد من وجود أموال كافية في الحساب."
+    },
+    "NoSuchAppOnProvider" : {
+      "title" : "لا يمكن العثور على التطبيق {{appName}} للتهيئة الخاصة بك.",
+      "description" : "حاول إعادة تثبيت التطبيق من المدير"
     },
     "NotEnoughGas" : {
       "title" : "ETH غير كافٍ لتغطية رسوم الشبكة",
@@ -728,6 +732,9 @@
     "ImageProcessingError" : {
       "title" : "فشل معالجة الصورة",
       "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "HederaAddAccountError" : {
+      "title" : "لم تتم إضافة حسابك. يرجى إعادة المحاولة."
     }
   },
   "crash" : {
@@ -775,6 +782,9 @@
     "failed" : {
       "biometrics" : {
         "title" : "إلغاء قفل {{biometricsType}} فشل",
+        "touchid" : "مُعرّف البصمة (TouchID)",
+        "faceid" : "مُعرّف الوجه (FaceID)",
+        "fingerprint" : "بصمة الإصبع",
         "description" : "أدخل كلمة المرور الخاصة بك للمتابعة",
         "authenticate" : "يرجى التوثيق باستخدام تطبيق Ledger Live"
       },
@@ -803,7 +813,10 @@
     },
     "enableBiometrics" : {
       "title" : "{{biometricsType}}",
-      "desc" : "إلغاء القفل باستخدام {{biometricsType}}"
+      "desc" : "إلغاء القفل باستخدام {{biometricsType}}",
+      "touchid" : "مُعرّف البصمة (TouchID)",
+      "faceid" : "مُعرّف الوجه (FaceID)",
+      "fingerprint" : "بصمة الإصبع"
     }
   },
   "reset" : {
@@ -1002,12 +1015,12 @@
   },
   "discover" : {
     "title" : "اكتشف",
-    "desc" : "استكشف عالم ال\\\\ويب 0.3 المتضمن في Ledger Live",
+    "desc" : "اكتشف عالم ويب 3.0 بأمان",
     "link" : "أخبرني بالمزيد",
     "sections" : {
       "learn" : {
         "title" : "تعلّم",
-        "desc" : "تعرّف على الأصول المشفرة والرموز غير القابلة للاستبدال والأمان الرقمي وغير ذلك الكثير"
+        "desc" : "تعرف على المزيد حول الأصول المشفرة والمزيد غير ذلك من الخبراء مجاناً."
       },
       "ledgerApps" : {
         "title" : "التطبيقات",
@@ -1015,15 +1028,34 @@
       },
       "earn" : {
         "title" : "اكسب",
-        "desc" : "كسب دخل سلبي وتنمية أصولك المشفرة"
+        "desc" : "قم بتنمية أصولك المشفرة من خلال التكديس والإقراض."
       },
       "mint" : {
         "title" : "سَكَّ NFT",
-        "desc" : "سَكَّ الرموز غير القابلة للاستبدال (NFT) من خلال تعاونات حصرية على سوق [ L ]"
+        "desc" : "سَكَّ رموز غير قابلة للاستبدال من حملات حصرية على سوق [L]."
+      },
+      "referralProgram" : {
+        "title" : "رشّح صديق",
+        "desc" : "اكسب ما يساوي 10$ من BTC عندما يشتري صديقك Ledger. "
       }
     },
     "comingSoon" : "قريباً",
     "mostPopular" : "الأكثر شعبية"
+  },
+  "installSetOfApps" : {
+    "landing" : {
+      "estimatedTime" : "{{ minutes }} دقيقة",
+      "title" : "{{ productName }} يستخدم تطبيقات لتمكين المعاملات الآمنة على سلسلة الكتل",
+      "subtitle" : "نوصي بتنزيل مجموعة محددة من التطبيقات. يُمكنك تنزيل المزيد لاحقاً.",
+      "installCTA" : "تثبيت التطبيقات",
+      "skipCTA" : "سأفعل هذا لاحقاً"
+    },
+    "ongoing" : {
+      "loading" : "جاري التحميل ...",
+      "resolving" : "حل التبعيات",
+      "progress" : "تثبيت التطبيقات %{{progress}}",
+      "disclaimer" : "التطبيقات على {{ productName }} تُستخدم للموافقة على المعاملات. يمكنك إضافتها أو حذفها في أي وقت."
+    }
   },
   "onboarding" : {
     "stepWelcome" : {
@@ -1970,6 +2002,7 @@
       },
       "advanced" : {
         "title" : "سجلات متقدمة",
+        "warningDerivation" : "هذا مفتاح عام ممتد {{tag}}. عند استيراده إلى محفظة طرف ثالث، اختر نفس نمط الاشتقاق.",
         "desc" : ""
       }
     },
