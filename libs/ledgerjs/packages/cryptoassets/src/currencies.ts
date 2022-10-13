@@ -982,13 +982,18 @@ export const cryptocurrenciesById: Record<string, CryptoCurrency> = {
     color: "#0ebdcd",
     symbol: "Ξ",
     units: ethereumUnits("ether", "ETH"),
-    family: "ethereum",
+    family: "evm",
     blockAvgTime: 15,
     ethereumLikeInfo: {
       baseChain: "mainnet",
       chainId: 1,
       networkId: 1,
       hardfork: "petersburg",
+      rpc: "https://cloudflare-eth.com",
+      explorer: {
+        uri: "https://api.etherscan.io",
+        type: "etherscan",
+      },
     },
     explorerViews: [
       {
@@ -3087,13 +3092,18 @@ export const cryptocurrenciesById: Record<string, CryptoCurrency> = {
     units: ethereumUnits("ether", "ETH").map(makeTestnetUnit),
     isTestnetFor: "ethereum",
     disableCountervalue: true,
-    family: "ethereum",
+    family: "evm",
     blockAvgTime: 15,
     ethereumLikeInfo: {
       baseChain: "goerli",
       chainId: 5, // goerli
       networkId: 5,
       hardfork: "petersburg",
+      rpc: "https://goerli.infura.io/v3/c40608c251d04d5b82cc1f88ed49f0d8",
+      explorer: {
+        uri: "https://api-goerli.etherscan.io",
+        type: "etherscan",
+      },
     },
     explorerViews: [
       {

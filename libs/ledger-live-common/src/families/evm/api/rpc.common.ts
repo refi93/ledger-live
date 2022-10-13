@@ -5,6 +5,7 @@ import { CryptoCurrency } from "@ledgerhq/types-cryptoassets";
 import { transactionToEthersTransaction } from "../adapters";
 import { Transaction as EvmTransaction } from "../types";
 import { Account } from "@ledgerhq/types-live";
+import ERC20Abi from "../abis/erc20.abi.json";
 
 export const DEFAULT_RETRIES_RPC_METHODS = 2;
 
@@ -44,7 +45,7 @@ export const getAccount: (
   async (currency, addr) =>
     withApi(currency, async (api) => {
       const [balance, nonce, blockHeight] = await Promise.all([
-        getBalance(currency, addr),
+        getCoinBalance(currency, addr),
         getTransactionCount(currency, addr),
         api.getBlockNumber(),
       ]);
@@ -70,12 +71,26 @@ export const getTransaction = (
 /**
  * Get the balance of an address
  */
-export const getBalance = (
+export const getCoinBalance = (
   currency: CryptoCurrency,
   address: string
 ): Promise<BigNumber> =>
   withApi(currency, async (api) => {
     const balance = await api.getBalance(address);
+    return new BigNumber(balance.toString());
+  });
+
+/**
+ * Get the balance of an address
+ */
+export const getTokenBalance = (
+  currency: CryptoCurrency,
+  address: string,
+  contractAddress: string
+): Promise<BigNumber> =>
+  withApi(currency, async (api) => {
+    const erc20 = new ethers.Contract(contractAddress, ERC20Abi, api);
+    const balance = await erc20.balanceOf(address);
     return new BigNumber(balance.toString());
   });
 
@@ -98,11 +113,11 @@ export const getGasEstimation = (
   transaction: EvmTransaction
 ): Promise<BigNumber> =>
   withApi(account.currency, async (api) => {
-    const ethersTransaction = transactionToEthersTransaction(
+    const { from, to, data, value } = transactionToEthersTransaction(
       transaction,
       account
     ) as ethers.providers.TransactionRequest;
-    const gasEtimation = await api.estimateGas(ethersTransaction);
+    const gasEtimation = await api.estimateGas({ from, to, data, value });
 
     return new BigNumber(gasEtimation.toString());
   });
@@ -154,12 +169,34 @@ export const getBlock = (
     return api.getBlock(blockHeight);
   });
 
+/**
+ * Get account balances and nonce
+ */
+export const getSubAccount: (
+  currency: CryptoCurrency,
+  addr: string
+) => Promise<{ blockHeight: number; balance: BigNumber; nonce: number }> =
+  async (currency, addr) =>
+    withApi(currency, async (api) => {
+      const [balance, nonce, blockHeight] = await Promise.all([
+        getCoinBalance(currency, addr),
+        getTransactionCount(currency, addr),
+        api.getBlockNumber(),
+      ]);
+
+      return {
+        blockHeight,
+        balance: new BigNumber(balance.toString()),
+        nonce,
+      };
+    });
+
 export default {
   DEFAULT_RETRIES_RPC_METHODS,
   withApi,
   getAccount,
   getTransaction,
-  getBalance,
+  getCoinBalance,
   getTransactionCount,
   getGasEstimation,
   getFeesEstimation,

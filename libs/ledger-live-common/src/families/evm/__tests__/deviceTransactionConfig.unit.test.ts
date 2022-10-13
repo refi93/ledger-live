@@ -34,6 +34,7 @@ describe("EVM Family", () => {
         expect(
           getDeviceTransactionConfig({
             account,
+            parentAccount: undefined,
             transaction,
             status,
           })

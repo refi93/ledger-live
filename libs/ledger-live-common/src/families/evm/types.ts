@@ -10,7 +10,7 @@ export type EvmTransactionMode = "send";
 
 export type EvmTransactionBase = TransactionCommon & {
   family: "evm";
-  mode: "send";
+  mode: EvmTransactionMode;
   nonce: number;
   gasLimit: BigNumber;
   chainId: number;
@@ -34,7 +34,7 @@ export type Transaction = EvmTransactionLegacy | EvmTransactionEIP1559;
 
 export type EvmTransactionBaseRaw = TransactionCommonRaw & {
   family: "evm";
-  mode: "send";
+  mode: EvmTransactionMode;
   nonce: number;
   gasLimit: string;
   chainId: number;
@@ -77,6 +77,28 @@ export type EtherscanOperation = {
   confirmations: string;
   methodId: string;
   functionName: string;
+};
+
+export type EtherscanERC20Event = {
+  blockNumber: string;
+  timeStamp: string;
+  hash: string;
+  nonce: string;
+  blockHash: string;
+  from: string;
+  contractAddress: string;
+  to: string;
+  value: string;
+  tokenName: string;
+  tokenSymbol: string;
+  tokenDecimal: string;
+  transactionIndex: string;
+  gas: string;
+  gasPrice: string;
+  gasUsed: string;
+  cumulativeGasUsed: string;
+  input: string;
+  confirmations: string;
 };
 
 export type TransactionStatus = TransactionStatusCommon;

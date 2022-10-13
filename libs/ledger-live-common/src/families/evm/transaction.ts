@@ -12,8 +12,8 @@ import {
   toTransactionStatusRawCommon as toTransactionStatusRaw,
 } from "../../transaction/common";
 import { getAccountUnit } from "../../account";
-import { formatCurrencyUnit } from "../../currencies";
 import { getTransactionCount } from "./api/rpc";
+import { formatCurrencyUnit } from "../../currencies";
 
 /**
  * Format the transaction for the CLI

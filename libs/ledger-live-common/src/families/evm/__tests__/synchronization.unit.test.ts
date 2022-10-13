@@ -66,10 +66,10 @@ describe("EVM Family", () => {
       describe("With no transactions fetched", () => {
         beforeAll(() => {
           jest
-            .spyOn(etherscanAPI, "getLatestTransactions")
+            .spyOn(etherscanAPI, "getLatestCoinOperations")
             .mockImplementation(() => Promise.resolve([]));
           jest
-            .spyOn(etherscanAPI?.default, "getLatestTransactions")
+            .spyOn(etherscanAPI?.default, "getLatestCoinOperations")
             .mockImplementation(() => Promise.resolve([]));
         });
 
@@ -131,10 +131,10 @@ describe("EVM Family", () => {
       describe("With transactions fetched", () => {
         beforeAll(() => {
           jest
-            .spyOn(etherscanAPI, "getLatestTransactions")
+            .spyOn(etherscanAPI, "getLatestCoinOperations")
             .mockImplementation(() => Promise.resolve([fakeOperation]));
           jest
-            .spyOn(etherscanAPI?.default, "getLatestTransactions")
+            .spyOn(etherscanAPI?.default, "getLatestCoinOperations")
             .mockImplementation(() => Promise.resolve([fakeOperation]));
         });
 
@@ -157,10 +157,10 @@ describe("EVM Family", () => {
       describe("With pending operations", () => {
         beforeAll(() => {
           jest
-            .spyOn(etherscanAPI, "getLatestTransactions")
+            .spyOn(etherscanAPI, "getLatestCoinOperations")
             .mockImplementation(() => Promise.resolve([]));
           jest
-            .spyOn(etherscanAPI?.default, "getLatestTransactions")
+            .spyOn(etherscanAPI?.default, "getLatestCoinOperations")
             .mockImplementation(() => Promise.resolve([]));
           jest
             .spyOn(synchronization, "getOperationStatus")

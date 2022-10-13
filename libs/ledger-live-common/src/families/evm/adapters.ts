@@ -8,7 +8,12 @@ import {
   EvmTransactionEIP1559,
   EvmTransactionLegacy,
   EtherscanOperation,
+  EtherscanERC20Event,
 } from "./types";
+import { decodeAccountId, encodeTokenAccountId } from "../../account";
+import { findTokenByAddressInCurrency } from "@ledgerhq/cryptoassets";
+import { TokenCurrency } from "@ledgerhq/types-cryptoassets";
+import { toTransactionRaw } from "./transaction";
 
 /**
  * Adapter to convert a Ledger Live transaction to an Ethers transaction
@@ -19,12 +24,19 @@ export const transactionToEthersTransaction = (
   // into the transaction to estimate its fees or will throw
   account: Account
 ): ethers.Transaction => {
+  console.warn("BITE", { tx: toTransactionRaw(tx) });
+  const subAccount = tx.subAccountId
+    ? account.subAccounts?.find(({ id }) => id === tx.subAccountId)
+    : null;
+  const isTokenSend = tx.mode === "send" && subAccount?.type === "TokenAccount";
+  const value = isTokenSend
+    ? ethers.BigNumber.from(0)
+    : ethers.BigNumber.from(tx.amount.toFixed());
+
   const ethersTx = {
     from: account.freshAddress,
     to: tx.recipient,
-    value: tx.amount
-      ? ethers.BigNumber.from(tx.amount.toFixed())
-      : ethers.BigNumber.from(0),
+    value,
     data: tx.data ? `0x${tx.data.toString("hex")}` : undefined,
     gasLimit: ethers.BigNumber.from(tx.gasLimit.toFixed()),
     nonce: tx.nonce,
@@ -57,7 +69,7 @@ export const etherscanOperationToOperation = (
   accountId: string,
   address: string,
   tx: EtherscanOperation
-): Operation | null => {
+): Operation => {
   const from = eip55.encode(tx.from);
   const to = tx.to ? eip55.encode(tx.to) : "";
   const value = new BigNumber(tx.value);
@@ -73,30 +85,77 @@ export const etherscanOperationToOperation = (
       return "IN";
     }
     if (from === eip55.encode(address)) {
+      return value.eq(0) ? "FEES" : "OUT";
+    }
+
+    return "NONE";
+  })();
+
+  return {
+    id: encodeOperationId(accountId, tx.hash, type),
+    hash: tx.hash,
+    type: type,
+    value: type === "OUT" || type === "FEES" ? value.plus(fee) : value,
+    fee,
+    senders: [from],
+    recipients: [to],
+    blockHeight: parseInt(tx.blockNumber, 10),
+    blockHash: tx.blockHash,
+    transactionSequenceNumber: parseInt(tx.nonce, 10),
+    accountId: accountId,
+    date: new Date(parseInt(tx.timeStamp, 10) * 1000),
+    extra: {},
+  };
+};
+
+export const etherscanERC20EventToOperation = (
+  accountId: string,
+  address: string,
+  event: EtherscanERC20Event
+): { tokenCurrency: TokenCurrency; operation: Operation } | null => {
+  const { currencyId } = decodeAccountId(accountId);
+  const tokenCurrency = findTokenByAddressInCurrency(
+    event.contractAddress,
+    currencyId
+  );
+  if (!tokenCurrency) return null;
+
+  const tokenAccountId = encodeTokenAccountId(accountId, tokenCurrency);
+  const from = eip55.encode(event.from);
+  const to = event.to ? eip55.encode(event.to) : "";
+  const value = new BigNumber(event.value);
+  const fee = new BigNumber(event.gasUsed).times(new BigNumber(event.gasPrice));
+
+  const type = ((): OperationType => {
+    if (event.contractAddress && to === eip55.encode(address)) {
+      return "IN";
+    }
+
+    if (event.contractAddress && from === eip55.encode(address)) {
       return "OUT";
     }
 
     return "NONE";
   })();
 
-  try {
-    return {
-      id: encodeOperationId(accountId, tx.hash, type),
-      hash: tx.hash,
+  return {
+    tokenCurrency,
+    operation: {
+      id: encodeOperationId(tokenAccountId, event.hash, type),
+      hash: event.hash,
       type: type,
-      value: type === "OUT" ? value.plus(fee) : value,
+      value,
       fee,
       senders: [from],
       recipients: [to],
-      blockHeight: parseInt(tx.blockNumber, 10),
-      blockHash: tx.blockHash,
-      transactionSequenceNumber: parseInt(tx.nonce, 10),
-      accountId: accountId,
-      date: new Date(parseInt(tx.timeStamp, 10) * 1000),
+      tokenId: tokenCurrency.id,
+      contract: tokenCurrency.contractAddress,
+      blockHeight: parseInt(event.blockNumber, 10),
+      blockHash: event.blockHash,
+      transactionSequenceNumber: parseInt(event.nonce, 10),
+      accountId: tokenAccountId,
+      date: new Date(parseInt(event.timeStamp, 10) * 1000),
       extra: {},
-    };
-  } catch (e) {
-    // if something went wrong while parsing the etherscan operation, just return null
-    return null;
-  }
+    },
+  };
 };
