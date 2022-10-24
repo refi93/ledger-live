@@ -5,11 +5,14 @@ import { Flex, Icons, Text } from "@ledgerhq/native-ui";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
+
 import { ensureContrast } from "../../colors";
 import { ScreenName } from "../../const";
 import { useDistribution } from "../../actions/general";
 import RingChart from "../Analytics/RingChart";
 import { track } from "../../analytics";
+import { blacklistedTokenIdsSelector } from "../../reducers/settings";
 
 const NUMBER_MAX_ALLOCATION_ASSETS_TO_DISPLAY = 4;
 
@@ -42,6 +45,7 @@ const Allocations = () => {
   const navigation = useNavigation();
   const distribution = useDistribution({ showEmptyAccounts: true });
   const { colors } = useTheme();
+  const blacklistedTokenIds = useSelector(blacklistedTokenIdsSelector);
 
   const goToAnalyticsAllocations = useCallback(() => {
     track("analytics_clicked", {
@@ -51,13 +55,25 @@ const Allocations = () => {
   }, [navigation]);
 
   const distributionListFormatted = useMemo(() => {
-    if (distribution.list.length <= NUMBER_MAX_ALLOCATION_ASSETS_TO_DISPLAY) {
+    const displayedCurrencies = distribution.list.filter(asset => {
+      return asset.currency.type === "TokenCurrency"
+        ? !blacklistedTokenIds.includes(asset.currency.id)
+        : true;
+    });
+
+    // if there is less than NUMBER_MAX_ALLOCATION_ASSETS_TO_DISPLAY and that there are no blacklisted tokens
+    if (
+      distribution.list.length <= NUMBER_MAX_ALLOCATION_ASSETS_TO_DISPLAY &&
+      displayedCurrencies.length === distribution.list.length
+    ) {
       return distribution.list;
     }
-    const data = distribution.list.slice(
+
+    const data = displayedCurrencies.slice(
       0,
       NUMBER_MAX_ALLOCATION_ASSETS_TO_DISPLAY - 1,
     );
+
     const othersAllocations = {
       currency: {
         id: "others",
@@ -68,16 +84,18 @@ const Allocations = () => {
       distribution: 0,
       amount: 0,
     };
+
     for (const assetAllocation of distribution.list.slice(
       NUMBER_MAX_ALLOCATION_ASSETS_TO_DISPLAY - 1,
     )) {
       othersAllocations.distribution += assetAllocation.distribution;
       othersAllocations.amount += assetAllocation.amount;
     }
+
     data.push(othersAllocations);
 
     return data;
-  }, [distribution.list, colors.neutral.c70, t]);
+  }, [distribution.list, colors.neutral.c70, t, blacklistedTokenIds]);
 
   return (
     <Flex flex={1} mt={6}>

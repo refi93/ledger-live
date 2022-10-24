@@ -1,11 +1,15 @@
 import React, { useCallback, useState, useMemo } from "react";
 import { Trans } from "react-i18next";
+import { useSelector } from "react-redux";
 import take from "lodash/take";
 import { StyleSheet, View, FlatList } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import { Account, SubAccount, TokenAccount } from "@ledgerhq/types-live";
 import useEnv from "@ledgerhq/live-common/hooks/useEnv";
-import { listSubAccounts } from "@ledgerhq/live-common/account/index";
+import {
+  getAccountCurrency,
+  listSubAccounts,
+} from "@ledgerhq/live-common/account/index";
 import { listTokenTypesForCryptoCurrency } from "@ledgerhq/live-common/currencies/index";
 import { Button, Flex, Text } from "@ledgerhq/native-ui";
 import {
@@ -19,6 +23,7 @@ import Touchable from "../../components/Touchable";
 import TokenContextualModal from "../Settings/Accounts/TokenContextualModal";
 import perFamilySubAccountList from "../../generated/SubAccountList";
 import SectionTitle from "../WalletCentricSections/SectionTitle";
+import { blacklistedTokenIdsSelector } from "../../reducers/settings";
 
 const keyExtractor = (o: any) => o.id;
 
@@ -61,7 +66,11 @@ export default function SubAccountsList({
   const navigation = useNavigation();
   const [account, setAccount] = useState<TokenAccount | typeof undefined>();
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const subAccounts = listSubAccounts(parentAccount);
+  const blacklistedTokenIds = useSelector(blacklistedTokenIdsSelector);
+  const subAccounts = listSubAccounts(parentAccount).filter(subAccount => {
+    return !blacklistedTokenIds.includes(getAccountCurrency(subAccount).id);
+  });
+
   const family = parentAccount.currency.family;
   const specific = perFamilySubAccountList[family];
 

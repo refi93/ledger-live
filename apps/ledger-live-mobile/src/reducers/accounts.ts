@@ -23,7 +23,6 @@ import {
   getAccountCurrency,
   importAccountsReduce,
   isUpToDateAccount,
-  withoutToken,
   clearAccount,
   nestedSortAccounts,
   makeEmptyTokenAccount,
@@ -107,16 +106,6 @@ const handlers: Record<string, any> = {
   }),
   CLEAN_CACHE: (state: AccountsState): AccountsState => ({
     active: state.active.map(clearAccount),
-  }),
-  BLACKLIST_TOKEN: (
-    state: AccountsState,
-    {
-      payload: tokenId,
-    }: {
-      payload: string;
-    },
-  ) => ({
-    active: state.active.map(a => withoutToken(a, tokenId)),
   }),
   DANGEROUSLY_OVERRIDE_STATE: (state: AccountsState): AccountsState => ({
     ...state,
