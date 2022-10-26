@@ -121,6 +121,9 @@ function readPackage(pkg, context) {
         mkdirp: "*",
         yargs: "*",
       }),
+      addDependencies("allure-playwright", {
+        "@playwright/test": "*",
+      }),
       addPeerDependencies("@react-native-community/cli", {
         "metro-resolver": "*",
       }),
