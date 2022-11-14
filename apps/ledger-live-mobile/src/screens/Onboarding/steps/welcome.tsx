@@ -185,7 +185,7 @@ function OnboardingStepWelcome({ navigation }: NavigationProps) {
             onPress={() => handleNavigateToFeatureFlagsSettings("1")}
             suppressHighlighting
           >
-            {t("onboarding.stepWelcome.title")}
+            {t("onboarding.stepWelcome.title")}{"(private build)"}
           </Text>
           <Text
             variant="large"
