@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "{{currencyName}}を送付するにはマルチシグを無効にしてください。"
     },
+    "DustLimit" : {
+      "title" : "金額がダスト制限を下回っています"
+    },
     "StratisDown2021Warning" : {
       "description" : "Stratisブロックチェーンのメジャーアップデートが実施されたため、正しく動作しない可能性があります。旧Stratisブロックチェーンのサポートは、2021年10月16日まで引き続き提供されます。"
     },
@@ -1803,6 +1806,9 @@
           "title" : "ソフトウェアのアップデートに失敗しました"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "{{productName}}アプリケーション"
     },
     "readyStep" : {
       "title" : "{{productName}} の準備ができました"
@@ -3149,6 +3155,12 @@
           }
         }
       }
+    }
+  },
+  "signMessage" : {
+    "eip712" : {
+      "showFullMessage" : "メッセージ全体を表示する",
+      "hideFullMessage" : "メッセージ全体を非表示にする"
     }
   },
   "sync" : {
