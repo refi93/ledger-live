@@ -1804,6 +1804,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "Aplicaciones {{productName}}"
+    },
     "readyStep" : {
       "title" : "{{productName}} está listo"
     },
@@ -3851,17 +3854,6 @@
       "description" : "Actualiza tu firmware Ledger Nano conectándolo a la aplicación Ledger Live Desktop",
       "pleaseConnectUsbTitle" : "Es necesario un cable USB",
       "pleaseConnectUsbDescription" : "Para iniciar la actualización del firmware, conecta tu {{deviceName}} a tu teléfono mediante un cable USB."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Es necesaria una actualización del Firmware",
-      "description" : "Para realizar esta acción, primero deberás actualizar el Firmware de tu {{ deviceName }}",
-      "cta" : "Ir a Mi Ledger"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Actualización de Firmware necesaria en la PC",
-      "description" : "Actualiza tu {{ deviceName }} desde Ledger Live Desktop"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
