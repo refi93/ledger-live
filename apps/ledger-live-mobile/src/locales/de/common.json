@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "Bitte deaktivieren Sie Multisign um {{currencyName}} zu senden"
     },
+    "DustLimit" : {
+      "title" : "Die Menge ist niedriger als das Staub (dust) -Limit"
+    },
     "StratisDown2021Warning" : {
       "description" : "Die Stratis-Blockchain hat sich weiterentwickelt und funktioniert möglicherweise nicht mehr korrekt. Die Unterstützung für die ursprüngliche Stratis-Blockchain wird bis zum 16. Oktober 2021 aufrechterhalten."
     },
@@ -1803,6 +1806,9 @@
           "title" : "Softwareupdate fehlgeschlagen"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "{{productName}} Anwendungen"
     },
     "readyStep" : {
       "title" : "{{productName}} ist bereit"
@@ -5353,6 +5359,11 @@
       "viewOn" : "Ansehen auf",
       "viewInExplorer" : "Im Explorer ansehen",
       "txDetails" : "Transaktionsdetails"
+    },
+    "modalDisabled" : {
+      "title" : "Sendefunktion nicht verfügbar",
+      "body" : "Angesichts der aktuellen Aktualisierungen im App Store von Apple ist der Versand von NFTs vorübergehend nicht möglich. Sie können weiterhin Ledger Live auf Ihrem Desktop verwenden, um NFTs zu senden.",
+      "contactSupport" : "Lesen Sie bitte unseren Support-Artikel für weitere Informationen."
     }
   },
   "ApplicationVersion" : "v{{version}}",
