@@ -1804,6 +1804,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}} 应用程序"
+    },
     "readyStep" : {
       "title" : "{{productName}} 已经就绪"
     },
@@ -3851,17 +3854,6 @@
       "description" : "将您的 Ledger Nano 固件连接到桌面板的 Ledger Live 应用程序以更新",
       "pleaseConnectUsbTitle" : "需要使用 USB 线",
       "pleaseConnectUsbDescription" : "要开始固件更新，请使用 USB 线将 {{deviceName}} 插入手机。"
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "固件需要更新",
-      "description" : "要执行此操作，您首先需要更新 {{ deviceName }} 的固件。",
-      "cta" : "前往“我的 Ledger”"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "需要在电脑上更新固件",
-      "description" : "在 Ledger Live 桌面版上更新您的 {{ deviceName }}。"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
