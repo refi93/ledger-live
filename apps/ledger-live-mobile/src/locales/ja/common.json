@@ -85,9 +85,8 @@
     "moreInfo" : "詳細はこちら",
     "buyEth" : "Ethereumを購入",
     "popular" : "人気",
-    "getSupport" : "サポートを利用する",
     "comingSoon" : "近日公開",
-    "restart" : "再起動"
+    "getSupport" : "サポートを利用する"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "リセットできませんでした。",
       "description" : "もう一度お試しください。問題が解決しない場合は、以下のボタンを使ってログを保存し、Ledgerサポートに提出してください。"
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "デバイスで画像のコミットが拒否されました",
-      "description" : "この画像が正しくない場合は、別の画像で再度お試しいただけます。"
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "デバイスで画像の読み込みが拒否されました",
-      "description" : "この画像が正しくない場合は、別の画像で再度お試しいただけます。"
     },
     "InvalidAddress" : {
       "title" : "これは有効な{{currencyName}} アドレスではありません。"
@@ -1131,10 +1122,6 @@
         "title" : "ご利用ガイド（英語版）",
         "cta" : "了解！",
         "desc" : "Ledgerをよりスムーズに導入していただけるよう、多数の言語でガイドをご用意しております。なお現時点では、その他Ledger関連コンテンツは英語でのみ提供されています。予めご了承ください。"
-      },
-      "RestartModal" : {
-        "title" : "再起動が必要です",
-        "paragraph" : "選択された言語では、アプリを再起動する必要があります。続行してもよろしいですか？"
       }
     },
     "stepSelectDevice" : {
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "Ledger Liveアプリを開いた状態で、Nano Xを近くに置いてください。",
+    "stayInTheAppPlz" : "Ledger Liveアプリを開いた状態で、Ledgerを近くに置いてください。",
     "allowAppPermission" : "デバイスで{{wording}} アプリを開く",
     "allowAppPermissionSubtitleToken" : "{{token}} トークンを管理",
     "allowManagerPermission" : "デバイス上で{{wording}}を許可",
@@ -3851,17 +3838,6 @@
       "description" : "Ledger Nanoをデスクトップ版Ledger Liveアプリに接続して、Ledger Nanoのファームウェアをアップデートします。",
       "pleaseConnectUsbTitle" : "USBケーブルが必要です",
       "pleaseConnectUsbDescription" : "ファームウェアのアップデートを開始するには、 {{deviceName}}をUSBケーブルでスマートフォンに接続します。"
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "ファームウェアのアップデートが必要です",
-      "description" : "この操作を実行するには、まず {{ deviceName }}のファームウェアをアップデートする必要があります。",
-      "cta" : "My Ledgerに移動"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "パソコンでファームウェアをアップデートしてください",
-      "description" : "Ledger Live Desktopで{{ deviceName }}をアップデートしてください。"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "画像をトリミング",
     "chooseConstrast" : "コントラストを選択",
     "uploadAnotherImage" : "他の画像をアップロードする",
-    "selectContrast" : "コントラストを選択する",
-    "allowPreview" : "{{productName}}で画像のプレビューを許可する",
-    "loadingPicture" : "{{productName}}で画像を読み込んでいます",
-    "pictureLoaded" : "画像が読み込まれました",
-    "timeDisclaimer" : "これには最大30秒かかる場合があります",
-    "imageLoaded" : "{{productName}}に画像が読み込まれました",
-    "confirmPicture" : "{{productName}}で確認",
-    "title" : "写真を選択してください。\n雰囲気を作ってください。\nLedgerをあなたのものにしましょう。",
-    "subtitle" : "お気に入りのNFTの写真やスマホの写真を設定します。",
-    "customImage" : "画像をカスタマイズ",
-    "choosePicture" : "写真を選択",
-    "doThisLater" : "後で"
+    "selectContrast" : "コントラストを選択する"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "ご利用ガイド",
       "description" : "こちらをクリックして、Ledger Liveで{{productName}}を設定"
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "Ledgerデバイスをパーソナライズ",
-        "description" : "画像を追加することで",
-        "popupLabel" : "デバイスがパーソナライズされました",
-        "hubTitleAfterAction" : "画面状態は良好です"
-      }
     }
   }
 }
