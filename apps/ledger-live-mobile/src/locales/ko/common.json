@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "{{currencyName}}(을)를 보내려면 다중서명을 비활성화하세요"
     },
+    "DustLimit" : {
+      "title" : "더스트(소액) 한도보다 낮은 금액입니다."
+    },
     "StratisDown2021Warning" : {
       "description" : "Stratis 블록체인 진화로 더 이상 제대로 작동하지 않을 수 있습니다. 기존 Stratis 블록체인은 2021년 10월 16일까지 지원됩니다."
     },
@@ -1804,6 +1807,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}} 애플리케이션"
+    },
     "readyStep" : {
       "title" : "{{productName}} 장치가 준비되었습니다."
     },
@@ -2140,7 +2146,7 @@
       },
       "advanced" : {
         "title" : "고급 로그",
-        "warningDerivation" : "{{tag}} xpub 입니다. 타사 지갑으로 가져올 때 동일한 파생 모드를 선택하세요.",
+        "warningDerivation" : "{{tag}} xpub입니다. 타사 지갑으로 가져올 때 동일한 파생 모드를 선택하세요.",
         "desc" : ""
       }
     },
@@ -3634,6 +3640,7 @@
         "description" : "저장된 Ledger 장치 관리"
       },
       "addNewCTA" : "새로 추가하기",
+      "otgBanner" : "Nano S 또는 Nano S Plus 사용자라면, 장치를 USB 케이블로 연결하세요.",
       "connectExistingLedger" : "기존 Ledger 연결",
       "connectExistingLedgerDescription" : "이미 설정된 Ledger가 있나요? 블루투스 페어링을 진행하세요",
       "setUpNewLedger" : "새 Ledger 설정",
