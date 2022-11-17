@@ -124,7 +124,8 @@
     },
     "exchange" : "تبادل",
     "info" : "معلومات",
-    "connectDevice" : "توصيل جهازك"
+    "connectDevice" : "توصيل جهازك",
+    "add" : "إضافة"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "ما نوع جهازك؟",
-          "desc" : "اذا كان لديك Nano S ، يمكنك محاولة إصلاح البرنامج الثابت لجهازك. بالنسبة لمستخدمي Nano X وBlue ، يرجى أن تقم بالتواصل مع دعم Ledger"
+          "desc" : "إذا كنت تحاول توصيل Nano S، اختر الحالة المعروضة على Nano خاصتك. إذا كنت تحاول توصيل Nano S Plus أو Nano X، <0>زُر مركز المساعدة</0>"
         },
         "notFixed" : {
           "title" : " لم يتم حل مشكلة توصيل USB بعد؟",
           "desc" : "إذا جربت كل الحلول الممكنة، يرجى التواصل مع دعم Ledger. خلاف ذلك، يرجى إتباع إرشادات أي حل لم تجربه حتى الآن.",
           "back" : "الرجوع إلى المحفظة الاستثمارية",
-          "cta" : "تواصل مع الدعم"
+          "cta" : "تواصل مع الدعم",
+          "cta2" : "العودة للخلف"
         },
         "repair" : {
           "title" : "إصلاح Nano S الخاص بك",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "لم تتم إضافة حسابك. يرجى إعادة المحاولة."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "فشل تحميل الصورة من الملف.",
+      "description" : "يُرجى المحاولة مجدداً بصورة."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "فشل تحميل الصورة من الملف",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImageDownloadError" : {
+      "title" : "فشل تنزيل الصورة",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "فشل تحميل البيانات الوصفية للصورة",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImageTooLargeError" : {
+      "title" : "حجم الصورة كبير جداً",
+      "description" : "يُرجى المحاولة بصورة أصغر"
+    },
+    "ImageCropError" : {
+      "title" : "فشل قص الصورة",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImageResizeError" : {
+      "title" : "فشل تغيير حجم الصورة",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImagePreviewError" : {
+      "title" : "فشل عرض الصورة",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImageProcessingError" : {
+      "title" : "فشل معالجة الصورة",
+      "description" : "يُرجى المحاولة مرة أخرى بصورة أخرى"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "الالتزام بالصورة رُفِض على الجهاز (TODO: final wording)",
+      "description" : "إذا لم تكن هذه الصورة بالمقاس المناسب، يُمكنك المحاولة مرة ثانية مع صورة أخرى."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "تحميل الصورة رُفض على الجهاز (TODO: final wording)",
+      "description" : "إذا لم تكن هذه الصورة بالمقاس المناسب، يُمكنك المحاولة مرة ثانية مع صورة أخرى."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "اختر حساب"
     }
+  },
+  "customImage" : {
+    "title" : "صورة مخصصة",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "اختر صورة",
+        "description" : "اختر صورة لتعيينها على أنها (...)",
+        "pickFromNftGallery" : "اختر من معرض NFT",
+        "upload" : "تحميل من الكمبيوتر الخاص بي"
+      },
+      "adjust" : {
+        "stepLabel" : "ضبط الصورة",
+        "rotate" : "تدوير"
+      },
+      "contrast" : {
+        "stepLabel" : "اختر التباين"
+      },
+      "transfer" : {
+        "stepLabel" : "تحويل",
+        "uploadAnotherImage" : "قم بتحميل صورة أخرى",
+        "allowPreview" : "السماح بعرض الصورة على {{productName}}",
+        "loadingPicture" : "تحميل الصورة على {{productName}}",
+        "pictureLoaded" : "تم تحميل الصورة",
+        "imageLoaded" : "تم تحميل الصورة على {{productName}}",
+        "confirmPicture" : "قم بالتأكيد على {{productName}}",
+        "doThisLater" : "ربّما في وقت لاحق",
+        "timeDisclaimer" : "قد يستغرق هذا حتى 30 ثانية"
+      }
+    },
+    "customImageSet" : "تم تعيين الصورة المخصصة",
+    "finishCTA" : "إنهاء"
   }
 }
