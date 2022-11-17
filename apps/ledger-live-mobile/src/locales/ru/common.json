@@ -870,7 +870,7 @@
         "cta" : "Купить"
       },
       "familyPackX" : {
-        "title" : "Семейный набор Ledger Nano X",
+        "title" : "Семейный набор Nano X",
         "description" : "Набор из 3 Nano X по скидке. Идеально для подарка или резервной копии кошелька",
         "cta" : "Сэкономьте"
       },
@@ -1803,6 +1803,9 @@
           "title" : "Сбой обновления ПО"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "Приложения {{productName}}"
     },
     "readyStep" : {
       "title" : "Устройство {{productName}} готово"
@@ -3853,17 +3856,6 @@
       "pleaseConnectUsbDescription" : "Чтобы начать обновление прошивки, подключите {{deviceName}} к мобильному телефону с помощью USB-кабеля."
     }
   },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Необходимо обновить прошивку",
-      "description" : "Для данного действия сначала необходимо обновить прошивку {{ deviceName }}.",
-      "cta" : "Перейти в «Мой Ledger»"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Необходимо обновить прошивку посредством ПК",
-      "description" : "Обновите прошивку {{ deviceName }} через настольное приложение Ledger Live"
-    }
-  },
   "FirmwareUpdateReleaseNotes" : {
     "introTitle" : "Обновить {{deviceName}} до версии {{version}}",
     "recoveryPhraseBackupInstructions" : "Запишите фразу восстановления из 24 слов на лист восстановления и убедитесь, что в крайнем случае к ней будет доступ.",
@@ -4028,7 +4020,7 @@
         "description" : "Баланс заблокированных активов, доступных для голосования"
       },
       "withdrawableBalance" : {
-        "title" : "Баланс для вывода",
+        "title" : "Можно вывести",
         "description" : "Разблокированные CELO, которые можно вывести на баланс"
       }
     },
@@ -4144,7 +4136,7 @@
           "verification" : {
             "success" : {
               "title" : "Активация выполнена",
-              "text" : "Ваши голоса активированы."
+              "text" : "Ваши голоса активированы"
             }
           }
         }
@@ -4287,7 +4279,7 @@
     },
     "alerts" : {
       "withdrawableAssets" : "У вас есть баланс для вывода.",
-      "activatableVotes" : "У вас есть голоса, которые можно активировать"
+      "activatableVotes" : "У вас есть голоса, которые можно использовать"
     }
   },
   "osmosis" : {
