@@ -153,7 +153,7 @@
       }
     },
     "CeloAllFundsWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "CeloMissingWithdrawalsError" : {
       "title" : "Erreur lors du retrait des fonds"
@@ -624,7 +624,7 @@
       "title" : "Vous n’avez aucune nomination."
     },
     "PolkadotAllFundsWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "PolkadotDoMaxSendInstead" : {
       "title" : "Le solde ne peut pas être inférieur à {{minimumBalance}}. Pour vider : Max."
@@ -1803,6 +1803,9 @@
           "title" : "Échec de la mise à jour du logiciel"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "Applications {{productName}}"
     },
     "readyStep" : {
       "title" : "Votre {{productName}} est prêt"
@@ -3445,7 +3448,7 @@
       "subtitle" : "Ajouter un nouveau compte",
       "native_segwit" : {
         "title" : "Native SegWit",
-        "desc" : "Le meilleur choix. Frais de transaction faibles, détection d’erreurs et prise en charge du réseau Lightning. Non pris en charge par certains wallets/plateformes d’échange."
+        "desc" : "Le meilleur choix. Frais de transaction bas, détection d’erreurs et prise en charge du réseau Lightning. Non pris en charge par certains wallets/plateformes d’échange."
       },
       "segwit" : {
         "title" : "SegWit",
@@ -3851,17 +3854,6 @@
       "description" : "Mettez à jour le micrologiciel de votre Ledger Nano en le connectant à Ledger Live pour l’ordinateur",
       "pleaseConnectUsbTitle" : "Câble USB nécessaire",
       "pleaseConnectUsbDescription" : "Connectez votre {{deviceName}} à votre téléphone avec un câble USB pour lancer la mise à jour du micrologiciel."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Mise à jour du micrologiciel nécessaire",
-      "description" : "Pour effectuer cette action, vous devez d’abord mettre à jour le micrologiciel de votre {{ deviceName }}.",
-      "cta" : "Accéder à My Ledger"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Mise à jour du micrologiciel nécessaire sur ordinateur",
-      "description" : "Mettez à jour votre {{ deviceName }} sur Ledger Live pour l’ordinateur."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
