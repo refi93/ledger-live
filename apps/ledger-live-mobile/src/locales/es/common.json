@@ -85,9 +85,8 @@
     "moreInfo" : "Más información",
     "buyEth" : "Comprar Ethereum",
     "popular" : "popular",
-    "getSupport" : "Obtener ayuda",
     "comingSoon" : "Próximamente",
-    "restart" : "Reiniciar"
+    "getSupport" : "Obtener ayuda"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "No fue posible restablecer",
       "description" : "Inténtalo de nuevo. Si el problema persiste, guarda los registros con el botón que aparece a continuación y envíalos al Soporte de Ledger."
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "Commit de imagen rechazado en el dispositivo (TODO: final wording)",
-      "description" : "Si la imagen no era la adecuada, puedes intentarlo de nuevo con una diferente."
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "Carga de imagen rechazada en el dispositivo (TODO: final wording)",
-      "description" : "Si la imagen no era la adecuada, puedes intentarlo de nuevo con una diferente."
     },
     "InvalidAddress" : {
       "title" : "Esta no es una dirección de {{currencyName}} válida"
@@ -1131,10 +1122,6 @@
         "title" : "Comenzar en español",
         "cta" : "¡Entendido!",
         "desc" : "Estamos añadiendo idiomas adicionales para ayudarte a aprender a utilizar Ledger. Ten en cuenta que actualmente el resto de la experiencia Ledger solo está disponible en inglés."
-      },
-      "RestartModal" : {
-        "title" : "Es necesario reiniciar",
-        "paragraph" : "Para aplicar el idioma seleccionado es necesario reiniciar la aplicación. ¿Seguro que quieres continuar?"
       }
     },
     "stepSelectDevice" : {
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "Mantente dentro de la aplicación y con tu Nano X disponible",
+    "stayInTheAppPlz" : "Mantente dentro de la aplicación Ledger Live y con tu Ledger disponible.",
     "allowAppPermission" : "Abre la aplicación {{wording}} en tu dispositivo",
     "allowAppPermissionSubtitleToken" : "para administrar los tokens {{token}}",
     "allowManagerPermission" : "Permite {{wording}} en tu dispositivo",
@@ -3851,17 +3838,6 @@
       "description" : "Actualiza tu firmware Ledger Nano conectándolo a la aplicación Ledger Live Desktop",
       "pleaseConnectUsbTitle" : "Es necesario un cable USB",
       "pleaseConnectUsbDescription" : "Para iniciar la actualización del firmware, conecta tu {{deviceName}} a tu teléfono mediante un cable USB."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Es necesaria una actualización del Firmware",
-      "description" : "Para realizar esta acción, primero deberás actualizar el Firmware de tu {{ deviceName }}",
-      "cta" : "Ir a Mi Ledger"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Actualización de Firmware necesaria en la PC",
-      "description" : "Actualiza tu {{ deviceName }} desde Ledger Live Desktop"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "Recortar imagen",
     "chooseConstrast" : "Elegir contraste",
     "uploadAnotherImage" : "Cargar otra imagen",
-    "selectContrast" : "Selecciona el contraste",
-    "allowPreview" : "Permitir vista previa de la imagen en {{productName}}",
-    "loadingPicture" : "Cargando imagen en {{productName}}",
-    "pictureLoaded" : "Imagen cargada",
-    "timeDisclaimer" : "Puede tardar 30 segundos",
-    "imageLoaded" : "Imagen cargada en {{productName}}",
-    "confirmPicture" : "Confirmar en {{productName}}",
-    "title" : "Elige una imagen.\nCrea un estilo.\nHaz tuyo tu Ledger.",
-    "subtitle" : "Pon una imagen de tu NFT favorito o una de tu teléfono.",
-    "customImage" : "Imagen personalizada",
-    "choosePicture" : "Elige una imagen",
-    "doThisLater" : "Quizás más tarde"
+    "selectContrast" : "Selecciona el contraste"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "Primeros pasos",
       "description" : "Haz clic aquí para finalizar la configuración de tu {{productName}} con Ledger Live"
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "Personalizar mi dispositivo Ledger",
-        "description" : "Añadiendo una imagen",
-        "popupLabel" : "Dispositivo personalizado",
-        "hubTitleAfterAction" : "Esa pantalla tiene muy buen aspecto"
-      }
     }
   }
 }
