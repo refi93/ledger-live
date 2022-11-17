@@ -124,7 +124,8 @@
     },
     "exchange" : "Negociar",
     "info" : "Informações",
-    "connectDevice" : "Conecte seu dispositivo"
+    "connectDevice" : "Conecte seu dispositivo",
+    "add" : "Adicionar"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "Qual é seu dispositivo?",
-          "desc" : "Se você tem uma Nano S, você pode tentar reparar o firmware do seu dispositivo. Para usuários da Nano X e Blue, contate o Suporte Ledger"
+          "desc" : "Se estiver tentando conectar uma Nano S, selecione o estado exibido em sua Nano. Se estiver tentando conectar uma Nano S Plus ou Nano X, <0>visite o Centro de Ajuda</0>"
         },
         "notFixed" : {
           "title" : " O problema de conexão USB ainda não foi corrigido?",
           "desc" : "Se você já tentou todas as soluções possíveis, contate o Suporte Ledger. Caso contrário, siga as instruções das soluções que você ainda não tentou.",
           "back" : "Voltar ao portfólio",
-          "cta" : "Contatar Suporte"
+          "cta" : "Contatar Suporte",
+          "cta2" : "Voltar"
         },
         "repair" : {
           "title" : "Repare sua Nano S",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "Sua conta não foi adicionada. Tente Novamente."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "Falha no carregamento da imagem do arquivo.",
+      "description" : "Tente novamente com uma imagem."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "Falha no carregamento da imagem do arquivo",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImageDownloadError" : {
+      "title" : "Falha m baixar a imagem",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "Falha no carregamento dos metadados da imagem",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImageTooLargeError" : {
+      "title" : "Imagem muito grande",
+      "description" : "Tente com uma imagem menor"
+    },
+    "ImageCropError" : {
+      "title" : "Falha no corte da imagem",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImageResizeError" : {
+      "title" : "Falha no redimensionamento da imagem",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImagePreviewError" : {
+      "title" : "Falha na pré-visualização da imagem",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImageProcessingError" : {
+      "title" : "Falha no processamento da imagem",
+      "description" : "Tente novamente com outra imagem"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "Commit de imagem recusado no dispositivo (TODO: final wording)",
+      "description" : "Se esta imagem não era a mais adequada, você pode tentar novamente com outra imagem."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "Carregamento de imagem recusada no dispositivo (TODO: final wording)",
+      "description" : "Se esta imagem não era a mais adequada, você pode tentar novamente com outra imagem."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "escolher conta"
     }
+  },
+  "customImage" : {
+    "title" : "Imagem personalizada",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "Escolha uma imagem",
+        "description" : "Escolha uma imagem para definir como (...)",
+        "pickFromNftGallery" : "Selecionar na minha galeria de NFTs",
+        "upload" : "Carregar do meu computador"
+      },
+      "adjust" : {
+        "stepLabel" : "Ajustar imagem",
+        "rotate" : "Girar"
+      },
+      "contrast" : {
+        "stepLabel" : "Escolher contraste"
+      },
+      "transfer" : {
+        "stepLabel" : "Transferência",
+        "uploadAnotherImage" : "Enviar outra imagem",
+        "allowPreview" : "Permitir a visualização da imagem em {{productName}}",
+        "loadingPicture" : "Carregando imagem em {{productName}}",
+        "pictureLoaded" : "Imagem carregada",
+        "imageLoaded" : "Imagem carregada em {{productName}}",
+        "confirmPicture" : "Confirme em {{productName}}",
+        "doThisLater" : "Talvez mais tarde",
+        "timeDisclaimer" : "Isso pode demorar até 30 segundos"
+      }
+    },
+    "customImageSet" : "Imagem personalizada definida",
+    "finishCTA" : "Finalizar"
   }
 }
