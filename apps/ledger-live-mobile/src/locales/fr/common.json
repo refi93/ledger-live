@@ -85,9 +85,8 @@
     "moreInfo" : "Plus d’informations",
     "buyEth" : "Acheter de l’Ethereum",
     "popular" : "Populaire",
-    "getSupport" : "Obtenir de l’aide",
     "comingSoon" : "Bientôt disponibles",
-    "restart" : "Redémarrer"
+    "getSupport" : "Obtenir de l’aide"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -153,7 +152,7 @@
       }
     },
     "CeloAllFundsWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "CeloMissingWithdrawalsError" : {
       "title" : "Erreur lors du retrait des fonds"
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "Échec de la réinitialisation",
       "description" : "Veuillez réessayer. Si le problème persiste, enregistrez vos logs en utilisant le bouton ci-dessous et transmettez-les à l’Assistance Ledger."
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "Validation de l’image refusée sur votre Ledger (TODO: final wording)",
-      "description" : "Si cette image ne vous plaît pas, choisissez une autre image."
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "Chargement de l’image refusé sur votre Ledger (TODO: final wording)",
-      "description" : "Si cette image ne vous plaît pas, choisissez une autre image."
     },
     "InvalidAddress" : {
       "title" : "Adresse {{currencyName}} invalide"
@@ -624,7 +615,7 @@
       "title" : "Vous n’avez aucune nomination."
     },
     "PolkadotAllFundsWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "PolkadotDoMaxSendInstead" : {
       "title" : "Le solde ne peut pas être inférieur à {{minimumBalance}}. Pour vider : Max."
@@ -1131,10 +1122,6 @@
         "title" : "À noter",
         "cta" : "Compris",
         "desc" : "Nous ajoutons des langues supplémentaires afin de faciliter vos premiers pas avec Ledger. L’expérience Ledger sera bientôt entièrement disponible dans plusieurs langues."
-      },
-      "RestartModal" : {
-        "title" : "Redémarrage requis",
-        "paragraph" : "La langue sélectionnée nécessite que l’application soit redémarrée. Voulez-vous vraiment continuer ?"
       }
     },
     "stepSelectDevice" : {
@@ -3445,7 +3432,7 @@
       "subtitle" : "Ajouter un nouveau compte",
       "native_segwit" : {
         "title" : "Native SegWit",
-        "desc" : "Le meilleur choix. Frais de transaction faibles, détection d’erreurs et prise en charge du réseau Lightning. Non pris en charge par certains wallets/plateformes d’échange."
+        "desc" : "Le meilleur choix. Frais de transaction bas, détection d’erreurs et prise en charge du réseau Lightning. Non pris en charge par certains wallets/plateformes d’échange."
       },
       "segwit" : {
         "title" : "SegWit",
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "Restez dans l’app et gardez votre Nano X en main.",
+    "stayInTheAppPlz" : "Restez dans Ledger Live et gardez votre Ledger à portée de main.",
     "allowAppPermission" : "Ouvrez l’app {{wording}} sur votre appareil",
     "allowAppPermissionSubtitleToken" : "pour gérer vos tokens {{token}}",
     "allowManagerPermission" : "Autorisez {{wording}} sur l’appareil.",
@@ -3851,17 +3838,6 @@
       "description" : "Mettez à jour le micrologiciel de votre Ledger Nano en le connectant à Ledger Live pour l’ordinateur",
       "pleaseConnectUsbTitle" : "Câble USB nécessaire",
       "pleaseConnectUsbDescription" : "Connectez votre {{deviceName}} à votre téléphone avec un câble USB pour lancer la mise à jour du micrologiciel."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Mise à jour du micrologiciel nécessaire",
-      "description" : "Pour effectuer cette action, vous devez d’abord mettre à jour le micrologiciel de votre {{ deviceName }}.",
-      "cta" : "Accéder à My Ledger"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Mise à jour du micrologiciel nécessaire sur ordinateur",
-      "description" : "Mettez à jour votre {{ deviceName }} sur Ledger Live pour l’ordinateur."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "Recadrez l’image",
     "chooseConstrast" : "Choisissez un contraste",
     "uploadAnotherImage" : "Télécharger une autre image",
-    "selectContrast" : "Sélectionnez le contraste voulu",
-    "allowPreview" : "Autorisez l’aperçu des images sur votre {{productName}}",
-    "loadingPicture" : "Chargement de l’image sur votre {{productName}}",
-    "pictureLoaded" : "Image chargée",
-    "timeDisclaimer" : "Cela peut prendre jusqu’à 30 secondes.",
-    "imageLoaded" : "Image chargée sur votre {{productName}}",
-    "confirmPicture" : "Confirmez sur votre {{productName}}",
-    "title" : "Choisissez une image.\nCréez votre style.\nPersonnalisez votre Ledger.",
-    "subtitle" : "Sélectionnez votre NFT préféré ou une image de votre téléphone.",
-    "customImage" : "Image personnalisée",
-    "choosePicture" : "Choisissez une image",
-    "doThisLater" : "Pas maintenant"
+    "selectContrast" : "Sélectionnez le contraste voulu"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "Premiers pas",
       "description" : "Cliquez ici pour terminer la configuration de votre {{productName}} avec Ledger Live."
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "Personnaliser mon Ledger",
-        "description" : "En ajoutant une image",
-        "popupLabel" : "Appareil personnalisé",
-        "hubTitleAfterAction" : "Vous avez créé votre style !"
-      }
     }
   }
 }
