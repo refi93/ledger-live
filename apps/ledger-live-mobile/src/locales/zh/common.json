@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "请禁用多重签名以发送 {{currencyName}}"
     },
+    "DustLimit" : {
+      "title" : "金额低于小额资产下限"
+    },
     "StratisDown2021Warning" : {
       "description" : "Stratis 区块链已经进化，可能无法正确工作。对原有 Stratis 区块链的技术支持，将会持续到 2021 年 10 月 16 日。"
     },
@@ -1804,6 +1807,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}} 应用程序"
+    },
     "readyStep" : {
       "title" : "{{productName}} 已经就绪"
     },
@@ -2140,7 +2146,7 @@
       },
       "advanced" : {
         "title" : "高级日志",
-        "warningDerivation" : "这是一个 {{tag}} xpub。将其导入第三方钱包时，请选择相同的衍生模式。",
+        "warningDerivation" : "这是一个 {{tag}} xpub 扩展公钥。将其导入第三方钱包时，请选择相同的衍生模式。",
         "desc" : ""
       }
     },
@@ -3634,6 +3640,7 @@
         "description" : "管理您保存的 Ledger 设备"
       },
       "addNewCTA" : "添加新的",
+      "otgBanner" : "如果您使用的是 Nano S 或 Nano S Plus，请使用 USB 数据线连接您的设备。",
       "connectExistingLedger" : "连接现有 Ledger 设备",
       "connectExistingLedgerDescription" : "已有设置过的 Ledger 设备？使用蓝牙配对",
       "setUpNewLedger" : "设置新 Ledger 设备",
