@@ -124,7 +124,8 @@
     },
     "exchange" : "Umtauschen",
     "info" : "Informationen",
-    "connectDevice" : "Verbinden Sie Ihr Gerät"
+    "connectDevice" : "Verbinden Sie Ihr Gerät",
+    "add" : "Hinzufügen"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "Was für ein Gerät haben Sie?",
-          "desc" : "Wenn Sie einen Nano S haben, können Sie versuchen, die Firmware Ihres Geräts zu reparieren. Für Nano X- und Blue-Benutzer wenden Sie sich bitte an den Ledger-Support"
+          "desc" : "Wenn Sie versuchen, einen Nano S anzuschließen, wählen Sie den Status aus, der auf Ihrem Nano angezeigt wird. Wenn Sie versuchen, einen Nano S Plus oder Nano X zu verbinden, <0>besuchen Sie das Hilfe-Center</0>"
         },
         "notFixed" : {
           "title" : " USB-Verbindungsproblem immer noch nicht behoben?",
           "desc" : "Wenn Sie alle möglichen Lösungen ausprobiert haben, wenden Sie sich bitte an den Ledger-Support. Ansonsten folgen Sie bitte den Anweisungen jeder Lösung, die Sie noch nicht ausprobiert haben.",
           "back" : "Zurück zum Portfolio",
-          "cta" : "Support kontaktieren"
+          "cta" : "Support kontaktieren",
+          "cta2" : "Zurückgehen"
         },
         "repair" : {
           "title" : "Reparieren Sie Ihren Nano S",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "Ihr Konto wurde nicht hinzugefügt. Bitte versuchen Sie es erneut."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "Das Laden des Bildes aus einer Datei ist fehlgeschlagen.",
+      "description" : "Bitte versuchen Sie es erneut mit einem Bild."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "Das Laden des Bildes aus einer Datei ist fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImageDownloadError" : {
+      "title" : "Bilddownload fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "Laden der Bild-Metadaten fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImageTooLargeError" : {
+      "title" : "Das Bild ist zu groß",
+      "description" : "Bitte versuchen Sie es mit einem kleineren Bild"
+    },
+    "ImageCropError" : {
+      "title" : "Das Zuschneiden des Bildes ist fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImageResizeError" : {
+      "title" : "Die Größenänderung des Bildes ist fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImagePreviewError" : {
+      "title" : "Die Vorschau des Bildes ist fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImageProcessingError" : {
+      "title" : "Die Verarbeitung des Bildes ist fehlgeschlagen",
+      "description" : "Bitte versuchen Sie es noch einmal mit einem anderen Bild"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "Bildübertragung auf Gerät verweigert",
+      "description" : "Sollte dieses Bild nicht passen, können Sie es mit einem anderen Bild erneut versuchen."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "Laden von Bildern auf Gerät verweigert",
+      "description" : "Sollte dieses Bild nicht passen, können Sie es mit einem anderen Bild erneut versuchen."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "Konto auswählen"
     }
+  },
+  "customImage" : {
+    "title" : "Benutzerdefiniertes Bild",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "Wählen Sie ein Bild aus",
+        "description" : "Wählen Sie ein Bild, das als (...) festgelegt werden soll",
+        "pickFromNftGallery" : "Aus meiner NFT-Galerie auswählen",
+        "upload" : "Von meinem Computer hochladen"
+      },
+      "adjust" : {
+        "stepLabel" : "Bild anpassen",
+        "rotate" : "Drehen"
+      },
+      "contrast" : {
+        "stepLabel" : "Kontrast auswählen"
+      },
+      "transfer" : {
+        "stepLabel" : "Übertragen",
+        "uploadAnotherImage" : "Ein weiteres Bild hochladen",
+        "allowPreview" : "Bildvorschau zulassen auf {{productName}}",
+        "loadingPicture" : "Bild wird geladen auf {{productName}}",
+        "pictureLoaded" : "Bild geladen",
+        "imageLoaded" : "Bild geladen auf {{productName}}",
+        "confirmPicture" : "Bestätigen auf {{productName}}",
+        "doThisLater" : "Vielleicht später",
+        "timeDisclaimer" : "Dies kann bis zu 30 Sekunden dauern"
+      }
+    },
+    "customImageSet" : "Benutzerdefiniertes Bild-Set",
+    "finishCTA" : "Beenden"
   }
 }
