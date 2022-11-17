@@ -124,7 +124,8 @@
     },
     "exchange" : "교환",
     "info" : "정보",
-    "connectDevice" : "내 장치 연결하기"
+    "connectDevice" : "내 장치 연결하기",
+    "add" : "추가"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "어떤 장치를 이용 중인가요?",
-          "desc" : "Nano S를 이용 중이라면, 장치 펌웨어 복구를 시도하세요. Nano X와 Blue 사용자는 Ledger 지원 부서에 연락하시기 바랍니다"
+          "desc" : "Nano S를 연결하고 싶다면, Nano 장치에 표시된 상태를 선택하세요. Nano S Plus 또는 Nano X를 연결하고 싶다면, <0>지원 센터를 방문하세요</0>"
         },
         "notFixed" : {
           "title" : " USB 연결 문제가 여전히 해결되지 않았나요?",
           "desc" : "모든 해결책을 이미 시도해 보았다면, Ledger 지원 부서에 문의해주세요. 그렇지 않은 경우, 아직 시도해 보지 않은 해결책의 지침을 따라보세요.",
           "back" : "포트폴리오로 돌아가기",
-          "cta" : "지원 부서 문의"
+          "cta" : "지원 부서 문의",
+          "cta2" : "돌아가기"
         },
         "repair" : {
           "title" : "Nano S 복구",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "귀하의 계정이 추가되지 않았습니다. 다시 시도해 주세요."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "파일 이미지 로딩 실패.",
+      "description" : "다른 이미지로 재시도해보세요."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "파일 이미지 로딩 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImageDownloadError" : {
+      "title" : "이미지 다운로드 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "이미지 메타데이터 로딩 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImageTooLargeError" : {
+      "title" : "이미지 크기 초과",
+      "description" : "작은 이미지로 다시 시도하세요"
+    },
+    "ImageCropError" : {
+      "title" : "이미지 크롭 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImageResizeError" : {
+      "title" : "이미지 사이즈 변경 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImagePreviewError" : {
+      "title" : "이미지 미리보기 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImageProcessingError" : {
+      "title" : "이미지 처리 실패",
+      "description" : "다른 이미지로 다시 시도하세요"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "장치에서 이미지 커밋이 거부됨(할 일: 최종 문구)",
+      "description" : "적합한 이미지가 아니라면 다른 이미지로 다시 시도해볼 수 있습니다."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "장치에서 이미지 로드가 거부됨(할 일: 최종 문구)",
+      "description" : "적합한 이미지가 아니라면 다른 이미지로 다시 시도해볼 수 있습니다."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "계정 선택"
     }
+  },
+  "customImage" : {
+    "title" : "맞춤 이미지",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "이미지 선택",
+        "description" : "(...)로 설정할 이미지 선택",
+        "pickFromNftGallery" : "내 NFT 갤러리에서 선택",
+        "upload" : "내 컴퓨터에서 업로드"
+      },
+      "adjust" : {
+        "stepLabel" : "이미지 조정",
+        "rotate" : "회전"
+      },
+      "contrast" : {
+        "stepLabel" : "대비 선택"
+      },
+      "transfer" : {
+        "stepLabel" : "전송",
+        "uploadAnotherImage" : "다른 이미지 업로드",
+        "allowPreview" : "{{productName}}에서 사진 미리보기 허용",
+        "loadingPicture" : "{{productName}}에서 사진 로드 중",
+        "pictureLoaded" : "사진 로드 완료",
+        "imageLoaded" : "{{productName}}에서 로드한 이미지",
+        "confirmPicture" : "{{productName}}에서 확인",
+        "doThisLater" : "다음에 결정하기",
+        "timeDisclaimer" : "최대 30초가 소요될 수 있습니다"
+      }
+    },
+    "customImageSet" : "맞춤 이미지 세트",
+    "finishCTA" : "완료"
   }
 }
