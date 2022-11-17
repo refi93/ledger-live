@@ -1804,6 +1804,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "تطبيقات {{productName}}"
+    },
     "readyStep" : {
       "title" : "{{productName}} مستعد"
     },
@@ -3851,17 +3854,6 @@
       "description" : "قم بتحديث برنامج Ledger Nano الثابت عن طريق توصيله إلى تطبيق Ledger Live على سطح المكتب",
       "pleaseConnectUsbTitle" : "كبل USB مطلوب",
       "pleaseConnectUsbDescription" : "لبدء تحديث البرنامج الثابت، قم بتوصيل {{deviceName}} خاصتك بهاتفك الجوال باستخدام كبل USB."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "تحديث البرنامج الثابت مطلوب",
-      "description" : "لتنفيذ هذا الإجراء، تحتاج أولاً إلى تحديث البرنامج الثابت لجهازك {{ deviceName }}.",
-      "cta" : "انتقل إلى My Ledger"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "تحديث البرنامج الثابت مطلوب على الكمبيوتر",
-      "description" : "تحديث {{ deviceName }} الخاص بك على Ledger Live لسطح المكتب."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
