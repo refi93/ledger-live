@@ -124,7 +124,8 @@
     },
     "exchange" : "Cambia",
     "info" : "Info",
-    "connectDevice" : "Conecta tu dispositivo"
+    "connectDevice" : "Conecta tu dispositivo",
+    "add" : "Agregar"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -1833,7 +1834,7 @@
         "bandwidthDescription" : "Los puntos de Ancho de banda se utilizan para realizar transacciones sin pagar TRX por tarifas de red. Elige Ancho de banda para aumentar tus transacciones gratuitas diarias.",
         "energyDescription" : "Se requieren puntos de Energía para ejecutar contratos inteligentes. Si no tienes ningún contrato inteligente, no es necesario que elijas recompensas en Energía.",
         "amountLabel" : "Importe a inmovilizar",
-        "available" : "Disponible: {{amountAvailable}}",
+        "available" : "Disponibles: {{amountAvailable}}",
         "info" : "No es posible enviar los activos inmovilizados por un periodo de tres días."
       },
       "connectDevice" : {
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "¿Cuál es tu dispositivo?",
-          "desc" : "Si tienes un Nano S, puedes intentar reparar el firmware de tu dispositivo. Para los usuarios de Nano X y Blue, por favor contactar al soporte de Ledger."
+          "desc" : "Si estás intentando conectar un Nano S, selecciona el estado que se muestra en tu Nano. Si estás intentando conectar un Nano S Plus o un Nano X, <0>visita el Centro de ayuda</0>"
         },
         "notFixed" : {
           "title" : " ¿Aún no está resuelto el problema de la conexión USB?",
           "desc" : "Si ya has probado con todas las soluciones posibles, por favor ponte en contacto con el soporte de Ledger. De lo contrario, sigue las instrucciones de aquellas soluciones que todavía no hayas probado.",
           "back" : "Volver al Portfolio",
-          "cta" : "Ponte en contacto con Soporte"
+          "cta" : "Ponte en contacto con Soporte",
+          "cta2" : "Volver"
         },
         "repair" : {
           "title" : "Reparar tu Nano S",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "Tu cuenta no ha sido agregada. Inténtalo de nuevo."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "Error al cargar la imagen desde el archivo.",
+      "description" : "Vuelve a intentarlo con una imagen."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "Error al cargar la imagen desde el archivo.",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImageDownloadError" : {
+      "title" : "Error al descargar la imagen",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "Error al cargar los metadatos de la imagen",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImageTooLargeError" : {
+      "title" : "Imagen demasiado grande",
+      "description" : "Vuelve a intentarlo con una imagen más pequeña"
+    },
+    "ImageCropError" : {
+      "title" : "Error al recortar la imagen",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImageResizeError" : {
+      "title" : "Error al cambiar el tamaño de la imagen",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImagePreviewError" : {
+      "title" : "Error al previsualizar la imagen",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImageProcessingError" : {
+      "title" : "Error al procesar la imagen",
+      "description" : "Vuelve a intentarlo con otra imagen"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "Commit de imagen rechazado en el dispositivo (TODO: final wording)",
+      "description" : "Si la imagen no era la adecuada, puedes intentarlo de nuevo con una diferente."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "Carga de imagen rechazada en el dispositivo (TODO: final wording)",
+      "description" : "Si la imagen no era la adecuada, puedes intentarlo de nuevo con una diferente."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "elige una cuenta"
     }
+  },
+  "customImage" : {
+    "title" : "Imagen personalizada",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "Elige una imagen",
+        "description" : "Elige una imagen para establecerla como (...)",
+        "pickFromNftGallery" : "Seleccionar de mi galería de NFT",
+        "upload" : "Cargar desde mi PC"
+      },
+      "adjust" : {
+        "stepLabel" : "Ajustar imagen",
+        "rotate" : "Girar"
+      },
+      "contrast" : {
+        "stepLabel" : "Elegir contraste"
+      },
+      "transfer" : {
+        "stepLabel" : "Transferir",
+        "uploadAnotherImage" : "Cargar otra imagen",
+        "allowPreview" : "Permitir vista previa de la imagen en {{productName}}",
+        "loadingPicture" : "Cargando imagen en {{productName}}",
+        "pictureLoaded" : "Imagen cargada",
+        "imageLoaded" : "Imagen cargada en {{productName}}",
+        "confirmPicture" : "Confirmar en {{productName}}",
+        "doThisLater" : "Quizás más tarde",
+        "timeDisclaimer" : "Puede tardar hasta 30 segundos"
+      }
+    },
+    "customImageSet" : "Imagen personalizada establecida",
+    "finishCTA" : "Finalizar"
   }
 }
