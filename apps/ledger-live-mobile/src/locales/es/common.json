@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "Desactiva la multifirma para enviar {{currencyName}}"
     },
+    "DustLimit" : {
+      "title" : "La cantidad es menor que el límite de remanente"
+    },
     "StratisDown2021Warning" : {
       "description" : "La cadena de bloques Stratis ha evolucionado y es posible que ya no funcione correctamente. La compatibilidad con la cadena de bloques Stratis original se mantendrá hasta el 16 de octubre de 2021."
     },
@@ -1804,6 +1807,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "Aplicaciones {{productName}}"
+    },
     "readyStep" : {
       "title" : "{{productName}} está listo"
     },
@@ -2140,7 +2146,7 @@
       },
       "advanced" : {
         "title" : "Registros avanzados",
-        "warningDerivation" : "Esta es una xpub {{tag}}. Cuando la importes en una billetera de terceros, selecciona el mismo modo de derivación.",
+        "warningDerivation" : "Esta es una xpub {{tag}}. Cuando la importes a una billetera de terceros, selecciona el mismo modo de derivación.",
         "desc" : ""
       }
     },
@@ -3149,6 +3155,12 @@
           }
         }
       }
+    }
+  },
+  "signMessage" : {
+    "eip712" : {
+      "showFullMessage" : "Mostrar el mensaje completo",
+      "hideFullMessage" : "Ocultar el mensaje completo"
     }
   },
   "sync" : {
