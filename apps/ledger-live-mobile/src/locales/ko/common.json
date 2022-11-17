@@ -85,9 +85,8 @@
     "moreInfo" : "자세한 정보",
     "buyEth" : "이더리움 구매",
     "popular" : "인기 있는",
-    "getSupport" : "지원 받기",
     "comingSoon" : "곧 출시 예정",
-    "restart" : "재시작"
+    "getSupport" : "지원 받기"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "죄송하지만 리셋할 수 없습니다",
       "description" : "다시 시도해 주세요. 문제가 지속될 경우, 아래 버튼을 이용해 로그를 저장하고 Ledger 지원 부서로 보내주세요."
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "장치에서 이미지 커밋(COMMIT)이 거부됨(할 일: 최종 문구)",
-      "description" : "적합한 이미지가 아니라면 다른 이미지로 다시 시도해볼 수 있습니다."
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "장치에서 이미지 로드가 거부됨(할 일: 최종 문구)",
-      "description" : "적합한 이미지가 아니라면 다른 이미지로 다시 시도해볼 수 있습니다."
     },
     "InvalidAddress" : {
       "title" : "유효한 {{currencyName}} 주소가 아닙니다"
@@ -1131,10 +1122,6 @@
         "title" : "영어로 시작하기",
         "cta" : "알겠습니다!",
         "desc" : "신규 사용자가 원활하게 Ledger 제품을 시작할 수 있도록 새로운 언어를 추가했습니다. 현재 Ledger의 나머지 기능은 영어로만 이용 가능합니다."
-      },
-      "RestartModal" : {
-        "title" : "재시작 필요",
-        "paragraph" : "선택한 언어를 사용하려면 애플리케이션을 재시작해야 합니다. 정말 계속하시겠습니까?"
       }
     },
     "stepSelectDevice" : {
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "앱을 그대로 유지하고 Nano X를 가까운 곳에 위치시켜 주세요",
+    "stayInTheAppPlz" : "Ledger Live 앱을 끄지 마시고 Ledger 장치를 가까운 곳에 위치시켜 주세요.",
     "allowAppPermission" : "내 장치에서 {{wording}} 앱 열기",
     "allowAppPermissionSubtitleToken" : "나의 {{token}} 토큰 관리",
     "allowManagerPermission" : "장치에서 {{wording}} 허용",
@@ -3851,17 +3838,6 @@
       "description" : "Ledger Nano 펌웨어를 Ledger Live 데스크탑 애플리케이션에 연결해 업데이트하세요",
       "pleaseConnectUsbTitle" : "USB 케이블이 필요합니다",
       "pleaseConnectUsbDescription" : "펌웨어 업데이트를 시작하려면 USB 케이블로 {{deviceName}} 장치를 핸드폰에 연결하세요."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "펌웨어 업데이트 필요",
-      "description" : "이 작업을 수행하려면 먼저 귀하의 {{ deviceName }} 펌웨어를 업데이트해야 합니다.",
-      "cta" : "내 Ledger로 이동"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "컴퓨터에 펌웨어 업데이트 필요",
-      "description" : "Ledger Live 데스크탑에서 귀하의 {{ deviceName }}를 업데이트하세요."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "이미지 자르기",
     "chooseConstrast" : "대비 선택",
     "uploadAnotherImage" : "다른 이미지 업로드",
-    "selectContrast" : "컨트라스트 선택",
-    "allowPreview" : "{{productName}}에서 사진 미리보기 허용",
-    "loadingPicture" : "{{productName}}에서 사진 로드 중",
-    "pictureLoaded" : "사진 로드 완료",
-    "timeDisclaimer" : "최대 30초가 소요될 수 있습니다",
-    "imageLoaded" : "{{productName}}에서 로드한 이미지",
-    "confirmPicture" : "{{productName}}에서 확인",
-    "title" : "사진을 선택하고,\n원하는 느낌으로,\n나만의 Ledger를 만나보세요.",
-    "subtitle" : "좋아하는 NFT 이미지나 휴대폰에 저장된 사진으로 설정해 보세요.",
-    "customImage" : "커스텀 사진",
-    "choosePicture" : "사진 선택",
-    "doThisLater" : "다음에 결정하기"
+    "selectContrast" : "컨트라스트 선택"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "시작하기",
       "description" : "여기를 클릭하여 Ledger Live로 귀하의 {{productName}} 장치 설정을 마치세요"
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "내 Ledger 장치 커스텀",
-        "description" : "원하는 이미지 추가",
-        "popupLabel" : "장치 커스텀 완료",
-        "hubTitleAfterAction" : "깔끔하고 멋진 화면이네요"
-      }
     }
   }
 }
