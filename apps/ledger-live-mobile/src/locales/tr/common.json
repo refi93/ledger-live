@@ -1804,6 +1804,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}} uygulamaları"
+    },
     "readyStep" : {
       "title" : "{{productName}} hazır"
     },
@@ -3851,17 +3854,6 @@
       "description" : "Ledger Nano donanım yazılımını güncellemek için cihazınızı bilgisayarınızdaki Ledger Live uygulamasına bağlayın",
       "pleaseConnectUsbTitle" : "USB kablosu gerekli",
       "pleaseConnectUsbDescription" : "Donanım yazılımı güncellemesini başlatmak için {{deviceName}} cihazınızı bir USB kablosuyla cep telefonunuza bağlayın."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Donanım yazılımı güncellemesi gerekli",
-      "description" : "Bu eylemi gerçekleştirmeden önce {{ deviceName }} cihazınızın donanım yazılımını güncellemelisiniz.",
-      "cta" : "My Ledger'a Git"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Donanım yazılımının bilgisayarınızda güncellenmesi gerekiyor",
-      "description" : "Ledger Live Desktop'ta {{ deviceName }} cihazını güncelleyin"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
