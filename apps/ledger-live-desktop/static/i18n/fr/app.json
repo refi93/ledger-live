@@ -124,7 +124,8 @@
     },
     "exchange" : "Échanger",
     "info" : "Informations",
-    "connectDevice" : "Connectez votre appareil"
+    "connectDevice" : "Connectez votre appareil",
+    "add" : "Ajouter"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -1153,7 +1154,7 @@
     },
     "buyCrypto" : {
       "title" : "Acheter des cryptos",
-      "description" : "Achetez des crypto-actifs via notre partenaire et recevez-les directement dans votre compte Ledger.",
+      "description" : "Achetez des crypto-actifs via nos partenaires et recevez-les directement dans votre compte Ledger.",
       "cta" : "Acheter maintenant"
     },
     "familyPack" : {
@@ -1175,7 +1176,7 @@
     },
     "swap" : {
       "title" : "Échanger des cryptos",
-      "description" : "Échangez une crypto contre une autre sur Ledger Live grâce à notre partenaire."
+      "description" : "Échangez une crypto contre une autre sur Ledger Live grâce à nos partenaires."
     },
     "lending" : {
       "title" : "Prêter",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "Quel appareil avez-vous ?",
-          "desc" : "Si vous avez un Nano S, vous pouvez essayer de réparer son micrologiciel. Pour les utilisateurs de Nano X et Blue, veuillez contacter l’Assistance Ledger."
+          "desc" : "Si vous essayez de connecter un Nano S, veuillez sélectionner le message affiché sur votre Nano. Si vous essayer de connecter un Nano S Plus ou un Nano X, <0>veuillez consulter notre centre d’aide</0>."
         },
         "notFixed" : {
           "title" : " Le problème de connexion USB persiste ?",
           "desc" : "Si vous avez tout essayé, merci de contacter l’Assistance Ledger. Sinon, veuillez suivre les instructions des solutions que vous n’avez pas encore essayées.",
           "back" : "Retour au Portefeuille",
-          "cta" : "Contacter l’Assistance"
+          "cta" : "Contacter l’Assistance",
+          "cta2" : "Retour"
         },
         "repair" : {
           "title" : "Réparer votre Nano S",
@@ -4435,7 +4437,7 @@
       "description" : ""
     },
     "CeloAllFundsWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "ClaimRewardsFeesWarning" : {
       "title" : "Les récompenses sont inférieures aux frais estimés pour les demander.",
@@ -4973,7 +4975,7 @@
       "title" : "Vous n’avez aucune nomination."
     },
     "PolkadotAllFundsWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "PolkadotDoMaxSendInstead" : {
       "title" : "Le solde ne peut pas être inférieur à {{minimumBalance}}. Pour vider : Max."
@@ -5007,7 +5009,7 @@
       "title" : "Adresse en dehors de la courbe ed25519"
     },
     "SolanaUseAllAmountStakeWarning" : {
-      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir les frais de transaction."
+      "title" : "Assurez-vous que votre solde disponible est suffisant pour couvrir vos futurs frais de transaction."
     },
     "SolanaTxSimulationFailedWhilePendingOp" : {
       "title" : "Votre transaction précédente n’a pas encore été traitée. Patientez un instant puis vérifiez l’historique des transactions avant de réessayer."
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "Votre compte n’a pas été ajouté. Veuillez réessayer."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "Échec du chargement de l’image.",
+      "description" : "Veuillez réessayer avec un autre format d’image."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "Échec du chargement de l’image.",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImageDownloadError" : {
+      "title" : "Échec du téléchargement de l’image",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "Échec du chargement des métadonnées de l’image",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImageTooLargeError" : {
+      "title" : "Image trop grande",
+      "description" : "Veuillez essayer avec une image plus petite."
+    },
+    "ImageCropError" : {
+      "title" : "Échec du recadrage de l’image",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImageResizeError" : {
+      "title" : "Échec du redimensionnement de l’image",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImagePreviewError" : {
+      "title" : "Aperçu de l’image indisponible",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImageProcessingError" : {
+      "title" : "Échec du traitement de l’image",
+      "description" : "Veuillez réessayer avec une autre image."
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "Validation de l’image refusée sur votre Ledger (TODO: final wording)",
+      "description" : "Si cette image ne vous plaît pas, choisissez une autre image."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "Chargement de l’image refusé sur votre Ledger (TODO: final wording)",
+      "description" : "Si cette image ne vous plaît pas, choisissez une autre image."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "Choisir un compte"
     }
+  },
+  "customImage" : {
+    "title" : "Image personnalisée",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "Choisissez une image",
+        "description" : "Choisir une image à définir comme (...)",
+        "pickFromNftGallery" : "Sélectionner depuis ma galerie de NFT",
+        "upload" : "Télécharger à partir de mon ordinateur"
+      },
+      "adjust" : {
+        "stepLabel" : "Ajuster l’image",
+        "rotate" : "Pivoter"
+      },
+      "contrast" : {
+        "stepLabel" : "Choisissez un contraste"
+      },
+      "transfer" : {
+        "stepLabel" : "Transfert",
+        "uploadAnotherImage" : "Télécharger une autre image",
+        "allowPreview" : "Autorisez l’aperçu des images sur votre {{productName}}",
+        "loadingPicture" : "Chargement de l’image sur votre {{productName}}",
+        "pictureLoaded" : "Image chargée",
+        "imageLoaded" : "Image chargée sur votre {{productName}}",
+        "confirmPicture" : "Confirmez sur votre {{productName}}",
+        "doThisLater" : "Pas maintenant",
+        "timeDisclaimer" : "Cela peut prendre jusqu’à 30 secondes."
+      }
+    },
+    "customImageSet" : "Image définie",
+    "finishCTA" : "Terminer"
   }
 }
