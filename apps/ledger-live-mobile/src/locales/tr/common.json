@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "{{currencyName}} göndermek için lütfen çoklu imzayı devre dışı bırakın"
     },
+    "DustLimit" : {
+      "title" : "Miktar, dust sınırının altında"
+    },
     "StratisDown2021Warning" : {
       "description" : "Stratis blok zinciri evrimleşti ve artık düzgün çalışmayabilir. Orijinal Stratis blok zinciri desteği 16 Ekim 2021'e kadar sürdürülecektir."
     },
@@ -1804,6 +1807,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}} uygulamaları"
+    },
     "readyStep" : {
       "title" : "{{productName}} hazır"
     },
@@ -2140,7 +2146,7 @@
       },
       "advanced" : {
         "title" : "Kapsamlı loglar",
-        "warningDerivation" : "Bu bir {{tag}} xpub'ıdır. Bunu bir üçüncü taraf cüzdanda içe aktarırken aynı türev modunu seçin.",
+        "warningDerivation" : "Bu bir {{tag}} xpub'ıdır. Bunu bir üçüncü taraf cüzdana aktarırken aynı türev modunu seçin.",
         "desc" : ""
       }
     },
@@ -5353,6 +5359,11 @@
       "viewOn" : "Burada görüntüle:",
       "viewInExplorer" : "Tarayıcıda görüntüle",
       "txDetails" : "İşlem bilgileri"
+    },
+    "modalDisabled" : {
+      "title" : "Gönderme işlevi devre dışı",
+      "body" : "Apple'ın App Store için gerçekleştirdiği son güncellemeler uyarınca, NFT gönderme işlevi geçici olarak devre dışı bırakıldı. Ledger Live Desktop sürümünü kullanarak NFT göndermeye devam edebilirsiniz.",
+      "contactSupport" : "Daha çok bilgi almak için lütfen destek makalemizi okuyun."
     }
   },
   "ApplicationVersion" : "v{{version}}",
