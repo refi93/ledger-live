@@ -124,7 +124,8 @@
     },
     "exchange" : "兑换",
     "info" : "信息",
-    "connectDevice" : "连接您的设备"
+    "connectDevice" : "连接您的设备",
+    "add" : "添加"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "您使用的是哪种设备？",
-          "desc" : "如果您使用的是 Nano S，可以尝试修复设备的固件。如果您使用的是 Nano X 和 Blue，请联系 Ledger 客服。"
+          "desc" : "如果您要尝试连接 Nano S，请选择 Nano 上显示的状态。如果您要尝试连接 Nano S Plus 或 Nano X，请访问<0>帮助中心</0>"
         },
         "notFixed" : {
           "title" : " 依旧没有解决 USB 连接问题？",
           "desc" : "如果您已经尝试过了所有可能的解决方案，请联系 Ledger 客服。否则，请根据指示尝试还未使用过的解决方案。",
           "back" : "返回 Portfolio（资产组合）",
-          "cta" : "联系客服"
+          "cta" : "联系客服",
+          "cta2" : "返回"
         },
         "repair" : {
           "title" : "修复您的 Nano S",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "您的账户尚未添加。请再次尝试。"
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "从文件加载图片失败。",
+      "description" : "请使用图片再试一次。"
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "从文件加载图片失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImageDownloadError" : {
+      "title" : "图片下载失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "图片元数据加载失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImageTooLargeError" : {
+      "title" : "图片过大",
+      "description" : "请尝试使用较小的图片"
+    },
+    "ImageCropError" : {
+      "title" : "图片裁剪失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImageResizeError" : {
+      "title" : "调整图片大小失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImagePreviewError" : {
+      "title" : "图片预览失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImageProcessingError" : {
+      "title" : "图片处理失败",
+      "description" : "请使用另一张图片重试"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "图像提交在设备上被拒绝",
+      "description" : "如果这张图片不合适，您可以使用另一张图片重试。"
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "图像加载在设备上被拒绝",
+      "description" : "如果这张图片不合适，您可以使用另一张图片重试。"
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "选择账户"
     }
+  },
+  "customImage" : {
+    "title" : "自定义图片",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "选择一张图片",
+        "description" : "选择要设为 (...) 的图片",
+        "pickFromNftGallery" : "从我的 NFT 画廊中选择",
+        "upload" : "从我的计算机上传"
+      },
+      "adjust" : {
+        "stepLabel" : "调整图片",
+        "rotate" : "旋转"
+      },
+      "contrast" : {
+        "stepLabel" : "选择对比度"
+      },
+      "transfer" : {
+        "stepLabel" : "转移",
+        "uploadAnotherImage" : "上传另一张图片",
+        "allowPreview" : "允许在 {{productName}} 上预览图片",
+        "loadingPicture" : "正在 {{productName}} 上加载图片",
+        "pictureLoaded" : "图片已加载",
+        "imageLoaded" : "图片已加载到 {{productName}}",
+        "confirmPicture" : "在 {{productName}} 上确认",
+        "doThisLater" : "以后再说",
+        "timeDisclaimer" : "可能最多需要 30 秒"
+      }
+    },
+    "customImageSet" : "自定义图片集",
+    "finishCTA" : "完成"
   }
 }
