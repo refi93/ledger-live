@@ -1804,6 +1804,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}}アプリケーション"
+    },
     "readyStep" : {
       "title" : "{{productName}} の準備ができました"
     },
@@ -3851,17 +3854,6 @@
       "description" : "Ledger Nanoをデスクトップ版Ledger Liveアプリに接続して、Ledger Nanoのファームウェアをアップデートします。",
       "pleaseConnectUsbTitle" : "USBケーブルが必要です",
       "pleaseConnectUsbDescription" : "ファームウェアのアップデートを開始するには、 {{deviceName}}をUSBケーブルでスマートフォンに接続します。"
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "ファームウェアのアップデートが必要です",
-      "description" : "この操作を実行するには、まず {{ deviceName }}のファームウェアをアップデートする必要があります。",
-      "cta" : "My Ledgerに移動"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "パソコンでファームウェアをアップデートしてください",
-      "description" : "Ledger Live Desktopで{{ deviceName }}をアップデートしてください。"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
