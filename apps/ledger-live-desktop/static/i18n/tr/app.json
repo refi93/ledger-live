@@ -124,7 +124,8 @@
     },
     "exchange" : "Takas edin",
     "info" : "Bilgi",
-    "connectDevice" : "Cihazınızı bağlayın"
+    "connectDevice" : "Cihazınızı bağlayın",
+    "add" : "Ekle"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -748,7 +749,7 @@
       "descToken" : "<1><0>{{managerAppName}}</0></1> uygulaması yüklüyse hesabınıza <3><0>{{ticker}}</0></3> ve <5><0>{{tokenList}}</0>token'larını</5> almaya başlayabilirsiniz",
       "buttons" : {
         "receiveFunds" : "Al",
-        "buy" : "Satın Alın"
+        "buy" : "Satın Al"
       }
     },
     "settings" : {
@@ -2194,7 +2195,7 @@
     },
     "lockedBalance" : "Kilitli bakiye",
     "lockedTooltip" : "Ödül kazanmak için öncelikle varlıkların kilitlenmesi ve doğrulayıcı gruplarına oylanması gerekir.",
-    "nonvotingLockedBalance" : "Oylanmayan kilitli bakiye",
+    "nonvotingLockedBalance" : "Oylamayan kilitli bakiye",
     "nonvotingLockedTooltip" : "Oylama için kullanılabilecek kilitli varlıkların bakiyesi",
     "withdrawableBalance" : "Çekilebilir bakiye",
     "withdrawableTooltip" : "Mevcut Bakiyenize çekebileceğiniz kilidi açık Celo varlıkları",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "Hangi cihazı kullanıyorsunuz?",
-          "desc" : "Nano S cihazınız varsa, donanım yazılımını onarmayı deneyebilirsiniz. Nano X veya Blue kullanıcısıysanız, lütfen Ledger desteğine başvurun"
+          "desc" : "Bir Nano S bağlamaya çalışıyorsanız Nano'nuzda gösterilen durumu seçin. Bir Nano S Plus veya Nano X bağlamaya çalışıyorsanız <0>Yardım Merkezini ziyaret edin</0>"
         },
         "notFixed" : {
           "title" : " USB bağlantı sorunu hâlâ düzeltilmedi mi?",
           "desc" : "Mümkün olan her çözümü denediyseniz lütfen Ledger Destek'e ulaşın. Aksi takdirde, lütfen henüz denemediğiniz çözümlerin yönergelerini izleyin.",
           "back" : "Portföye geri dön",
-          "cta" : "Destek Al"
+          "cta" : "Destek Al",
+          "cta2" : "Geri dön"
         },
         "repair" : {
           "title" : "Nano S cihazınızı onarın",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "Hesabınız eklenemedi. Lütfen tekrar deneyin."
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "Dosyadan görüntü yüklenemedi.",
+      "description" : "Lütfen bir görüntü seçerek tekrar deneyin."
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "Dosyadan görüntü yüklenemedi",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImageDownloadError" : {
+      "title" : "Görüntü indirilemedi",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "Görüntü meta verileri yüklenemedi",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImageTooLargeError" : {
+      "title" : "Görüntü çok büyük",
+      "description" : "Lütfen daha küçük bir görüntü seçmeyi deneyin"
+    },
+    "ImageCropError" : {
+      "title" : "Görüntü kırpılamadı",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImageResizeError" : {
+      "title" : "Görüntü yeniden boyutlandırılamadı",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImagePreviewError" : {
+      "title" : "Görüntü ön izlemesi yapılamadı",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImageProcessingError" : {
+      "title" : "Görüntü işlenemedi",
+      "description" : "Lütfen başka bir görüntüyle tekrar deneyin"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "Görüntü commit etme cihazda reddedildi (TODO: final wording)",
+      "description" : "Bu resim uygun olmadıysa başka bir resim seçerek tekrar deneyebilirsiniz."
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "Görüntü yükleme cihazda reddedildi (TODO: final wording)",
+      "description" : "Bu resim uygun olmadıysa başka bir resim seçerek tekrar deneyebilirsiniz."
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "hesap seç"
     }
+  },
+  "customImage" : {
+    "title" : "Özel görüntü",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "Bir görüntü seçin",
+        "description" : "Bir görüntü seçip ayarlayın (...)",
+        "pickFromNftGallery" : "NFT galerimden seç",
+        "upload" : "Bilgisayarımdan yükle"
+      },
+      "adjust" : {
+        "stepLabel" : "Görüntüyü ayarla",
+        "rotate" : "Döndür"
+      },
+      "contrast" : {
+        "stepLabel" : "Kontrastı seç"
+      },
+      "transfer" : {
+        "stepLabel" : "Transfer",
+        "uploadAnotherImage" : "Başka bir görsel yükleyin",
+        "allowPreview" : "{{productName}} cihazında resim ön izlemesine izin ver",
+        "loadingPicture" : "{{productName}} cihazında resim yükleniyor",
+        "pictureLoaded" : "Resim yüklendi",
+        "imageLoaded" : "Görsel {{productName}} cihazına yüklendi",
+        "confirmPicture" : "{{productName}} cihazında onaylayın",
+        "doThisLater" : "Belki sonra",
+        "timeDisclaimer" : "Bu, 30 saniyeye kadar sürebilir"
+      }
+    },
+    "customImageSet" : "Özel resim ayarlandı",
+    "finishCTA" : "Bitir"
   }
 }
