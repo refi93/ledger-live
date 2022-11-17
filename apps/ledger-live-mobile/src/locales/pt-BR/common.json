@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "Desative a assinatura múltipla para enviar {{currencyName}}"
     },
+    "DustLimit" : {
+      "title" : "Quantia menor do que o limite de pó"
+    },
     "StratisDown2021Warning" : {
       "description" : "A blockchain Stratis evoluiu e pode não funcionar mais corretamente. Suporte à blockchain Stratis original foi mantido até 16 de outubro de 2021."
     },
@@ -1803,6 +1806,9 @@
           "title" : "Atualização do software falhou"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "Aplicativos {{productName}}"
     },
     "readyStep" : {
       "title" : "A {{productName}} está pronta"
@@ -3149,6 +3155,12 @@
           }
         }
       }
+    }
+  },
+  "signMessage" : {
+    "eip712" : {
+      "showFullMessage" : "Mostrar mensagem completa",
+      "hideFullMessage" : "Esconder mensagem completa"
     }
   },
   "sync" : {
