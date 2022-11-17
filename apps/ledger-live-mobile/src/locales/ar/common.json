@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "يرجى تعطيل خاصية التوقيع المتعدد لإرسال {{currencyName}}"
     },
+    "DustLimit" : {
+      "title" : "المبلغ أقل من حد الغبار"
+    },
     "StratisDown2021Warning" : {
       "description" : "سلسلة كتل Stratis تطورت ومن الوارد ألا تعمل بشكل صحيح. سيتم توفير الدعم لسلسلة كتل Stratis الأصلية حتى 16 أكتوبر 2021."
     },
@@ -1803,6 +1806,9 @@
           "title" : "فشل تحديث البرنامج"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "{{productName}} applications"
     },
     "readyStep" : {
       "title" : "{{productName}} مستعد"
@@ -3634,6 +3640,7 @@
         "description" : "قم بإدارة أجهزة Ledger المحفوظة خاصتك"
       },
       "addNewCTA" : "إضافة جديد",
+      "otgBanner" : "إذا كنت تمتلك Nano S أو Nano S Plus، فقم بتوصيل جهازك عن طريق كبل USB.",
       "connectExistingLedger" : "توصيل Ledger موجود بالفعل",
       "connectExistingLedgerDescription" : "لديك Ledger تم إعدادها؟ قم بإقرانها عبر البلوتوث",
       "setUpNewLedger" : "إعداد Ledger جديدة",
