@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "Bitte deaktivieren Sie Multisign um {{currencyName}} zu senden"
     },
+    "DustLimit" : {
+      "title" : "Die Menge ist niedriger als das Staub (dust) -Limit"
+    },
     "StratisDown2021Warning" : {
       "description" : "Die Stratis-Blockchain hat sich weiterentwickelt und funktioniert möglicherweise nicht mehr korrekt. Die Unterstützung für die ursprüngliche Stratis-Blockchain wird bis zum 16. Oktober 2021 aufrechterhalten."
     },
@@ -1803,6 +1806,9 @@
           "title" : "Softwareupdate fehlgeschlagen"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "{{productName}} Anwendungen"
     },
     "readyStep" : {
       "title" : "{{productName}} ist bereit"
@@ -3149,6 +3155,12 @@
           }
         }
       }
+    }
+  },
+  "signMessage" : {
+    "eip712" : {
+      "showFullMessage" : "Vollständige Nachricht anzeigen",
+      "hideFullMessage" : "Vollständige Nachricht ausblenden"
     }
   },
   "sync" : {
