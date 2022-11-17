@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "Desative a assinatura múltipla para enviar {{currencyName}}"
     },
+    "DustLimit" : {
+      "title" : "Quantia menor do que o limite de pó"
+    },
     "StratisDown2021Warning" : {
       "description" : "A blockchain Stratis evoluiu e pode não funcionar mais corretamente. Suporte à blockchain Stratis original foi mantido até 16 de outubro de 2021."
     },
@@ -1803,6 +1806,9 @@
           "title" : "Atualização do software falhou"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "Aplicativos {{productName}}"
     },
     "readyStep" : {
       "title" : "A {{productName}} está pronta"
@@ -3634,6 +3640,7 @@
         "description" : "Gerencie suas Ledgers salvas"
       },
       "addNewCTA" : "Adicionar Novo",
+      "otgBanner" : "Se você tiver uma Nano S ou uma Nano S Plus, conecte seu dispositivo por cabo USB.",
       "connectExistingLedger" : "Conectar uma Ledger existente",
       "connectExistingLedgerDescription" : "Já tem uma Ledger configurada? Emparelhe-a com bluetooth",
       "setUpNewLedger" : "Configurar uma nova Ledger",
