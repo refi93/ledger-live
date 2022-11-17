@@ -85,9 +85,8 @@
     "moreInfo" : "Daha fazla bilgi",
     "buyEth" : "Ethereum Satın Al",
     "popular" : "popüler",
-    "getSupport" : "Destek alın",
     "comingSoon" : "Çok yakında",
-    "restart" : "Yeniden Başlat"
+    "getSupport" : "Destek alın"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "Üzgünüz, sıfırlanamadı",
       "description" : "Lütfen tekrar deneyin. Sorun devam ederse, lütfen aşağıdaki butonu kullanarak loglarınızı kaydedin ve Ledger Destek'e gönderin."
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "Görüntü commit etme cihazda reddedildi (TODO: final wording)",
-      "description" : "Bu resim uygun olmadıysa başka bir resim seçerek tekrar deneyebilirsiniz."
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "Görüntü yükleme cihazda reddedildi (TODO: final wording)",
-      "description" : "Bu resim uygun olmadıysa başka bir resim seçerek tekrar deneyebilirsiniz."
     },
     "InvalidAddress" : {
       "title" : "Bu geçerli bir {{currencyName}} adresi değil"
@@ -1131,10 +1122,6 @@
         "title" : "İngilizce olarak başlayın",
         "cta" : "Anladım!",
         "desc" : "Ledger kullanmaya başlamanızı kolaylaştırmak için ek diller sunuyoruz. Ledger deneyiminin geri kalanının an itibarıyla sadece İngilizce olarak mevcut olduğunu lütfen unutmayın."
-      },
-      "RestartModal" : {
-        "title" : "Yeniden başlatın",
-        "paragraph" : "Seçilen dil, uygulamanın yeniden başlatılmasını gerektiriyor. Devam etmek istediğinize emin misiniz?"
       }
     },
     "stepSelectDevice" : {
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "Ledger Live uygulamasında kalın ve Nano X'inizi yakınınızda tutun",
+    "stayInTheAppPlz" : "Ledger Live uygulamasında kalın ve Ledger'ınızı yakınınızda tutun.",
     "allowAppPermission" : "Cihazınızda {{wording}} uygulamasını açın",
     "allowAppPermissionSubtitleToken" : "ve {{token}} token'larınızı yönetin",
     "allowManagerPermission" : "Cihazınızda {{wording}} uygulamasına izin verin",
@@ -3851,17 +3838,6 @@
       "description" : "Ledger Nano donanım yazılımını güncellemek için cihazınızı bilgisayarınızdaki Ledger Live uygulamasına bağlayın",
       "pleaseConnectUsbTitle" : "USB kablosu gerekli",
       "pleaseConnectUsbDescription" : "Donanım yazılımı güncellemesini başlatmak için {{deviceName}} cihazınızı bir USB kablosuyla cep telefonunuza bağlayın."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Donanım yazılımı güncellemesi gerekli",
-      "description" : "Bu eylemi gerçekleştirmeden önce {{ deviceName }} cihazınızın donanım yazılımını güncellemelisiniz.",
-      "cta" : "My Ledger'a Git"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Donanım yazılımının bilgisayarınızda güncellenmesi gerekiyor",
-      "description" : "Ledger Live Desktop'ta {{ deviceName }} cihazını güncelleyin"
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "Görüntüyü kırp",
     "chooseConstrast" : "Kontrastı seç",
     "uploadAnotherImage" : "Başka bir görsel yükleyin",
-    "selectContrast" : "Kontrastınızı seçin",
-    "allowPreview" : "{{productName}} cihazında resim ön izlemesine izin ver",
-    "loadingPicture" : "{{productName}} cihazında resim yükleniyor",
-    "pictureLoaded" : "Resim yüklendi",
-    "timeDisclaimer" : "Bu, 30 saniyeye kadar sürebilir",
-    "imageLoaded" : "Görüntü {{productName}} cihazına yüklendi",
-    "confirmPicture" : "{{productName}} cihazında onaylayın",
-    "title" : "Bir resim seçin.\nBir tarz oluşturun.\nLedger'ı özelleştirin.",
-    "subtitle" : "En sevdiğiniz NFT'nin bir resmini veya telefonunuzdaki bir resmi ayarlayın.",
-    "customImage" : "Özel resim",
-    "choosePicture" : "Bir resim seçin",
-    "doThisLater" : "Belki sonra"
+    "selectContrast" : "Kontrastınızı seçin"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "Başlarken",
       "description" : "Ledger Live ile {{productName}} kurulumunu tamamlamak için buraya tıklayın"
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "Ledger cihazımı kişiselleştir",
-        "description" : "Görüntü ekleyerek",
-        "popupLabel" : "Cihaz kişiselleştirildi",
-        "hubTitleAfterAction" : "Ekran şık görünüyor"
-      }
     }
   }
 }
