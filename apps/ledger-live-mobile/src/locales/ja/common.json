@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "{{currencyName}}を送付するにはマルチシグを無効にしてください。"
     },
+    "DustLimit" : {
+      "title" : "金額がダスト制限を下回っています"
+    },
     "StratisDown2021Warning" : {
       "description" : "Stratisブロックチェーンのメジャーアップデートが実施されたため、正しく動作しない可能性があります。旧Stratisブロックチェーンのサポートは、2021年10月16日まで引き続き提供されます。"
     },
@@ -1803,6 +1806,9 @@
           "title" : "ソフトウェアのアップデートに失敗しました"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "{{productName}}アプリケーション"
     },
     "readyStep" : {
       "title" : "{{productName}} の準備ができました"
@@ -5353,6 +5359,11 @@
       "viewOn" : "表示",
       "viewInExplorer" : "エクスプローラーで表示",
       "txDetails" : "トランザクションの詳細"
+    },
+    "modalDisabled" : {
+      "title" : "送信機能はご利用いただけません",
+      "body" : "AppleのApp Storeによる最近のアップデートに準拠するため、NFTの送信は現在、一時的にご利用いただけなくなっています。デスクトップのLedger Liveを使用してNFTを送信することは引き続き可能です。",
+      "contactSupport" : "詳しくは、サポート記事をご覧ください。"
     }
   },
   "ApplicationVersion" : "v{{version}}",
