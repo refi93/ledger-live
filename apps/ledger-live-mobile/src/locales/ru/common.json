@@ -85,9 +85,8 @@
     "moreInfo" : "Подробнее",
     "buyEth" : "Купить Эфириум",
     "popular" : "популярное",
-    "getSupport" : "Поддержка",
     "comingSoon" : "Скоро",
-    "restart" : "Перезагрузка"
+    "getSupport" : "Поддержка"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "Не удалось сбросить",
       "description" : "Пожалуйста, попробуйте ещё раз. Если проблема не уходит, сохраните логи и отправьте их в Поддержку Ledger."
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "В установке изображения отказано на устройстве (TODO: final wording)",
-      "description" : "Если это изображение не подошло, вы можете попробовать другое."
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "В загрузке изображения отказано на устройстве (TODO: final wording)",
-      "description" : "Если это изображение не подошло, вы можете попробовать другое."
     },
     "InvalidAddress" : {
       "title" : "Некорректный адрес {{currencyName}}"
@@ -870,7 +861,7 @@
         "cta" : "Купить"
       },
       "familyPackX" : {
-        "title" : "Семейный набор Ledger Nano X",
+        "title" : "Семейный набор Nano X",
         "description" : "Набор из 3 Nano X по скидке. Идеально для подарка или резервной копии кошелька",
         "cta" : "Сэкономьте"
       },
@@ -1131,10 +1122,6 @@
         "title" : "Настроить на английском",
         "cta" : "Понятно!",
         "desc" : "Чтобы вам было удобнее, мы перевели процедуру настройки Ledger на разные языки. Имейте в виду: в самом приложении пока может не быть вашего языка."
-      },
-      "RestartModal" : {
-        "title" : "Требуется перезагрузка",
-        "paragraph" : "Для смены языка необходимо перезагрузить приложение. Продолжить?"
       }
     },
     "stepSelectDevice" : {
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "Оставайтесь в приложении и держите при себе Nano X",
+    "stayInTheAppPlz" : "Оставайтесь в приложении и держите устройство Ledger при себе.",
     "allowAppPermission" : "Откройте приложение {{wording}} на устройстве",
     "allowAppPermissionSubtitleToken" : "для управления {{token}}",
     "allowManagerPermission" : "Разрешите использование {{wording}} на устройстве",
@@ -3853,17 +3840,6 @@
       "pleaseConnectUsbDescription" : "Чтобы начать обновление прошивки, подключите {{deviceName}} к мобильному телефону с помощью USB-кабеля."
     }
   },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "Необходимо обновить прошивку",
-      "description" : "Для данного действия сначала необходимо обновить прошивку {{ deviceName }}.",
-      "cta" : "Перейти в «Мой Ledger»"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "Необходимо обновить прошивку посредством ПК",
-      "description" : "Обновите прошивку {{ deviceName }} через настольное приложение Ledger Live"
-    }
-  },
   "FirmwareUpdateReleaseNotes" : {
     "introTitle" : "Обновить {{deviceName}} до версии {{version}}",
     "recoveryPhraseBackupInstructions" : "Запишите фразу восстановления из 24 слов на лист восстановления и убедитесь, что в крайнем случае к ней будет доступ.",
@@ -4028,7 +4004,7 @@
         "description" : "Баланс заблокированных активов, доступных для голосования"
       },
       "withdrawableBalance" : {
-        "title" : "Баланс для вывода",
+        "title" : "Можно вывести",
         "description" : "Разблокированные CELO, которые можно вывести на баланс"
       }
     },
@@ -4144,7 +4120,7 @@
           "verification" : {
             "success" : {
               "title" : "Активация выполнена",
-              "text" : "Ваши голоса активированы."
+              "text" : "Ваши голоса активированы"
             }
           }
         }
@@ -4287,7 +4263,7 @@
     },
     "alerts" : {
       "withdrawableAssets" : "У вас есть баланс для вывода.",
-      "activatableVotes" : "У вас есть голоса, которые можно активировать"
+      "activatableVotes" : "У вас есть голоса, которые можно использовать"
     }
   },
   "osmosis" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "Обрезать изображение",
     "chooseConstrast" : "Указать контраст",
     "uploadAnotherImage" : "Загрузить другое изображение",
-    "selectContrast" : "Выберите контрастность",
-    "allowPreview" : "Разрешить превью изображений в {{productName}}",
-    "loadingPicture" : "Загружаем изображение в {{productName}}",
-    "pictureLoaded" : "Изображение загружено",
-    "timeDisclaimer" : "Это займёт не более 30 секунд",
-    "imageLoaded" : "Изображение загружено в {{productName}}",
-    "confirmPicture" : "Подтвердите на {{productName}}",
-    "title" : "Выберите изображение.\nСоздайте атмосферу.\nНастройте Ledger под себя.",
-    "subtitle" : "Установите ваш любимый NFT или другую фотографию с телефона.",
-    "customImage" : "Пользовательское изображение",
-    "choosePicture" : "Выбрать изображение",
-    "doThisLater" : "Не сейчас"
+    "selectContrast" : "Выберите контрастность"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "Начало работы",
       "description" : "Нажмите здесь, чтобы завершить настройку {{productName}} в Ledger Live"
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "Персонализируйте устройство Ledger",
-        "description" : "При помощи картинки",
-        "popupLabel" : "Устройство персонализировано",
-        "hubTitleAfterAction" : "Выглядит круто!"
-      }
     }
   }
 }
