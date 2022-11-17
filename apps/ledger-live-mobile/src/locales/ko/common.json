@@ -1804,6 +1804,9 @@
         }
       }
     },
+    "appsStep" : {
+      "title" : "{{productName}} 애플리케이션"
+    },
     "readyStep" : {
       "title" : "{{productName}} 장치가 준비되었습니다."
     },
@@ -3851,17 +3854,6 @@
       "description" : "Ledger Nano 펌웨어를 Ledger Live 데스크탑 애플리케이션에 연결해 업데이트하세요",
       "pleaseConnectUsbTitle" : "USB 케이블이 필요합니다",
       "pleaseConnectUsbDescription" : "펌웨어 업데이트를 시작하려면 USB 케이블로 {{deviceName}} 장치를 핸드폰에 연결하세요."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "펌웨어 업데이트 필요",
-      "description" : "이 작업을 수행하려면 먼저 귀하의 {{ deviceName }} 펌웨어를 업데이트해야 합니다.",
-      "cta" : "내 Ledger로 이동"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "컴퓨터에 펌웨어 업데이트 필요",
-      "description" : "Ledger Live 데스크탑에서 귀하의 {{ deviceName }}를 업데이트하세요."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
