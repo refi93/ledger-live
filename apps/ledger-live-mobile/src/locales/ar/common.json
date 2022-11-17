@@ -85,9 +85,8 @@
     "moreInfo" : "مزيد من المعلومات",
     "buyEth" : "شراء إثيريوم",
     "popular" : "شائع",
-    "getSupport" : "احصل على الدعم",
     "comingSoon" : "قريباً",
-    "restart" : "Restart"
+    "getSupport" : "احصل على الدعم"
   },
   "errors" : {
     "countervaluesUnavailable" : {
@@ -321,14 +320,6 @@
     "HardResetFail" : {
       "title" : "عذراً، لا يمكن إعادة التعيين",
       "description" : "يرجى إعادة المحاولة مرة أخرى. إذا استمرت المشكلة، يرجى حفظ سجلاتك باستخدام الزر أدناه وتقديمها إلى فريق دعم Ledger."
-    },
-    "ImageCommitRefusedOnDevice" : {
-      "title" : "الالتزام بالصورة رُفِض على الجهاز (TODO: final wording)",
-      "description" : "إذا لم تكن هذه الصورة بالمقاس المناسب، يُمكنك المحاولة مرة ثانية مع صورة أخرى."
-    },
-    "ImageLoadRefusedOnDevice" : {
-      "title" : "تحميل الصورة رُفض على الجهاز (TODO: final wording)",
-      "description" : "إذا لم تكن هذه الصورة بالمقاس المناسب، يُمكنك المحاولة مرة ثانية مع صورة أخرى."
     },
     "InvalidAddress" : {
       "title" : "هذا ليس عنوان {{currencyName}} صحيح"
@@ -1131,10 +1122,6 @@
         "title" : "ابدأ باللغة الإنجليزية",
         "cta" : "فهمت!",
         "desc" : "نحن نقوم بتقديم لغات إضافية لمساعدتك في بدء استخدام Ledger. يرجى العلم أن الجزء المتبقي من تجربة Ledger متاح حالياً باللغة الإنجليزية فقط."
-      },
-      "RestartModal" : {
-        "title" : "Restart required",
-        "paragraph" : "The selected language requires the application to restart. Are you sure you want to continue?"
       }
     },
     "stepSelectDevice" : {
@@ -3462,7 +3449,7 @@
     }
   },
   "DeviceAction" : {
-    "stayInTheAppPlz" : "ابق في تطبيق Ledger Live وحافظ على Nano X الخاصة بك بالقرب منك",
+    "stayInTheAppPlz" : "لا تُغادر تطبيق Ledger Live وابق على Ledger خاصتك بالقرب منك.",
     "allowAppPermission" : "افتح تطبيق {{wording}} على جهازك",
     "allowAppPermissionSubtitleToken" : "لإدارة رموزك {{token}}",
     "allowManagerPermission" : "السماح بــ {{wording}} على جهازك",
@@ -3851,17 +3838,6 @@
       "description" : "قم بتحديث برنامج Ledger Nano الثابت عن طريق توصيله إلى تطبيق Ledger Live على سطح المكتب",
       "pleaseConnectUsbTitle" : "كبل USB مطلوب",
       "pleaseConnectUsbDescription" : "لبدء تحديث البرنامج الثابت، قم بتوصيل {{deviceName}} خاصتك بهاتفك الجوال باستخدام كبل USB."
-    }
-  },
-  "firmwareUpdateRequired" : {
-    "updateAvailableFromLLM" : {
-      "title" : "تحديث البرنامج الثابت مطلوب",
-      "description" : "لتنفيذ هذا الإجراء، تحتاج أولاً إلى تحديث البرنامج الثابت لجهازك {{ deviceName }}.",
-      "cta" : "انتقل إلى My Ledger"
-    },
-    "updateNotAvailableFromLLM" : {
-      "title" : "تحديث البرنامج الثابت مطلوب على الكمبيوتر",
-      "description" : "تحديث {{ deviceName }} الخاص بك على Ledger Live لسطح المكتب."
     }
   },
   "FirmwareUpdateReleaseNotes" : {
@@ -5393,18 +5369,7 @@
     "cropImage" : "قُصّ الصورة",
     "chooseConstrast" : "اختر التباين",
     "uploadAnotherImage" : "قم بتحميل صورة أخرى",
-    "selectContrast" : "اختر مستوى التباين",
-    "allowPreview" : "السماح بعرض الصورة على {{productName}}",
-    "loadingPicture" : "تحميل الصورة على {{productName}}",
-    "pictureLoaded" : "تم تحميل الصورة",
-    "timeDisclaimer" : "قد يستغرق هذا حتى 30 ثانية",
-    "imageLoaded" : "تم تحميل الصورة على {{productName}}",
-    "confirmPicture" : "قم بالتأكيد على {{productName}}",
-    "title" : "اختر صورة.\nاخلق أسلوب.\nاجعل Ledger خاصة بك.",
-    "subtitle" : "ضع صورة لرمزك غير القابل للاستبدال المفضل أو صورة من هاتفك.",
-    "customImage" : "صورة مخصصة",
-    "choosePicture" : "اختر صورة",
-    "doThisLater" : "ربّما في وقت لاحق"
+    "selectContrast" : "اختر مستوى التباين"
   },
   "postOnboarding" : {
     "hub" : {
@@ -5418,14 +5383,6 @@
     "walletCard" : {
       "title" : "بدء التشغيل",
       "description" : "انقر هنا لإنهاء إعداد {{productName}} الخاصة بك مع Ledger Live"
-    },
-    "actions" : {
-      "customImage" : {
-        "title" : "تخصيص جهازي Ledger",
-        "description" : "عن طريق إضافة صورة",
-        "popupLabel" : "تم تخصيص الجهاز",
-        "hubTitleAfterAction" : "الشاشة تبدو أنيقة"
-      }
     }
   }
 }
