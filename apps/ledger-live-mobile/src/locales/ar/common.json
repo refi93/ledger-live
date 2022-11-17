@@ -595,6 +595,9 @@
     "SourceHasMultiSign" : {
       "title" : "يرجى تعطيل خاصية التوقيع المتعدد لإرسال {{currencyName}}"
     },
+    "DustLimit" : {
+      "title" : "المبلغ أقل من حد الغبار"
+    },
     "StratisDown2021Warning" : {
       "description" : "سلسلة كتل Stratis تطورت ومن الوارد ألا تعمل بشكل صحيح. سيتم توفير الدعم لسلسلة كتل Stratis الأصلية حتى 16 أكتوبر 2021."
     },
@@ -1803,6 +1806,9 @@
           "title" : "فشل تحديث البرنامج"
         }
       }
+    },
+    "appsStep" : {
+      "title" : "تطبيقات {{productName}}"
     },
     "readyStep" : {
       "title" : "{{productName}} مستعد"
@@ -5353,6 +5359,11 @@
       "viewOn" : "مشاهدة على",
       "viewInExplorer" : "عرض في المتصفح",
       "txDetails" : "تفاصيل المعاملة"
+    },
+    "modalDisabled" : {
+      "title" : "وظيفة الإرسال غير متاحة",
+      "body" : "من أجل الامتثال لتحديثات Apple الأخيرة على App Store، فإن إرسال الرموز غير القابلة للاستبدال (NFTs) غير متاح مؤقتاً. لا يزال بوسعك استخدام Ledger Live على سطح المكتب لإرسال الرموز غير القابلة للاستبدال.",
+      "contactSupport" : "يُرجى قراءة مقالة الدعم لدينا للمزيد من المعلومات."
     }
   },
   "ApplicationVersion" : "إصدار {{version}}",
