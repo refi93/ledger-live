@@ -124,7 +124,8 @@
     },
     "exchange" : "取引",
     "info" : "情報",
-    "connectDevice" : "デバイスを接続"
+    "connectDevice" : "デバイスを接続",
+    "add" : "追加"
   },
   "devices" : {
     "nanoS" : "Nano S",
@@ -4262,13 +4263,14 @@
       "4" : {
         "deviceSelection" : {
           "title" : "どのデバイスをお使いですか？",
-          "desc" : "Nano Sをお使いの場合は、デバイスのファームウェアを修復してみてください。Nano XまたはBlueをお使いの場合は、Ledger サポートまでご連絡ください。"
+          "desc" : "Nano Sを接続しようとしている場合は、Nanoに表示されている状態を選択します。Nano S PlusまたはNano Xを接続しようとしている場合は、<0>ヘルプセンターにアクセス</0>してください。"
         },
         "notFixed" : {
           "title" : " USB接続の問題が解決されませんか？",
           "desc" : "全ての解決策を試しても解決できない場合は、Ledgerサポートまでご連絡ください。まだ試していない解決策がある場合は、それらの手順を実行してください。",
           "back" : "ポートフォリオに戻る",
-          "cta" : "サポートへのお問い合わせ"
+          "cta" : "サポートへのお問い合わせ",
+          "cta2" : "戻る"
         },
         "repair" : {
           "title" : "Nano Sを修理する",
@@ -5061,6 +5063,50 @@
     },
     "HederaAddAccountError" : {
       "title" : "アカウントが追加されていません。もう一度お試しください。"
+    },
+    "ImageIncorrectFileTypeError" : {
+      "title" : "ファイルからの画像の読み込みに失敗しました。",
+      "description" : "画像でもう一度お試しください。"
+    },
+    "ImageLoadFromFileError" : {
+      "title" : "ファイルからの画像の読み込みに失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImageDownloadError" : {
+      "title" : "画像のダウンロードに失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImageMetadataLoadingError" : {
+      "title" : "画像メタデータの読み込みに失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImageTooLargeError" : {
+      "title" : "画像が大きすぎます",
+      "description" : "小さい画像でもう一度お試しください"
+    },
+    "ImageCropError" : {
+      "title" : "画像のトリミングに失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImageResizeError" : {
+      "title" : "画像のサイズ変更に失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImagePreviewError" : {
+      "title" : "画像のプレビューに失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImageProcessingError" : {
+      "title" : "画像の処理に失敗しました",
+      "description" : "別の画像でもう一度お試しください"
+    },
+    "ImageCommitRefusedOnDevice" : {
+      "title" : "デバイスで画像のコミットが拒否されました",
+      "description" : "この画像が正しくない場合は、別の画像で再度お試しいただけます。"
+    },
+    "ImageLoadRefusedOnDevice" : {
+      "title" : "デバイスで画像の読み込みが拒否されました",
+      "description" : "この画像が正しくない場合は、別の画像で再度お試しいただけます。"
     }
   },
   "cryptoOrg" : {
@@ -5091,5 +5137,36 @@
     "selectAccount" : {
       "title" : "アカウントを選択"
     }
+  },
+  "customImage" : {
+    "title" : "画像をカスタマイズ",
+    "steps" : {
+      "choose" : {
+        "stepLabel" : "画像を選択してください",
+        "description" : "(...) として設定する画像を選択",
+        "pickFromNftGallery" : "NFTギャラリーから選択",
+        "upload" : "パソコンからアップロード"
+      },
+      "adjust" : {
+        "stepLabel" : "画像を調整",
+        "rotate" : "回転"
+      },
+      "contrast" : {
+        "stepLabel" : "コントラストを選択"
+      },
+      "transfer" : {
+        "stepLabel" : "送金",
+        "uploadAnotherImage" : "他の画像をアップロードする",
+        "allowPreview" : "{{productName}}で画像のプレビューを許可する",
+        "loadingPicture" : "{{productName}}で画像を読み込んでいます",
+        "pictureLoaded" : "画像が読み込まれました",
+        "imageLoaded" : "{{productName}}に画像が読み込まれました",
+        "confirmPicture" : "{{productName}}で確認",
+        "doThisLater" : "後で",
+        "timeDisclaimer" : "これには最大30秒かかる場合があります"
+      }
+    },
+    "customImageSet" : "画像セットをカスタマイズ",
+    "finishCTA" : "終了する"
   }
 }
