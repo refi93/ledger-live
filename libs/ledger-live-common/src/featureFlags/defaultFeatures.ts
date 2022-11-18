@@ -143,7 +143,7 @@ export const defaultFeatures: DefaultFeatures = {
         recoverySeed: {
           testingEnabled: false,
           token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NfaWQiOjY5NDgsImFwcF9pZCI6MTE0MjIsImluc19pZCI6MTI0ODh9.gFt9c5R8rLsnYpZfoBBchKqo9nEJJs5_G3-i215mTlU",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NfaWQiOjY5NDgsImFwcF9pZCI6MTE0MjIsImluc19pZCI6MTQ4Mjl9.iak4gUnizDdPrEXJEV3wszzJ2YkYX-RIWDXv31aJkiE",
         },
         testStory: {
           testingEnabled: false,
