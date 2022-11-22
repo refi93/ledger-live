@@ -10,10 +10,10 @@ export const customImageAction: PostOnboardingAction = {
   Icon: Icons.BracketsMedium,
   featureFlagId: "customImage",
   title: "postOnboarding.actions.customImage.title",
+  titleCompleted: "postOnboarding.actions.customImage.titleCompleted",
   description: "postOnboarding.actions.customImage.description",
   actionCompletedPopupLabel: "postOnboarding.actions.customImage.popupLabel",
-  actionCompletedHubTitle:
-    "postOnboarding.actions.customImage.hubTitleAfterAction",
+  actionCompletedHubTitle: "", // TODO: deprecated, to remove
   navigationParams: [
     NavigatorName.CustomImage,
     {

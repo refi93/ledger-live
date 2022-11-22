@@ -53,6 +53,12 @@ export type PostOnboardingAction = {
   title: string;
 
   /**
+   * Title displayed for this action in the post onboarding hub when the action
+   * is completed.
+   */
+  titleCompleted: string;
+
+  /**
    * Description displayed for this action in the post onboarding hub.
    */
   description: string;

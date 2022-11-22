@@ -20,6 +20,8 @@ import {
 } from "@ledgerhq/live-common/postOnboarding/hooks/index";
 import { clearPostOnboardingLastActionCompleted } from "@ledgerhq/live-common/postOnboarding/actions";
 import { useDispatch } from "react-redux";
+import { getDeviceModel } from "@ledgerhq/devices";
+import { DeviceModelId } from "@ledgerhq/types-devices";
 import PostOnboardingActionRow from "../../components/PostOnboarding/PostOnboardingActionRow";
 import { NavigatorName, ScreenName } from "../../const";
 import {
@@ -46,7 +48,8 @@ type NavigationProps = BaseComposite<
 const PostOnboardingHub = ({ navigation }: NavigationProps) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { lastActionCompleted, actionsState } = usePostOnboardingHubState();
+  const { lastActionCompleted, actionsState, deviceModelId } =
+    usePostOnboardingHubState();
   const { actionCompletedHubTitle } = lastActionCompleted || {};
 
   const clearLastActionCompleted = useCallback(() => {
@@ -149,18 +152,19 @@ const PostOnboardingHub = ({ navigation }: NavigationProps) => {
     [animDoneValue],
   );
 
+  const productName = getDeviceModel(
+    deviceModelId || DeviceModelId.nanoX,
+  )?.productName;
+
   return (
     <SafeContainer>
       <Flex px={6} py={7} justifyContent="space-between" flex={1}>
         <Text variant="h1Inter" fontWeight="semiBold" mb={8}>
           {allDone
-            ? t("postOnboarding.hub.allDoneTitle")
-            : actionCompletedHubTitle
-            ? t(actionCompletedHubTitle)
-            : t("postOnboarding.hub.title")}
-        </Text>
-        <Text variant="paragraph" mb={4} color="neutral.c70">
-          {t("postOnboarding.hub.subtitle")}
+            ? t("postOnboarding.hub.allDoneTitle", {
+                productName,
+              })
+            : t("postOnboarding.hub.title", { productName })}
         </Text>
         <ScrollView>
           {actionsState.map((action, index, arr) => (

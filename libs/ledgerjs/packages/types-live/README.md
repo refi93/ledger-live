@@ -150,6 +150,7 @@ Ledger Live main types.
     *   [featureFlagId](#featureflagid)
     *   [Icon](#icon)
     *   [title](#title)
+    *   [titleCompleted](#titlecompleted)
     *   [description](#description)
     *   [tagLabel](#taglabel)
     *   [actionCompletedPopupLabel](#actioncompletedpopuplabel)
@@ -1181,6 +1182,13 @@ Type: function (props: {size: [number](https://developer.mozilla.org/docs/Web/Ja
 #### title
 
 Title displayed for this action in the post onboarding hub.
+
+Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+#### titleCompleted
+
+Title displayed for this action in the post onboarding hub when the action
+is completed.
 
 Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
 

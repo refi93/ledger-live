@@ -5504,23 +5504,35 @@
   },
   "postOnboarding": {
     "hub": {
-      "title": "Nice one.\nYou're all set.",
-      "allDoneTitle": "Nice work.\nYou're up and running.",
-      "subtitle": "Here is what you can do next:",
-      "skip": "Skip to the app",
-      "goToWallet": "Go to Ledger Live wallet",
+      "title": "Next up, use your {{productName}} to...",
+      "allDoneTitle": "and that’s a wrap!",
+      "skip": "I’ll do this later",
       "done": "You've just secured your future"
     },
-    "walletCard": {
-      "title": "Getting started",
-      "description": "Click here to finish setting up your {{productName}} with Ledger Live"
+    "entryPointCard": {
+      "title": "There’s more to do with your {{productName}}",
+      "description": "From security tips to third party dApps, learn more about the power of your Ledger.",
+      "buttonLabel": "View actions"
     },
     "actions": {
       "customImage": {
-        "title": "Personalize my Ledger device",
-        "description": "By adding an image",
-        "popupLabel": "Device personalized",
-        "hubTitleAfterAction": "That screen is looking neat"
+        "title": "Customize the lock screen",
+        "titleCompleted": "Lock screen customized",
+        "description": "Choose any NFT or picture to set as the lock screen of your Ledger Stax.",
+        "popupLabel": "Lockscreen set"
+      },
+      "claimNft": {
+        "title": "Claim the Infinity NFT",
+        "titleCompleted": "Infinity NFT claimed",
+        "description": "This NFT gets you access to [ Ledger ] Market, our NFT marketplace.",
+        "popupLabel": "NFT claimed",
+        "tagLabel": "Gift"
+      },
+      "assetsTransfer": {
+        "title": "Transfer your assets to Ledger",
+        "titleCompleted": "Assets transferred to Ledger",
+        "description": "Transfer from any other exchange or wallet.",
+        "popupLabel": "Assets transferred"
       }
     }
   },

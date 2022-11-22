@@ -52,10 +52,10 @@ const PostOnboardingEntryPointCard: React.FC<Record<string, never>> = () => {
             mb={3}
             flexShrink={1}
           >
-            {t("postOnboarding.walletCard.title")}
+            {t("postOnboarding.entryPointCard.title", { productName })}
           </Text>
           <Text variant="body" fontWeight="medium" flexShrink={1}>
-            {t("postOnboarding.walletCard.description", { productName })}
+            {t("postOnboarding.entryPointCard.description", { productName })}
           </Text>
         </Flex>
         <PlaceholderImage />

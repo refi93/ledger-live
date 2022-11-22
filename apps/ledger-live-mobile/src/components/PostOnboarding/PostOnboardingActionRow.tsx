@@ -22,6 +22,7 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
     navigationParams,
     Icon,
     title,
+    titleCompleted,
     description,
     tagLabel,
     startEvent,
@@ -59,11 +60,13 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
               fontWeight="medium"
               color={completed ? "neutral.c70" : "neutral.c100"}
             >
-              {t(title)}
+              {t(completed ? titleCompleted : title)}
             </Text>
-            <Text variant="body" fontWeight="medium" color="neutral.c70">
-              {t(description)}
-            </Text>
+            {completed ? null : (
+              <Text variant="body" fontWeight="medium" color="neutral.c70">
+                {t(description)}
+              </Text>
+            )}
           </Flex>
         </Flex>
         <Flex
