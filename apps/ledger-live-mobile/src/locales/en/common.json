@@ -3695,12 +3695,11 @@
     "tabTitle": "My Ledger",
     "title": "My Ledger",
     "selectDevice": {
-      "saved": {
-        "title": "Devices",
-        "description": "Manage your saved Ledgers"
-      },
+      "title": "Devices",
+      "addALedger": "Add a Ledger",
+      "addWithBluetooth": "Add with Bluetooth",
       "addNewCTA": "Add new",
-      "otgBanner": "If you own a Nano S or a Nano S Plus, connect your device with USB cable.",
+      "otgBanner": "To use Ledger Nano S or Ledger Nano S Plus, connect with the USB cable.",
       "connectExistingLedger": "Connect an existing Ledger",
       "connectExistingLedgerDescription": "Already have a Ledger that is set up? Pair it with bluetooth",
       "setUpNewLedger": "Set up a new Ledger",

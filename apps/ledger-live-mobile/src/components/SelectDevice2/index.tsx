@@ -194,28 +194,27 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
   }, [navigation]);
 
   return (
-    <Flex mt={20} pb={100}>
+    <Flex mt={32} pb={100}>
       <Flex
         flexDirection="row"
         justifyContent="space-between"
         alignItems="center"
-        mb={3}
+        mb={1}
       >
-        <Flex>
-          <Text variant="h5" fontWeight="semiBold">
-            <Trans i18nKey="manager.selectDevice.saved.title" />
-          </Text>
-          <Text color="neutral.c80" variant="paragraph">
-            <Trans i18nKey="manager.selectDevice.saved.description" />
-          </Text>
-        </Flex>
+        <Text variant="h5" fontWeight="semiBold">
+          <Trans i18nKey="manager.selectDevice.title" />
+        </Text>
         {deviceList.length > 0 && (
           <Touchable onPress={onAddNewPress}>
             <Flex flexDirection="row" alignItems="center">
-              <Text color="primary.c90" mr={3}>
-                <Trans i18nKey="manager.selectDevice.addNewCTA" />
+              <Text color="primary.c90" mr={3} fontWeight="semiBold">
+                <Trans
+                  i18nKey={`manager.selectDevice.${
+                    Platform.OS === "android" ? "addWithBluetooth" : "addNewCTA"
+                  }`}
+                />
               </Text>
-              <Icons.PlusMedium color="primary.c90" size={14} />
+              <Icons.PlusMedium color="primary.c90" size={15} />
             </Flex>
           </Touchable>
         )}
@@ -242,33 +241,28 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
             >
               <Icons.PlusMedium color="neutral.c90" size={20} />
               <Text variant="large" fontWeight="semiBold" ml={5}>
-                {t("manager.selectDevice.addNewCTA")}
+                {t(
+                  `manager.selectDevice.${
+                    Platform.OS === "android"
+                      ? "addWithBluetooth"
+                      : "addALedger"
+                  }`,
+                )}
               </Text>
             </Flex>
           </Touchable>
         )}
       </Flex>
-      {deviceList.length === 0 && Platform.OS === "android" && (
-        <Flex
-          p={5}
-          borderRadius={5}
-          alignItems="center"
-          flexDirection="row"
-          backgroundColor="primary.c10"
+      {Platform.OS === "android" && (
+        <Text
+          color="neutral.c100"
+          variant="large"
+          fontWeight="semiBold"
+          fontSize={4}
+          lineHeight="21px"
         >
-          <Icons.InfoAltFillMedium color="primary.c80" size={20} />
-          <Text
-            color="neutral.c100"
-            variant="large"
-            fontWeight="semiBold"
-            fontSize={4}
-            ml={5}
-            mr={3}
-            lineHeight="21px"
-          >
-            <Trans i18nKey="manager.selectDevice.otgBanner" />
-          </Text>
-        </Flex>
+          <Trans i18nKey="manager.selectDevice.otgBanner" />
+        </Text>
       )}
       <Flex alignItems="center" mt={8}>
         <Touchable onPress={onBuyDevicePress}>

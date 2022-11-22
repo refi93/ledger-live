@@ -33,7 +33,7 @@ const Item = ({ device, onPress }: Props) => {
       case DeviceModelId.nanoSP:
         return <Icons.NanoSFoldedMedium size={24} />;
       case DeviceModelId.nanoFTS:
-        return <Icons.PowerMedium size={24} />;
+        return <Icons.StaxRegular size={24} />;
       case DeviceModelId.nanoX:
       default:
         return <Icons.NanoXFoldedMedium size={24} />;
