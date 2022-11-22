@@ -24,3 +24,20 @@ export const customImageAction: PostOnboardingAction = {
     },
   ],
 };
+
+export const claimNftAction: PostOnboardingAction = {
+  id: PostOnboardingActionId.claimNft,
+  Icon: Icons.BracketsMedium,
+  //featureFlagId: "claimNft",
+  title: "postOnboarding.actions.claimNft.title",
+  description: "postOnboarding.actions.claimNft.description",
+  actionCompletedPopupLabel: "postOnboarding.actions.claimNft.popupLabel",
+  actionCompletedHubTitle:
+    "postOnboarding.actions.claimNft.hubTitleAfterAction",
+  navigationParams: [
+    NavigatorName.ClaimNft,
+    {
+      screen: ScreenName.ClaimNftWelcome,
+    },
+  ],
+};

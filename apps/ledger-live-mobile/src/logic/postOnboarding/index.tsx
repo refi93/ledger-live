@@ -4,7 +4,7 @@ import {
   PostOnboardingActionId,
 } from "@ledgerhq/types-live";
 import { claimMock, migrateAssetsMock, personalizeMock } from "./mockActions";
-import { customImageAction } from "./actions";
+import { customImageAction, claimNftAction } from "./actions";
 
 /**
  * All implemented post onboarding actions.
@@ -17,6 +17,7 @@ const postOnboardingActions: Record<
   migrateAssetsMock,
   personalizeMock,
   customImage: customImageAction,
+  claimNft: claimNftAction,
 };
 
 /**
@@ -28,7 +29,10 @@ const ftsPostOnboardingActionsMock: PostOnboardingAction[] = [
   migrateAssetsMock,
 ];
 
-const ftsPostOnboardingActions: PostOnboardingAction[] = [customImageAction];
+const ftsPostOnboardingActions: PostOnboardingAction[] = [
+  customImageAction,
+  claimNftAction,
+];
 
 export function getPostOnboardingAction(
   id: PostOnboardingActionId,

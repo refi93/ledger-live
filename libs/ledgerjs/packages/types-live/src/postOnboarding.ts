@@ -9,6 +9,7 @@ export enum PostOnboardingActionId {
   migrateAssetsMock = "migrateAssetsMock",
   personalizeMock = "personalizeMock",
   customImage = "customImage",
+  claimNft = "claimNft",
 }
 
 export type WithNavigationParams = {
