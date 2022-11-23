@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from "@ledgerhq/native-ui";
 // import { space } from "@ledgerhq/native-ui/styles/theme";
 import React, { ComponentProps, useContext } from "react";
-import { Image, StyleSheet } from "react-native";
+import { Image, ImageProps, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 // import { targetDimensions } from "../../screens/CustomImage/shared";
 import ForceTheme from "../theme/ForceTheme";
@@ -20,6 +20,7 @@ type FrameConfig = {
   innerTop: number;
   borderRightRadius: number;
   backgroundSource: number;
+  resizeMode: ImageProps["resizeMode"];
 };
 
 type Props = Partial<ComponentProps<typeof Image>> & {
@@ -45,6 +46,7 @@ export const transferConfig: FrameConfig = {
   innerTop: 6,
   borderRightRadius: 5,
   backgroundSource: transferBackground,
+  resizeMode: "cover",
 };
 
 export const previewConfig: FrameConfig = {
@@ -56,15 +58,17 @@ export const previewConfig: FrameConfig = {
   innerTop: 8.7,
   borderRightRadius: 15.6,
   backgroundSource: previewBackground,
+  resizeMode: "cover",
 };
 
 function scaleFrameConfig(
   frameConfig: FrameConfig,
   scale: number,
 ): FrameConfig {
-  const { backgroundSource, ...rest } = frameConfig;
+  const { backgroundSource, resizeMode, ...rest } = frameConfig;
   return {
     backgroundSource,
+    resizeMode,
     ...Object.fromEntries(
       Object.entries(rest).map(([key, value]) => {
         return [key, value * scale];
@@ -105,6 +109,7 @@ const FramedImage: React.FC<Props> = ({
     innerTop,
     borderRightRadius,
     backgroundSource,
+    resizeMode,
   } = scaleFrameConfig(frameConfig, scale || 1);
   return (
     <Container height={frameHeight} width={frameWidth}>
@@ -133,7 +138,7 @@ const FramedImage: React.FC<Props> = ({
             <Image
               {...imageProps}
               fadeDuration={0}
-              resizeMode="cover"
+              resizeMode={resizeMode}
               source={source}
               style={{
                 height: innerHeight,
