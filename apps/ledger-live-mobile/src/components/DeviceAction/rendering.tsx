@@ -797,12 +797,10 @@ export function renderDeviceNotOnboarded({
 
   return (
     <Wrapper>
-      <Illustration
-        lightSource={notOnboardedLightImg}
-        darkSource={notOnboardedDarkImg}
-        size={175}
-      />
-      <Text variant="h4" textAlign="center" mt={4}>
+      <Flex backgroundColor="neutral.c30" p={16} borderRadius={999}>
+        <Icons.InfoAltFillMedium color="primary.c80" size={28} />
+      </Flex>
+      <Text variant="h4" textAlign="center" mt={6}>
         {t("DeviceAction.deviceNotOnboarded.title")}
       </Text>
       <Text variant="body" color="neutral.c70" textAlign="center" mt={4} mx={4}>
