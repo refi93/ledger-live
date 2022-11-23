@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback, useEffect, useState } from "react";
-import { Linking, Platform } from "react-native";
+import { Platform } from "react-native";
 import { Trans, useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { discoverDevices } from "@ledgerhq/live-common/hw/index";
@@ -7,9 +7,7 @@ import { CompositeScreenProps, useNavigation } from "@react-navigation/native";
 import { Text, Flex, Icons, BottomDrawer } from "@ledgerhq/native-ui";
 import { Device } from "@ledgerhq/live-common/hw/actions/types";
 import { useBleDevicesScanning } from "@ledgerhq/live-common/ble/hooks/useBleDevicesScanning";
-import { useFeature } from "@ledgerhq/live-common/featureFlags/index";
 
-import { urls } from "../../config/urls";
 import TransportBLE from "../../react-native-hw-transport-ble";
 import { track } from "../../analytics";
 import { NavigatorName, ScreenName } from "../../const";
@@ -56,7 +54,6 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
 
   const { t } = useTranslation();
 
-  const buyDeviceFromLive = useFeature("buyDeviceFromLive");
   const knownDevices = useSelector(knownDevicesSelector);
   const navigation = useNavigation<Navigation["navigation"]>();
   const { scannedDevices } = useBleDevicesScanning({
@@ -84,7 +81,7 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
     const filter = ({ id }: { id: string }) =>
       ["hid", "httpdebug"].includes(id);
     const sub = discoverDevices(filter).subscribe(e => {
-      const setDevice = e.id.startsWith("hid") ? setUSBDevice : setProxyDevice;
+      const setDevice = e.id.startsWith("usb") ? setUSBDevice : setProxyDevice;
 
       if (e.type === "remove") setDevice(undefined);
       if (e.type === "add") {
@@ -151,16 +148,6 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
 
   const onAddNewPress = useCallback(() => setIsAddNewDrawerOpen(true), []);
 
-  const onBuyDevicePress = useCallback(() => {
-    if (buyDeviceFromLive?.enabled) {
-      navigation.navigate(NavigatorName.BuyDevice, {
-        screen: ScreenName.PurchaseDevice,
-      });
-    } else {
-      Linking.openURL(urls.buyNanoX);
-    }
-  }, [navigation, buyDeviceFromLive?.enabled]);
-
   const onPairDevices = useCallback(() => {
     const navigateInput: NavigateInput<
       MainNavigatorParamList,
@@ -194,7 +181,7 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
   }, [navigation]);
 
   return (
-    <Flex mt={32} pb={100}>
+    <Flex>
       <Flex
         flexDirection="row"
         justifyContent="space-between"
@@ -253,24 +240,19 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
           </Touchable>
         )}
       </Flex>
-      {Platform.OS === "android" && (
-        <Text
-          color="neutral.c100"
-          variant="large"
-          fontWeight="semiBold"
-          fontSize={4}
-          lineHeight="21px"
-        >
-          <Trans i18nKey="manager.selectDevice.otgBanner" />
-        </Text>
-      )}
-      <Flex alignItems="center" mt={8}>
-        <Touchable onPress={onBuyDevicePress}>
-          <Text color="primary.c90">
-            <Trans i18nKey="manager.selectDevice.buyDeviceCTA" />
+      {Platform.OS === "android" &&
+        USBDevice === undefined &&
+        ProxyDevice === undefined && (
+          <Text
+            color="neutral.c100"
+            variant="large"
+            fontWeight="semiBold"
+            fontSize={4}
+            lineHeight="21px"
+          >
+            <Trans i18nKey="manager.selectDevice.otgBanner" />
           </Text>
-        </Touchable>
-      </Flex>
+        )}
       <BottomDrawer
         isOpen={isAddNewDrawerOpen}
         onClose={() => setIsAddNewDrawerOpen(false)}

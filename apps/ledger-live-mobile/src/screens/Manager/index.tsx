@@ -26,6 +26,7 @@ import {
   StackNavigatorProps,
 } from "../../components/RootNavigator/types/helpers";
 import { ManagerNavigatorStackParamList } from "../../components/RootNavigator/types/ManagerNavigator";
+import BuyDeviceCTA from "../../components/BuyDeviceCTA";
 
 const action = createAction(connectManager);
 
@@ -90,11 +91,8 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
   if (!isFocused) return null;
 
   return (
-    <NavigationScrollView
-      style={[styles.root]}
-      contentContainerStyle={styles.scrollContainer}
-    >
-      <Flex mt={70}>
+    <Flex flex={1} pb={100}>
+      <Flex mt={100} px={16} mb={8}>
         <TrackScreen category="Manager" name="ChooseDevice" />
         <Text fontWeight="semiBold" variant="h4">
           <Trans i18nKey="manager.title" />
@@ -127,7 +125,42 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
           request={null}
         />
       </Flex>
-    </NavigationScrollView>
+      <NavigationScrollView
+        style={[styles.root]}
+        contentContainerStyle={styles.scrollContainer}
+      >
+        <Flex>
+          {newDeviceSelectionFeatureFlag?.enabled ? (
+            <SelectDevice2 onSelect={onSelectDevice} />
+          ) : (
+            <>
+              <SelectDevice
+                usbOnly={params?.firmwareUpdate}
+                autoSelectOnAdd
+                onSelect={onSelectDevice}
+                onBluetoothDeviceAction={onShowMenu}
+              />
+              {chosenDevice ? (
+                <RemoveDeviceMenu
+                  open={showMenu}
+                  device={chosenDevice as Device}
+                  onHideMenu={onHideMenu}
+                />
+              ) : null}
+            </>
+          )}
+          <DeviceActionModal
+            onClose={() => onSelectDevice()}
+            device={device}
+            onResult={onSelect}
+            onModalHide={onModalHide}
+            action={action}
+            request={null}
+          />
+        </Flex>
+      </NavigationScrollView>
+      <BuyDeviceCTA />
+    </Flex>
   );
 };
 

@@ -3704,7 +3704,7 @@
       "connectExistingLedgerDescription": "Already have a Ledger that is set up? Pair it with bluetooth",
       "setUpNewLedger": "Set up a new Ledger",
       "setUpNewLedgerDescription": "Bought a new Ledger? Click here to set it up",
-      "buyDeviceCTA": "Need a new Ledger? Buy one",
+      "buyDeviceCTA": "<0>Need a new Ledger? </0><1>Buy now</1>",
       "item": {
         "usb": "Connected with USB",
         "available": "Available. Tap to connect",
