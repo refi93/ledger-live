@@ -1,11 +1,26 @@
 import { Box, Flex, Text } from "@ledgerhq/native-ui";
-import { space } from "@ledgerhq/native-ui/styles/theme";
+// import { space } from "@ledgerhq/native-ui/styles/theme";
 import React, { ComponentProps, useContext } from "react";
 import { Image, StyleSheet } from "react-native";
 import styled from "styled-components/native";
-import { targetDimensions } from "../../screens/CustomImage/shared";
+// import { targetDimensions } from "../../screens/CustomImage/shared";
 import ForceTheme from "../theme/ForceTheme";
-import { scaleDimensions } from "./imageUtils";
+// import { scaleDimensions } from "./imageUtils";
+import transferBackground from "./assets/transferBackground.png";
+import previewBackground from "./assets/previewBackground.png";
+
+const DEBUG = false;
+
+type FrameConfig = {
+  frameHeight: number;
+  frameWidth: number;
+  innerWidth: number;
+  innerHeight: number;
+  innerRight: number;
+  innerTop: number;
+  borderRightRadius: number;
+  backgroundSource: number;
+};
 
 type Props = Partial<ComponentProps<typeof Image>> & {
   /** source of the image inside */
@@ -17,84 +32,121 @@ type Props = Partial<ComponentProps<typeof Image>> & {
   /** float between 0 and 1 */
   loadingProgress?: number;
   children?: React.ReactNode | undefined;
+  frameConfig: FrameConfig;
+  scale?: number;
 };
 
-const imageDimensions = scaleDimensions(targetDimensions, 0.4);
+export const transferConfig: FrameConfig = {
+  frameHeight: 222,
+  frameWidth: 141,
+  innerHeight: 210,
+  innerWidth: 133,
+  innerRight: 8,
+  innerTop: 6,
+  borderRightRadius: 5,
+  backgroundSource: transferBackground,
+};
 
-const px = 3;
-const py = 3;
+export const previewConfig: FrameConfig = {
+  frameHeight: 321.36,
+  frameWidth: 204,
+  innerWidth: 185,
+  innerHeight: 303,
+  innerRight: 8.2,
+  innerTop: 8.7,
+  borderRightRadius: 15.6,
+  backgroundSource: previewBackground,
+};
 
-const Container = styled(Box).attrs({
-  px,
-  py,
-})``;
+function scaleFrameConfig(
+  frameConfig: FrameConfig,
+  scale: number,
+): FrameConfig {
+  const { backgroundSource, ...rest } = frameConfig;
+  return {
+    backgroundSource,
+    ...Object.fromEntries(
+      Object.entries(rest).map(([key, value]) => {
+        return [key, value * scale];
+      }),
+    ),
+  } as FrameConfig;
+}
+
+const Container = styled(Box).attrs({})``;
 
 const AbsoluteBackgroundContainer = styled(Flex).attrs({
   ...StyleSheet.absoluteFillObject,
-  backgroundColor: "lightgreen",
-})``;
-
-const BackgroundPlaceholder = styled(Flex).attrs({
-  ...StyleSheet.absoluteFillObject,
-  background: "#494949",
-  px,
-  py,
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
+  backgroundColor: DEBUG ? "blue" : undefined,
 })``;
 
 const AbsoluteInnerImageContainer = styled(Flex).attrs({
-  ...StyleSheet.absoluteFillObject,
-  mx: px,
-  my: py,
+  position: "absolute",
   overflow: "hidden",
+  flexDirection: "row-reverse",
+  justifyContent: "flex-start",
 })``;
 
 const FramedImage: React.FC<Props> = ({
   source,
-  backgroundSource,
   backgroundPlaceholderText,
   loadingProgress = 1,
   children,
+  frameConfig = transferConfig,
+  scale,
   ...imageProps
 }) => {
+  const {
+    frameHeight,
+    frameWidth,
+    innerWidth,
+    innerHeight,
+    innerRight,
+    innerTop,
+    borderRightRadius,
+    backgroundSource,
+  } = scaleFrameConfig(frameConfig, scale || 1);
   return (
-    <Container>
+    <Container height={frameHeight} width={frameWidth}>
       <ForceTheme selectedPalette="light">
-        <AbsoluteBackgroundContainer>
-          {backgroundSource ? (
-            <Image
-              source={backgroundSource}
-              fadeDuration={0}
-              resizeMode="contain"
-              style={{
-                height: imageDimensions.height + 2 * space[3],
-                width: imageDimensions.width + 2 * space[3],
-              }}
-            />
-          ) : (
-            <BackgroundPlaceholder>
-              <Text color="neutral.c00" textAlign="center">
-                {backgroundPlaceholderText || "illustrationPlaceholder"}
-              </Text>
-            </BackgroundPlaceholder>
-          )}
+        <AbsoluteBackgroundContainer height={frameHeight} width={frameWidth}>
+          <Image
+            source={backgroundSource}
+            fadeDuration={0}
+            resizeMode="contain"
+            style={{
+              height: frameHeight,
+              width: frameWidth,
+            }}
+          />
         </AbsoluteBackgroundContainer>
         <AbsoluteInnerImageContainer
-          style={{ height: loadingProgress * imageDimensions.height }}
+          style={{
+            right: innerRight,
+            top: innerTop,
+            height: loadingProgress * innerHeight,
+            width: innerWidth,
+            backgroundColor: DEBUG ? "red" : undefined,
+          }}
         >
-          {source ? (
+          {!DEBUG && source ? (
             <Image
               {...imageProps}
               fadeDuration={0}
-              resizeMode="contain"
+              resizeMode="cover"
               source={source}
-              style={imageDimensions}
+              style={{
+                height: innerHeight,
+                width: innerWidth,
+                borderTopRightRadius: borderRightRadius,
+                borderBottomRightRadius: borderRightRadius,
+              }}
             />
           ) : null}
         </AbsoluteInnerImageContainer>
-        <Flex style={imageDimensions}>{children}</Flex>
+        <Flex style={{ height: innerHeight, width: innerWidth }}>
+          {children}
+        </Flex>
       </ForceTheme>
     </Container>
   );

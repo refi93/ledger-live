@@ -64,7 +64,10 @@ import CurrencyUnitValue from "../CurrencyUnitValue";
 import TermsFooter, { TermsProviders } from "../TermsFooter";
 import CurrencyIcon from "../CurrencyIcon";
 import Illustration from "../../images/illustration/Illustration";
-import { FramedImageWithContext } from "../CustomImage/FramedImage";
+import {
+  FramedImageWithContext,
+  transferConfig,
+} from "../CustomImage/FramedImage";
 
 import notOnboardedDarkImg from "../../images/illustration/Dark/_010.png";
 import notOnboardedLightImg from "../../images/illustration/Light/_010.png";
@@ -1129,6 +1132,7 @@ const ImageLoadingGeneric: React.FC<{
         <FramedImageWithContext
           loadingProgress={progress}
           backgroundPlaceholderText={backgroundPlaceholderText}
+          frameConfig={transferConfig}
         >
           {children}
         </FramedImageWithContext>

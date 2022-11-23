@@ -31,7 +31,9 @@ import {
 } from "../../components/CustomImage/imageUtils";
 import { ImageFileUri } from "../../components/CustomImage/types";
 import { targetDimensions } from "./shared";
-import FramedImage from "../../components/CustomImage/FramedImage";
+import FramedImage, {
+  previewConfig,
+} from "../../components/CustomImage/FramedImage";
 import ImageProcessor, {
   Props as ImageProcessorProps,
   ProcessorPreviewResult,
@@ -296,6 +298,7 @@ const PreviewPreEdit = ({ navigation, route }: NavigationProps) => {
                 onError={handlePreviewImageError}
                 fadeDuration={0}
                 source={{ uri: processorPreviewImage?.imageBase64DataUri }}
+                frameConfig={previewConfig}
               />
             </Flex>
           </Flex>

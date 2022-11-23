@@ -212,35 +212,35 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
           <InfiniteLoader />
         )}
       </Flex>
+      {resizedImage?.imageBase64DataUri && (
+        <ForceTheme selectedPalette="dark">
+          <Flex flexDirection="row" my={6}>
+            <Animated.View style={leftBoxAnimatedStyle} />
+            {contrasts.map(({ val, color }, index, arr) => (
+              <Pressable
+                disabled={loading}
+                key={val}
+                onPress={() => {
+                  if (selectedIndex !== index) {
+                    setLoading(true);
+                    setSelectedIndexWrapped(index);
+                  }
+                }}
+              >
+                <ContrastChoice
+                  selected={selectedIndex === index}
+                  loading={loading}
+                  color={color}
+                  isFirst={index === 0}
+                  isLast={index === arr.length - 1}
+                />
+              </Pressable>
+            ))}
+            <Animated.View style={rightBoxAnimatedStyle} />
+          </Flex>
+        </ForceTheme>
+      )}
       <BottomButtonsContainer>
-        {resizedImage?.imageBase64DataUri && (
-          <ForceTheme selectedPalette="dark">
-            <Flex flexDirection="row" my={6}>
-              <Animated.View style={leftBoxAnimatedStyle} />
-              {contrasts.map(({ val, color }, index, arr) => (
-                <Pressable
-                  disabled={loading}
-                  key={val}
-                  onPress={() => {
-                    if (selectedIndex !== index) {
-                      setLoading(true);
-                      setSelectedIndexWrapped(index);
-                    }
-                  }}
-                >
-                  <ContrastChoice
-                    selected={selectedIndex === index}
-                    loading={loading}
-                    color={color}
-                    isFirst={index === 0}
-                    isLast={index === arr.length - 1}
-                  />
-                </Pressable>
-              ))}
-              <Animated.View style={rightBoxAnimatedStyle} />
-            </Flex>
-          </ForceTheme>
-        )}
         <Flex width="100%">
           <Button
             disabled={!processorPreviewImage?.imageBase64DataUri}
