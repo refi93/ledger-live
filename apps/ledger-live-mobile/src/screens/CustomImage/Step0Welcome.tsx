@@ -45,14 +45,6 @@ const Step0Welcome: React.FC<
           <Text variant="h4" fontWeight="semiBold" mt={7} textAlign="center">
             {t("customImage.landingPage.title")}
           </Text>
-          <Text
-            variant="bodyLineHeight"
-            color="neutral.c70"
-            textAlign="center"
-            mt={6}
-          >
-            {t("customImage.landingPage.subtitle")}
-          </Text>
         </Flex>
         <BottomButtonsContainer>
           <Button size="large" type="main" onPress={openModal}>

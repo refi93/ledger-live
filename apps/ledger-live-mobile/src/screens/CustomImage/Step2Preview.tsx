@@ -252,7 +252,7 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
             pending={rawResultLoading}
             displayContentWhenPending
           >
-            {t("common.confirm")}
+            {t("customImage.confirmContrast")}
           </Button>
         </Flex>
       </BottomButtonsContainer>

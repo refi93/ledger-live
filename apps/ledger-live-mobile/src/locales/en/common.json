@@ -5469,34 +5469,35 @@
     "title": "Lock screen picture",
     "replace": "Replace",
     "drawer": {
-      "title": "Choose an image",
+      "title": "Choose an image to set as your Stax lockscreen",
       "options": {
         "uploadFromPhone": "Choose from my picture gallery",
         "selectFromNFTGallery": "Choose from NFT gallery"
       }
     },
-    "cropImage": "Crop image",
+    "cropImage": "Crop picture",
     "chooseConstrast": "Choose contrast",
     "uploadAnotherImage": "Upload another image",
     "rotateImage": "Rotate",
-    "allowPreview": "Allow picture preview on {{productName}}",
+    "allowPreview": "Allow lock screen picture to load on your {{productName}}",
     "loadingPicture": "Loading picture on {{productName}}",
-    "pictureLoaded": "Picture loaded",
-    "timeDisclaimer": "This can take up to 30 seconds",
-    "imageLoaded": "Image loaded on {{productName}}",
+    "loadingPictureAlmostOver": "Voilà!",
+    "commitRequested": "Like what you see?\nKeep it!",
     "confirmPicture": "Confirm on {{productName}}",
     "landingPage": {
-      "title": "Choose a picture.\nCreate a vibe.\nMake your Ledger yours.",
-      "subtitle": "Set a picture of your favourite NFT or a picture from your phone.",
+      "title": "Choose any NFT, or photo.\nCustomize.\nMake your Ledger, yours.",
       "choosePicture": "Choose a picture"
     },
+    "confirmCrop": "Confirm crop",
+    "confirmContrast": "Confirm contrast",
+    "nftEntryPointButtonLabel": "Set as Ledger Stax lockscreen picture",
     "customImage": "Custom picture",
     "doThisLater": "Maybe later",
     "preview": {
       "title": "Preview",
       "loading": "Loading preview",
-      "setPicture": "Set custom picture",
-      "editPicture": "Edit picture"
+      "setPicture": "Set as lock screen",
+      "editPicture": "Edit"
     },
     "nftGallery": {
       "title": "My NFTs"

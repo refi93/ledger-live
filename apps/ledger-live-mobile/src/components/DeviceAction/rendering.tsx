@@ -1117,7 +1117,13 @@ const ImageLoadingGeneric: React.FC<{
         {top}
       </Flex>
       <Flex flexDirection={"column"} alignItems="center" alignSelf="stretch">
-        <Text textAlign="center" variant="large" mb={10} alignSelf="stretch">
+        <Text
+          textAlign="center"
+          variant="h4"
+          fontWeight="semiBold"
+          mb={8}
+          alignSelf="stretch"
+        >
           {title}
         </Text>
         <FramedImageWithContext
@@ -1157,19 +1163,17 @@ export const renderLoadingImage = ({
 }: RawProps & { progress: number; device: Device }) => {
   return (
     <ImageLoadingGeneric
-      title={t("customImage.loadingPicture", {
-        productName:
-          device.deviceName || getDeviceModel(device.modelId)?.productName,
-      })}
+      title={t(
+        progress > 0.9
+          ? "customImage.loadingPictureAlmostOver"
+          : "customImage.loadingPicture",
+        {
+          productName:
+            device.deviceName || getDeviceModel(device.modelId)?.productName,
+        },
+      )}
       progress={progress}
       backgroundPlaceholderText="image loading illustration placeholder"
-      bottom={
-        <Flex flexDirection="column" flex={1} justifyContent="flex-end" pb={8}>
-          <Text textAlign="center" variant="bodyLineHeight" color="neutral.c60">
-            {t("customImage.timeDisclaimer")}
-          </Text>
-        </Flex>
-      }
     />
   );
 };
@@ -1180,26 +1184,11 @@ export const renderImageCommitRequested = ({
 }: RawProps & { device: Device }) => {
   return (
     <ImageLoadingGeneric
-      title={t("customImage.confirmPicture", {
+      title={t("customImage.commitRequested", {
         productName:
           device.deviceName || getDeviceModel(device.modelId)?.productName,
       })}
       backgroundPlaceholderText="commit requested illustration placeholder"
-      top={
-        <Flex
-          flex={1}
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Flex mb={3} p={4} backgroundColor="neutral.c30" borderRadius={999}>
-            <Icons.CheckAloneMedium size={16} color="success.c50" />
-          </Flex>
-          <Text textAlign="center" color="neutral.c70" variant="bodyLineHeight">
-            {t("customImage.pictureLoaded")}
-          </Text>
-        </Flex>
-      }
     />
   );
 };
