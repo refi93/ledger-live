@@ -184,7 +184,10 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
   }));
 
   return (
-    <SafeAreaView edges={["bottom"]} style={{ flex: 1 }}>
+    <SafeAreaView
+      edges={["bottom"]}
+      style={{ flex: 1, justifyContent: "space-between" }}
+    >
       {resizedImage?.imageBase64DataUri && (
         <ImageProcessor
           ref={imageProcessorRef}
@@ -196,10 +199,10 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
         />
       )}
       <Flex
-        flex={1}
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
+        height={406}
       >
         {processorPreviewImage?.imageBase64DataUri ? (
           <Image
@@ -240,11 +243,10 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
           </Flex>
         </ForceTheme>
       )}
-      <BottomButtonsContainer>
+      <BottomButtonsContainer style={{ paddingTop: 0 }}>
         <Flex width="100%">
           <Button
             disabled={!processorPreviewImage?.imageBase64DataUri}
-            mt={6}
             size="large"
             type="main"
             outline={false}
