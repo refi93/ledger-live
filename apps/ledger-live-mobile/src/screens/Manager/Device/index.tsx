@@ -79,12 +79,12 @@ const DeviceCard = ({
   appList,
   onLanguageChange,
 }: Props) => {
-  const { colors } = useTheme();
+  const { colors, theme } = useTheme();
   const { deviceModel } = state;
   const [appsModalOpen, setAppsModalOpen] = useState(false);
 
   const [illustration] = useState(
-    illustrations[deviceModel.id]({ color: colors.neutral.c100 }),
+    illustrations[deviceModel.id]({ color: colors.neutral.c100, theme }),
   );
 
   const deviceLocalizationFeatureFlag = useFeature("deviceLocalization");
@@ -116,7 +116,7 @@ const DeviceCard = ({
 
   return (
     <BorderCard>
-      <Flex flexDirection={"row"} mt={24} mx={4} mb={8}>
+      <Flex flexDirection={"row"} mt={20} mx={4} mb={8} alignItems="center">
         {illustration}
         <Flex
           flex={1}

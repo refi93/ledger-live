@@ -38,15 +38,16 @@ export default function DeviceNameRow({
   const displayedName = savedName || initialDeviceName || productName;
 
   return (
-    <Flex flexDirection={"row"} flexWrap={"nowrap"}>
+    <Flex flexDirection={"row"} flexWrap={"nowrap"} alignItems="center">
       <Text
         maxWidth="90%"
-        variant={"h2"}
+        variant="large"
+        fontSize={24}
         uppercase={false}
         numberOfLines={2}
         ellipsizeMode="tail"
       >
-        {displayedName.toUpperCase()}
+        {displayedName}
       </Text>
       {(id === DeviceModelId.nanoX || id === DeviceModelId.nanoFTS) && (
         <Flex
