@@ -20,7 +20,7 @@ import { setLastSeenDeviceInfo } from "../../actions/settings";
 import { ScreenName } from "../../const";
 import FirmwareUpdateScreen from "../../components/FirmwareUpdate";
 import useLatestFirmware from "../../hooks/useLatestFirmware";
-import { isFirmwareUpdateVersionSupported } from "../../logic/firmwareUpdate";
+import isFirmwareUpdateVersionSupported from "@ledgerhq/live-common/hw/isFirmwareUpdateVersionSupported";
 import { ManagerNavigatorStackParamList } from "../../components/RootNavigator/types/ManagerNavigator";
 import {
   BaseComposite,
