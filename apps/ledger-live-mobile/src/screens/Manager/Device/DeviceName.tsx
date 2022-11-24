@@ -53,9 +53,9 @@ export default function DeviceNameRow({
         <Flex
           ml={3}
           backgroundColor={"palette.primary.c30"}
-          borderRadius={12}
-          width={24}
-          height={24}
+          borderRadius={14}
+          width={28}
+          height={28}
           alignItems="center"
           justifyContent="center"
         >

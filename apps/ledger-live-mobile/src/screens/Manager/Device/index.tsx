@@ -9,7 +9,7 @@ import {
 import { App, DeviceInfo, idsToLanguage } from "@ledgerhq/types-live";
 
 import { Flex, Text, Button, Divider } from "@ledgerhq/native-ui";
-import { CircledCheckMedium } from "@ledgerhq/native-ui/assets/icons";
+import { CircledCheckSolidMedium } from "@ledgerhq/native-ui/assets/icons";
 import styled, { useTheme } from "styled-components/native";
 import { ListAppsResult } from "@ledgerhq/live-common/apps/types";
 import { isDeviceLocalizationSupported } from "@ledgerhq/live-common/manager/localization";
@@ -59,12 +59,6 @@ const BorderCard = styled.View`
   border: 1px solid ${p => p.theme.colors.neutral.c40};
   border-radius: 4px;
 `;
-
-const VersionContainer = styled(Flex).attrs({
-  borderRadius: 4,
-  paddingHorizontal: 8,
-  paddingVertical: 5.5,
-})``;
 
 const DeviceCard = ({
   distribution,
@@ -122,6 +116,7 @@ const DeviceCard = ({
           flex={1}
           flexDirection={"column"}
           alignItems={"flex-start"}
+          justifyContent="center"
           ml={4}
         >
           <DeviceName
@@ -130,30 +125,36 @@ const DeviceCard = ({
             initialDeviceName={initialDeviceName}
             disabled={pendingInstalls}
           />
-          <Flex flexDirection={"row"} alignItems={"center"} mt={2} mb={3}>
-            <Text
-              variant={"body"}
-              fontWeight={"medium"}
-              color={"palette.neutral.c80"}
-              numberOfLines={1}
-              mr={3}
-            >
-              <Trans i18nKey="DeviceItemSummary.genuine" />
-            </Text>
-            <CircledCheckMedium size={18} color={"palette.success.c80"} />
-          </Flex>
-          <VersionContainer backgroundColor={"neutral.c80"}>
+          <Flex
+            backgroundColor={"neutral.c30"}
+            py={1}
+            px={3}
+            borderRadius={4}
+            my={2}
+          >
             <Text
               variant={"subtitle"}
               fontWeight={"semiBold"}
-              color={"neutral.c20"}
+              color={"neutral.c80"}
             >
               <Trans
                 i18nKey="FirmwareVersionRow.subtitle"
                 values={{ version: deviceInfo.version }}
               />
             </Text>
-          </VersionContainer>
+          </Flex>
+          <Flex flexDirection={"row"} alignItems={"center"} mt={2} mb={3}>
+            <CircledCheckSolidMedium size={18} color={"palette.success.c80"} />
+            <Text
+              variant={"body"}
+              fontWeight={"medium"}
+              color={"palette.neutral.c80"}
+              numberOfLines={1}
+              ml={2}
+            >
+              <Trans i18nKey="DeviceItemSummary.genuine" />
+            </Text>
+          </Flex>
         </Flex>
       </Flex>
       {hasCustomImage || showDeviceLanguage ? (
