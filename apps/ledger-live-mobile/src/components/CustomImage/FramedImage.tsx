@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@ledgerhq/native-ui";
+import { Box, Flex } from "@ledgerhq/native-ui";
 // import { space } from "@ledgerhq/native-ui/styles/theme";
 import React, { ComponentProps, useContext } from "react";
 import { Image, ImageProps, StyleSheet } from "react-native";
@@ -19,17 +19,16 @@ type FrameConfig = {
   innerRight: number;
   innerTop: number;
   borderRightRadius: number;
-  backgroundSource: number;
+  /** source of the background image */
+  backgroundSource?: ComponentProps<typeof Image>["source"];
   resizeMode: ImageProps["resizeMode"];
 };
 
-type Props = Partial<ComponentProps<typeof Image>> & {
+export type Props = Partial<ComponentProps<typeof Image>> & {
   /** source of the image inside */
   source?: ComponentProps<typeof Image>["source"];
-  /** source of the background image */
-  backgroundSource?: ComponentProps<typeof Image>["source"];
-  /** text to display in the background placeholder */
-  backgroundPlaceholderText?: string;
+  /** item to put in the background */
+  background?: React.ReactNode | undefined;
   /** float between 0 and 1 */
   loadingProgress?: number;
   children?: React.ReactNode | undefined;
@@ -37,7 +36,7 @@ type Props = Partial<ComponentProps<typeof Image>> & {
   scale?: number;
 };
 
-export const transferConfig: FrameConfig = {
+export const transferConfigBase: FrameConfig = {
   frameHeight: 222,
   frameWidth: 141,
   innerHeight: 210,
@@ -45,8 +44,18 @@ export const transferConfig: FrameConfig = {
   innerRight: 8,
   innerTop: 6,
   borderRightRadius: 5,
-  backgroundSource: transferBackground,
   resizeMode: "cover",
+};
+
+export const transferConfig: FrameConfig = {
+  ...transferConfigBase,
+  backgroundSource: transferBackground,
+};
+
+export const transferLottieConfig: FrameConfig = {
+  ...transferConfigBase,
+  innerTop: 4.5,
+  backgroundSource: transferBackground,
 };
 
 export const previewConfig: FrameConfig = {
@@ -93,11 +102,11 @@ const AbsoluteInnerImageContainer = styled(Flex).attrs({
 
 const FramedImage: React.FC<Props> = ({
   source,
-  backgroundPlaceholderText,
   loadingProgress = 1,
   children,
   frameConfig = transferConfig,
   scale,
+  background,
   ...imageProps
 }) => {
   const {
@@ -115,16 +124,28 @@ const FramedImage: React.FC<Props> = ({
     <Container height={frameHeight} width={frameWidth}>
       <ForceTheme selectedPalette="light">
         <AbsoluteBackgroundContainer height={frameHeight} width={frameWidth}>
-          <Image
-            source={backgroundSource}
-            fadeDuration={0}
-            resizeMode="contain"
-            style={{
-              height: frameHeight,
-              width: frameWidth,
-            }}
-          />
+          {backgroundSource ? (
+            <Image
+              source={backgroundSource}
+              fadeDuration={0}
+              resizeMode="contain"
+              style={{
+                height: frameHeight,
+                width: frameWidth,
+              }}
+            />
+          ) : null}
         </AbsoluteBackgroundContainer>
+        {background ? (
+          <Flex
+            {...StyleSheet.absoluteFillObject}
+            height={frameHeight}
+            justifyContent="center"
+            width={frameWidth}
+          >
+            {background}
+          </Flex>
+        ) : null}
         <AbsoluteInnerImageContainer
           style={{
             right: innerRight,

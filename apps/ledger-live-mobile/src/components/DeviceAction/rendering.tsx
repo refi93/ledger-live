@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Platform, ScrollView } from "react-native";
+import { Platform, ScrollView, StyleSheet } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/native";
 import { LockedDeviceError, WrongDeviceForAccount } from "@ledgerhq/errors";
@@ -63,14 +63,15 @@ import { track } from "../../analytics";
 import CurrencyUnitValue from "../CurrencyUnitValue";
 import TermsFooter, { TermsProviders } from "../TermsFooter";
 import CurrencyIcon from "../CurrencyIcon";
-import Illustration from "../../images/illustration/Illustration";
 import {
   FramedImageWithContext,
   transferConfig,
 } from "../CustomImage/FramedImage";
-
-import notOnboardedDarkImg from "../../images/illustration/Dark/_010.png";
-import notOnboardedLightImg from "../../images/illustration/Light/_010.png";
+import FramedImageWithLottie, {
+  FramedImageWithLottieWithContext,
+} from "../CustomImage/FramedImageWithLottie";
+import confirmLockscreen from "../animations/nanoFTS/customimage/confirmLockscreen.json";
+import allowConnection from "../animations/nanoFTS/customimage/allowConnection.json";
 
 const Wrapper = styled(Flex).attrs({
   flex: 1,
@@ -1094,30 +1095,20 @@ export const AutoRepair = ({
 const ImageLoadingGeneric: React.FC<{
   title: string;
   children?: React.ReactNode | undefined;
-  top?: React.ReactNode | undefined;
-  bottom?: React.ReactNode | undefined;
   progress?: number;
-  backgroundPlaceholderText?: string;
-}> = ({
-  title,
-  top,
-  bottom,
-  children,
-  progress,
-  backgroundPlaceholderText,
-}) => {
+  lottieSource?: React.ComponentProps<
+    typeof FramedImageWithLottie
+  >["lottieSource"];
+}> = ({ title, children, progress, lottieSource }) => {
   return (
     <Flex
       flexDirection="column"
-      justifyContent="space-between"
+      justifyContent="center"
       alignItems="center"
       flex={1}
       alignSelf="stretch"
     >
-      <Flex flex={1} flexDirection="column" alignItems={"center"}>
-        {top}
-      </Flex>
-      <Flex flexDirection={"column"} alignItems="center" alignSelf="stretch">
+      <Flex {...StyleSheet.absoluteFillObject}>
         <Text
           textAlign="center"
           variant="h4"
@@ -1127,16 +1118,23 @@ const ImageLoadingGeneric: React.FC<{
         >
           {title}
         </Text>
-        <FramedImageWithContext
-          loadingProgress={progress}
-          backgroundPlaceholderText={backgroundPlaceholderText}
-          frameConfig={transferConfig}
-        >
-          {children}
-        </FramedImageWithContext>
       </Flex>
-      <Flex flex={1} flexDirection="column" alignItems={"center"}>
-        {bottom}
+      <Flex flexDirection={"column"} alignItems="center" alignSelf="stretch">
+        {lottieSource ? (
+          <FramedImageWithLottieWithContext
+            loadingProgress={progress}
+            lottieSource={lottieSource}
+          >
+            {children}
+          </FramedImageWithLottieWithContext>
+        ) : (
+          <FramedImageWithContext
+            loadingProgress={progress}
+            frameConfig={transferConfig}
+          >
+            {children}
+          </FramedImageWithContext>
+        )}
       </Flex>
     </Flex>
   );
@@ -1152,8 +1150,8 @@ export const renderImageLoadRequested = ({
         productName:
           device.deviceName || getDeviceModel(device.modelId)?.productName,
       })}
+      lottieSource={allowConnection}
       progress={0}
-      backgroundPlaceholderText="load requested illustration placeholder"
     />
   );
 };
@@ -1175,7 +1173,6 @@ export const renderLoadingImage = ({
         },
       )}
       progress={progress}
-      backgroundPlaceholderText="image loading illustration placeholder"
     />
   );
 };
@@ -1190,7 +1187,8 @@ export const renderImageCommitRequested = ({
         productName:
           device.deviceName || getDeviceModel(device.modelId)?.productName,
       })}
-      backgroundPlaceholderText="commit requested illustration placeholder"
+      lottieSource={confirmLockscreen}
+      progress={0.89}
     />
   );
 };
