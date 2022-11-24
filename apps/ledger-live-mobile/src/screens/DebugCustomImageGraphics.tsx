@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { LayoutChangeEvent, StyleSheet } from "react-native";
 import {
   Box,
   Button,
@@ -66,44 +66,62 @@ export default function DebugCustomImageGraphics() {
     onError: setError,
   });
 
+  const { t } = useTranslation();
+
+  const insets = useSafeAreaInsets();
+
+  const [paddingBottom, setPaddingBottom] = useState(0);
+  const onDebugMenuLayout = useCallback((layoutEvent: LayoutChangeEvent) => {
+    setPaddingBottom(layoutEvent.nativeEvent.layout.height);
+  }, []);
+
   const loader = croppedImage?.imageBase64DataUri ? null : (
     <Flex flex={1} justifyContent="center" alignItems="center">
       <InfiniteLoader />
     </Flex>
   );
 
-  const { t } = useTranslation();
-
-  const insets = useSafeAreaInsets();
+  const slider = (
+    <Slider
+      value={progress}
+      minimumValue={0}
+      maximumValue={1}
+      step={0.01}
+      onValueChange={val => typeof val === "number" && setProgress(val)}
+    />
+  );
 
   return (
     <ImageSourceContext.Provider
       value={{ source: { uri: croppedImage?.imageBase64DataUri } }}
     >
       {showAllAssets ? (
-        <NavigationScrollView>
+        <NavigationScrollView contentContainerStyle={{ paddingBottom }}>
           <Flex style={styles.root}>
-            <Text>allowConnection</Text>
+            <Text mb={3}>lottie: allowConnection</Text>
             <FramedImageWithLottieWithContext
               loadingProgress={0}
               lottieSource={allowConnection}
             />
             <Divider />
-            <Text>confirmLockscreen</Text>
+            <Text mb={3}>lottie: confirmLockscreen</Text>
             <FramedImageWithLottieWithContext
               loadingProgress={0.89}
               lottieSource={confirmLockscreen}
             />
             <Divider />
-            <Box>
-              <FramedImageWithContext
-                frameConfig={transferConfig}
-                style={{ backgroundColor: "red" }}
-              >
-                {loader}
-              </FramedImageWithContext>
-            </Box>
+            <Text>FramedImage component, transferConfig</Text>
+            <Text mb={3}>progress={Math.round(progress * 100) / 100}</Text>
+            <FramedImageWithContext
+              frameConfig={transferConfig}
+              style={{ backgroundColor: "red" }}
+              loadingProgress={progress}
+            >
+              {loader}
+            </FramedImageWithContext>
+            {slider}
             <Divider />
+            <Text mb={3}>FramedImage component, previewConfig</Text>
             <FramedImageWithContext frameConfig={previewConfig}>
               {loader}
             </FramedImageWithContext>
@@ -125,6 +143,7 @@ export default function DebugCustomImageGraphics() {
         right={0}
         style={{ paddingBottom: insets.bottom }}
         backgroundColor="neutral.c40"
+        onLayout={onDebugMenuLayout}
       >
         <Flex p={4}>
           <Switch
@@ -134,17 +153,7 @@ export default function DebugCustomImageGraphics() {
           />
           {showAllAssets ? null : (
             <Flex mt={3}>
-              {deviceActionStep === "loading" ? (
-                <Slider
-                  value={progress}
-                  minimumValue={0}
-                  maximumValue={1}
-                  step={0.005}
-                  onValueChange={val =>
-                    typeof val === "number" && setProgress(val)
-                  }
-                />
-              ) : null}
+              {deviceActionStep === "loading" ? slider : null}
               <Flex mt={3} flexDirection={"row"}>
                 {["confirmLoad", "loading", "confirmCommit"].map(val => (
                   <Button
