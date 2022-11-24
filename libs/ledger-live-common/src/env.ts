@@ -290,7 +290,7 @@ const envDefinitions = {
   DISABLE_FW_UPDATE_VERSION_CHECK: {
     def: false,
     parser: boolParser,
-    desc: "disable the version check for firmware update eligibility"
+    desc: "disable the version check for firmware update eligibility",
   },
   EIP1559_ENABLED_CURRENCIES: {
     def: "ethereum,ethereum_goerli,polygon",

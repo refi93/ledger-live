@@ -1,7 +1,7 @@
 import { DeviceModelId } from "@ledgerhq/devices";
 import { DeviceInfo } from "@ledgerhq/types-live";
 import { satisfies as versionSatisfies } from "semver";
-import { getEnv } from "../env"
+import { getEnv } from "../env";
 // Nb probably need to figure out a better way of handling semantic versioning for
 // release candidate version ranges other than explicitly listing them here.
 const deviceVersionRangesForUpdate: { [key in DeviceModelId]?: string } = {
@@ -13,8 +13,8 @@ const deviceVersionRangesForUpdate: { [key in DeviceModelId]?: string } = {
 };
 
 export default (deviceInfo: DeviceInfo, modelId: DeviceModelId): boolean =>
-  getEnv("DISABLE_FW_UPDATE_VERSION_CHECK") ||  
-    (Boolean(deviceVersionRangesForUpdate[modelId]) &&
+  getEnv("DISABLE_FW_UPDATE_VERSION_CHECK") ||
+  (Boolean(deviceVersionRangesForUpdate[modelId]) &&
     versionSatisfies(
       deviceInfo.version,
       deviceVersionRangesForUpdate[modelId] as string

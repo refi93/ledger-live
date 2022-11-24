@@ -1,6 +1,6 @@
 import { DeviceModelId } from "@ledgerhq/devices";
 import isFirmwareUpdateVersionSupported from "./isFirmwareUpdateVersionSupported";
-import { getEnv, setEnv } from "../env";
+import { setEnv } from "../env";
 
 const goodDataset: { [key in DeviceModelId]?: string[] } = {
   nanoS: ["2.0.0", "3.0.0"],
@@ -39,7 +39,10 @@ describe("Firmware update version availability checks", () => {
         const deviceInfo = getDeviceInfo(version);
         it(`testing ${version} for ${deviceModelId}`, () =>
           expect(
-            isFirmwareUpdateVersionSupported(deviceInfo, deviceModelId as DeviceModelId)
+            isFirmwareUpdateVersionSupported(
+              deviceInfo,
+              deviceModelId as DeviceModelId
+            )
           ).toBe(false));
       });
     });
@@ -55,7 +58,10 @@ describe("Firmware update version availability checks", () => {
         const deviceInfo = getDeviceInfo(version);
         it(`testing ${version} for ${deviceModelId}`, () =>
           expect(
-            isFirmwareUpdateVersionSupported(deviceInfo, deviceModelId as DeviceModelId)
+            isFirmwareUpdateVersionSupported(
+              deviceInfo,
+              deviceModelId as DeviceModelId
+            )
           ).toBe(true));
       });
     });
@@ -65,15 +71,18 @@ describe("Firmware update version availability checks", () => {
     beforeEach(() => {
       setEnv("DISABLE_FW_UPDATE_VERSION_CHECK", true);
     });
-    
+
     Object.keys(badDataset).forEach((deviceModelId) => {
       badDataset[deviceModelId].forEach((version) => {
         const deviceInfo = getDeviceInfo(version);
         it(`testing ${version} for ${deviceModelId}`, () =>
           expect(
-            isFirmwareUpdateVersionSupported(deviceInfo, deviceModelId as DeviceModelId)
+            isFirmwareUpdateVersionSupported(
+              deviceInfo,
+              deviceModelId as DeviceModelId
+            )
           ).toBe(true));
       });
     });
-  })
+  });
 });
