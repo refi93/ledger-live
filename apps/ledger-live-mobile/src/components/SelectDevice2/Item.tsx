@@ -53,8 +53,10 @@ const Item = ({ device, onPress }: Props) => {
         {deviceIcon}
 
         <Flex ml={5} flex={1}>
-          <Text color="neutral.c100">{device.deviceName}</Text>
-          <Text color={color}>
+          <Text color="neutral.c100" fontWeight="semiBold" fontSize="16px">
+            {device.deviceName}
+          </Text>
+          <Text color={color} fontSize="12px">
             <Trans i18nKey={`manager.selectDevice.item.${wording}`} />
           </Text>
         </Flex>
