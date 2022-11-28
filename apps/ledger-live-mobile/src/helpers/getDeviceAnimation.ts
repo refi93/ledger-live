@@ -45,6 +45,10 @@ const animations: Animations = {
       light: require("../animations/nanoS/7Validate/light.json"),
       dark: require("../animations/nanoS/7Validate/dark.json"),
     },
+    allowUpdate: {
+      light: require("../animations/nanoS/7Validate/light.json"),
+      dark: require("../animations/nanoS/7Validate/dark.json"),
+    },
   },
   nanoSP: {
     plugAndPinCode: {
@@ -75,6 +79,10 @@ const animations: Animations = {
       light: require("../animations/nanoSP/7Validate/light.json"),
       dark: require("../animations/nanoSP/7Validate/dark.json"),
     },
+    allowUpdate: {
+      light: require("../animations/nanoSP/7Validate/light.json"),
+      dark: require("../animations/nanoSP/7Validate/dark.json"),
+    },
   },
   blue: {
     plugAndPinCode: {
@@ -102,6 +110,10 @@ const animations: Animations = {
       dark: require("../animations/blue/7Validate/data.json"),
     },
     sign: {
+      light: require("../animations/blue/7Validate/data.json"),
+      dark: require("../animations/blue/7Validate/data.json"),
+    },
+    allowUpdate: {
       light: require("../animations/blue/7Validate/data.json"),
       dark: require("../animations/blue/7Validate/data.json"),
     },
@@ -136,6 +148,10 @@ const animations: Animations = {
         light: require("../animations/nanoX/wired/7Validate/light.json"),
         dark: require("../animations/nanoX/wired/7Validate/dark.json"),
       },
+      allowUpdate: {
+        light: require("../animations/nanoX/wired/7Validate/light.json"),
+        dark: require("../animations/nanoX/wired/7Validate/dark.json"),
+      },
     },
     bluetooth: {
       plugAndPinCode: {
@@ -163,6 +179,10 @@ const animations: Animations = {
         dark: require("../animations/nanoX/bluetooth/7Validate/dark.json"),
       },
       sign: {
+        light: require("../animations/nanoX/bluetooth/7Validate/light.json"),
+        dark: require("../animations/nanoX/bluetooth/7Validate/dark.json"),
+      },
+      allowUpdate: {
         light: require("../animations/nanoX/bluetooth/7Validate/light.json"),
         dark: require("../animations/nanoX/bluetooth/7Validate/dark.json"),
       },
@@ -206,6 +226,10 @@ const animations: Animations = {
         light: require("../animations/nanoFTS/signTransaction.json"),
         dark: require("../animations/nanoFTS/signTransaction.json"),
       },
+      allowUpdate: {
+        light: require("../animations/nanoFTS/allowConnection.json"),
+        dark: require("../animations/nanoFTS/allowConnection.json"),
+      },
     },
     bluetooth: {
       plugAndPinCode: {
@@ -235,6 +259,10 @@ const animations: Animations = {
       sign: {
         light: require("../animations/nanoFTS/signTransaction.json"),
         dark: require("../animations/nanoFTS/signTransaction.json"),
+      },
+      allowUpdate: {
+        light: require("../animations/nanoFTS/allowConnection.json"),
+        dark: require("../animations/nanoFTS/allowConnection.json"),
       },
       blePairing: {
         light: require("../animations/nanoFTS/pairingProgress.json"),
