@@ -12,6 +12,7 @@ import connectManager from "@ledgerhq/live-common/hw/connectManager";
 import { createAction, Result } from "@ledgerhq/live-common/hw/actions/manager";
 import { useFeature } from "@ledgerhq/live-common/featureFlags/index";
 import { Flex, Text } from "@ledgerhq/native-ui";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ScreenName } from "../../const";
 import SelectDevice2 from "../../components/SelectDevice2";
@@ -48,6 +49,8 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
 
   const navigation = useNavigation<NavigationProps["navigation"]>();
   const { params } = useRoute<NavigationProps["route"]>();
+
+  const insets = useSafeAreaInsets();
 
   const newDeviceSelectionFeatureFlag = useFeature("llmNewDeviceSelection");
 
@@ -91,7 +94,7 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
   if (!isFocused) return null;
 
   return (
-    <Flex flex={1} pb={100}>
+    <Flex flex={1} pb={insets.bottom + 100}>
       <TrackScreen category="Manager" name="ChooseDevice" />
       <Flex mt={100} px={16} mb={8}>
         <Text fontWeight="semiBold" variant="h4">
