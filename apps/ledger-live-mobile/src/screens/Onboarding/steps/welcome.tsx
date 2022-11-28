@@ -195,7 +195,7 @@ function OnboardingStepWelcome({ navigation }: NavigationProps) {
             variant="large"
             color="neutral.c80"
             textAlign="center"
-            pb={5}
+            pb={4}
             onPress={() => handleNavigateToFeatureFlagsSettings("1")}
             suppressHighlighting
           >
