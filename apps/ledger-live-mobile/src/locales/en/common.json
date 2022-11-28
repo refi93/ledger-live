@@ -1780,22 +1780,22 @@
     },
     "pairingStep": {
       "title": "{{productName}} is paired",
-      "description": "Continue setting up your {{productName}} and look back here for step by step assistance"
+      "description": "Continue setting up on {{productName}}. Look back here for step-by-step assistance."
     },
     "pinStep": {
-      "title": "Choose your PIN",
-      "description": "Your PIN prevents any unwanted access to your {{productName}}. Never share it",
-      "warning": "Anyone who knows your PIN and has access to your {{productName}} can steal your assets forever"
+      "title": "PIN",
+      "description": "Your PIN prevents unwanted access to your {{productName}}."
     },
     "seedStep": {
-      "title": "Set your recovery phrase",
+      "title": "Secret Recovery Phrase",
       "description": "Your recovery phrase is a secret list of 24 words that backs up your private keys. Your {{productName}} generates a unique recovery phrase. Ledger does not keep a copy of it"
     },
     "softwareChecksSteps": {
-      "title": "Operating system check",
+      "title": "Hardware and Software checks",
       "genuineCheckRequestDrawer": {
-        "title": "Let's make sure your {{productName}} is genuine",
-        "checkCta": "Check genuineness"
+        "iconText": "Genuine Check",
+        "title": "This check assures that your Ledger Stax is an official Ledger.",
+        "checkCta": "Start Genuine Check"
       },
       "allowManagerDrawer": {
         "wording": "Ledger Live"
@@ -1846,10 +1846,10 @@
       }
     },
     "appsStep": {
-      "title": "{{productName}} applications"
+      "title": "Install blockchain apps"
     },
     "readyStep": {
-      "title": "{{productName}} is ready"
+      "title": "End of setup"
     },
     "completion": {
       "title": "Now you are in control"

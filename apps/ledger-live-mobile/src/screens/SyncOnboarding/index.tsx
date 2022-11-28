@@ -387,11 +387,8 @@ export const SyncOnboarding = ({
           estimatedTime: 120,
           renderBody: () => (
             <Flex>
-              <Text variant="bodyLineHeight" mb={6}>
-                {t("syncOnboarding.pinStep.description", { productName })}
-              </Text>
               <Text variant="bodyLineHeight">
-                {t("syncOnboarding.pinStep.warning", { productName })}
+                {t("syncOnboarding.pinStep.description", { productName })}
               </Text>
             </Flex>
           ),
@@ -402,9 +399,6 @@ export const SyncOnboarding = ({
           estimatedTime: 300,
           renderBody: () => (
             <Flex pb={1}>
-              <Text variant="bodyLineHeight" mb={6}>
-                {t("syncOnboarding.seedStep.description", { productName })}
-              </Text>
               <Stories
                 instanceID={StorylyInstanceID.recoverySeed}
                 vertical
