@@ -169,4 +169,7 @@ export const defaultFeatures: DefaultFeatures = {
   walletNftGallery: {
     enabled: false,
   },
+  staxWelcomeScreen: {
+    enabled: true, // TODO: put this to false before merging in public repo & setup the flag on Firebase envs
+  },
 };

@@ -1121,8 +1121,8 @@
       "no": "Not yet"
     },
     "postWelcomeStep": {
-      "title": "It's your choice",
-      "subtitle_yes": "You can choose to set up your Ledger or take a look around the app first",
+      "title": "Let's get you started",
+      "subtitle_yes": "Set up your Ledger, or take a look around the app first.",
       "subtitle_no": "You can choose to take a look around the app first or buy a Nano X device",
       "noLedgerLink": "I don’t have a Ledger and I would like to buy one",
       "setupLedger": {
@@ -1733,8 +1733,7 @@
     "title": "Setup {{deviceName}}",
     "estimatedTimeFormat": "{{estimatedTime}} min",
     "deviceSelection": {
-      "title": "Which device do you own?",
-      "subtitle": "Choose which Ledger wallet you want to setup with Ledger Live",
+      "title": "Choose the Ledger you'd like to set up:",
       "brand": "Ledger",
       "setupTime": "{{time}} mins"
     },

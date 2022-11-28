@@ -36,6 +36,7 @@ export type FeatureId =
   | "receiveStakingFlowConfigDesktop"
   | "ethStakingProviders"
   | "storyly"
+  | "staxWelcomeScreen"
   | "firebaseEnvironmentReadOnly";
 
 /**  We use objects instead of direct booleans for potential future improvements

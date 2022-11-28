@@ -13,8 +13,8 @@ const Illustration = ({
   lightSource: ImageSourcePropType;
   darkSource: ImageSourcePropType;
   size?: number;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
 }) => {
   const { theme } = useTheme();
 
