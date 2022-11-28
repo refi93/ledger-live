@@ -221,7 +221,7 @@ export function renderVerifyAddress({
     <Wrapper>
       <AnimationContainer withVerifyAddressHeight={device.modelId !== "blue"}>
         <Animation
-          source={getDeviceAnimation({ device, key: "validate", theme })}
+          source={getDeviceAnimation({ device, key: "verify", theme })}
         />
       </AnimationContainer>
       <TitleText>{t("DeviceAction.verifyAddress.title")}</TitleText>
@@ -281,7 +281,7 @@ export function renderConfirmSwap({
           withVerifyAddressHeight={device.modelId !== "blue"}
         >
           <Animation
-            source={getDeviceAnimation({ device, key: "validate", theme })}
+            source={getDeviceAnimation({ device, key: "sign", theme })}
           />
         </AnimationContainer>
         <TitleText>{t("DeviceAction.confirmSwap.title")}</TitleText>
@@ -399,7 +399,7 @@ export function renderConfirmSell({
         marginTop="16px"
         withVerifyAddressHeight={device.modelId !== "blue"}
       >
-        <Animation source={getDeviceAnimation({ device, key: "validate" })} />
+        <Animation source={getDeviceAnimation({ device, key: "sign" })} />
       </AnimationContainer>
       <TitleText>{t("DeviceAction.confirmSell.title")}</TitleText>
     </Wrapper>
@@ -438,6 +438,7 @@ export function renderAllowLanguageInstallation({
   device: Device;
 }) {
   const deviceName = getDeviceModel(device.modelId).productName;
+  const key = device.modelId === "nanoFTS" ? "allowConnection" : "sign";
 
   return (
     <Wrapper>
@@ -445,9 +446,7 @@ export function renderAllowLanguageInstallation({
         {t("deviceLocalization.allowLanguageInstallation", { deviceName })}
       </Text>
       <AnimationContainer>
-        <Animation
-          source={getDeviceAnimation({ device, key: "validate", theme })}
-        />
+        <Animation source={getDeviceAnimation({ device, key, theme })} />
       </AnimationContainer>
     </Wrapper>
   );
@@ -927,7 +926,7 @@ export function renderSecureTransferDeviceConfirmation({
     <Wrapper>
       <AnimationContainer>
         <Animation
-          source={getDeviceAnimation({ device, key: "validate", theme })}
+          source={getDeviceAnimation({ device, key: "sign", theme })}
         />
       </AnimationContainer>
       <TitleText>{t(`DeviceAction.${exchangeTypeName}.title`)}</TitleText>

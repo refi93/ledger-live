@@ -10,7 +10,6 @@ import Animation from "../components/Animation";
 import { getDeviceAnimation } from "../helpers/getDeviceAnimation";
 import BottomModal from "../components/BottomModal";
 import Touchable from "../components/Touchable";
-import Alert from "../components/Alert";
 import Check from "../icons/Check";
 import { lottieAnimations } from "./Onboarding/shared/infoPagesData";
 
@@ -23,7 +22,8 @@ const DebugLottie = () => {
       "quitApp",
       "allowManager",
       "openApp",
-      "validate",
+      "verify",
+      "sign",
     ],
     [],
   );
@@ -96,11 +96,6 @@ const DebugLottie = () => {
         },
       ]}
     >
-      <Alert type="warning">
-        {
-          "This is a tool provided as-is for the team to validate lottie animations used in the app."
-        }
-      </Alert>
       <LText secondary semiBold style={styles.title}>
         {!key ? "Select Animation" : `Showing '${key}'`}
       </LText>
