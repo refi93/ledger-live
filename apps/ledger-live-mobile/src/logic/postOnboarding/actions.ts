@@ -28,9 +28,9 @@ export const customImageAction: PostOnboardingAction = {
 export const claimNftAction: PostOnboardingAction = {
   id: PostOnboardingActionId.claimNft,
   Icon: Icons.GiftCardMedium,
-  //featureFlagId: "claimNft",
   title: "postOnboarding.actions.claimNft.title",
   description: "postOnboarding.actions.claimNft.description",
+  tagLabel: "postOnboarding.actions.claimNft.tagLabel",
   actionCompletedPopupLabel: "postOnboarding.actions.claimNft.popupLabel",
   actionCompletedHubTitle:
     "postOnboarding.actions.claimNft.hubTitleAfterAction",

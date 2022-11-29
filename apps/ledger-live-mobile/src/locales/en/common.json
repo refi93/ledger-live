@@ -5537,7 +5537,7 @@
   },
   "claimNft": {
     "welcomePage": {
-      "title": "This is a placeholder to be replaced azerty azerty",
+      "title": "Placeholder title.",
       "description": {
         "title": "This is the title of the items list:",
         "1": "This is the first item on the list",
@@ -5548,10 +5548,9 @@
       "backButton": "I've already claimed my NFT"
     },
     "qrScan": {
-      "title": "Scan QR code this is a test test test",
+      "title": "Scan QR code (placeholder text)",
       "description": {
-        "1": "test test test test testtest test testtest test test test test test",
-        "2": "test test test test testtest test testtest test test test test test test test test test test testtest"
+        "1": "(placeholder text) You will find your exclusive pass in the box of your Ledger device.\n\nStart by positioning the QR code on the back of the Pass in the frame. Use a well lit area and a simple light background."
       }
     }
   },
@@ -5577,9 +5576,10 @@
         "hubTitleAfterAction": "That screen is looking neat"
       },
       "claimNft": {
-        "title": "Claim NFT NFT NFT",
-        "description": "Get your NFT Get your NFT Get your NFT",
-        "popupLabel": "",
+        "title": "Claim NFT (placeholder text)",
+        "description": "Get your free NFT (placeholder text)",
+        "tagLabel": "Free",
+        "popupLabel": "NFT claimed",
         "hubTitleAfterAction": "NFT claimed. Lorem ipsum"
       }
     }
