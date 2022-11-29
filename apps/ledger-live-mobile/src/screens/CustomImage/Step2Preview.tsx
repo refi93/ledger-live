@@ -206,7 +206,11 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
       >
         {processorPreviewImage?.imageBase64DataUri ? (
           <Image
-            style={{ width: 252, height: 406 }}
+            style={{
+              width: 252,
+              height: (targetDimensions.height / targetDimensions.width) * 252,
+            }}
+            resizeMode="contain"
             onError={handlePreviewImageError}
             fadeDuration={0}
             source={{ uri: processorPreviewImage.imageBase64DataUri }}
