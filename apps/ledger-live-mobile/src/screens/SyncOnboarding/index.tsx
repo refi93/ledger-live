@@ -54,6 +54,7 @@ type Step = {
   key: CompanionStepKey;
   status: StepStatus;
   title: string;
+  doneTitle?: string;
   estimatedTime?: number;
   renderBody?: (isDisplayed?: boolean) => ReactNode;
 };
@@ -384,6 +385,7 @@ export const SyncOnboarding = ({
         {
           key: CompanionStepKey.Pin,
           title: t("syncOnboarding.pinStep.title"),
+          doneTitle: t("syncOnboarding.pinStep.doneTitle"),
           estimatedTime: 120,
           renderBody: () => (
             <Flex>
@@ -396,6 +398,7 @@ export const SyncOnboarding = ({
         {
           key: CompanionStepKey.Seed,
           title: t("syncOnboarding.seedStep.title"),
+          doneTitle: t("syncOnboarding.seedStep.doneTitle"),
           estimatedTime: 300,
           renderBody: () => (
             <Flex pb={1}>
@@ -410,6 +413,9 @@ export const SyncOnboarding = ({
         {
           key: CompanionStepKey.SoftwareCheck,
           title: t("syncOnboarding.softwareChecksSteps.title"),
+          doneTitle: t("syncOnboarding.softwareChecksSteps.doneTitle", {
+            productName,
+          }),
           renderBody: (isDisplayed?: boolean) => (
             <SoftwareChecksStep
               device={device}
@@ -436,7 +442,8 @@ export const SyncOnboarding = ({
           : []),
         {
           key: CompanionStepKey.Ready,
-          title: t("syncOnboarding.readyStep.title", { productName }),
+          title: t("syncOnboarding.readyStep.title"),
+          doneTitle: t("syncOnboarding.readyStep.doneTitle", { productName }),
         },
       ].map(step => ({
         ...step,

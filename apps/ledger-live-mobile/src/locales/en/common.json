@@ -1784,27 +1784,30 @@
     },
     "pinStep": {
       "title": "PIN",
+      "doneTitle": "PIN set",
       "description": "Your PIN prevents unwanted access to your {{productName}}."
     },
     "seedStep": {
       "title": "Secret Recovery Phrase",
+      "doneTitle": "Secret Recovery Phrase confirmed",
       "description": "Your recovery phrase is a secret list of 24 words that backs up your private keys. Your {{productName}} generates a unique recovery phrase. Ledger does not keep a copy of it"
     },
     "softwareChecksSteps": {
       "title": "Hardware and Software checks",
+      "doneTitle": "{{productName}} is genuine and up to date",
       "genuineCheckRequestDrawer": {
         "iconText": "Genuine Check",
         "title": "This check assures that your Ledger Stax is an official Ledger.",
         "checkCta": "Start Genuine Check"
       },
       "allowManagerDrawer": {
-        "wording": "Ledger Live"
+        "wording": "Genuine Check"
       },
       "genuineCheckCancelledDrawer": {
-        "title": "Authenticity check was cancelled on your Nano",
-        "description": "This check is important to make sure your {{productName}} is safe to use",
-        "retryCta": "Run genuine check again",
-        "skipCta": "Maybe later"
+        "title": "Genuine Check canceled",
+        "description": "This check is important to make sure your {{productName}} is an official Ledger.",
+        "retryCta": "Run Genuine Check again",
+        "skipCta": "I'll do it later"
       },
       "updateAvailableDrawer": {
         "title": "New software found",
@@ -1816,28 +1819,25 @@
           "title": "Authenticity check"
         },
         "active": {
-          "title": "Checking {{productName}}"
+          "title": "Genuine Check in progress..."
         },
         "completed": {
-          "title": "Your {{productName}} is authentic"
+          "title": "{{productName}} is genuine"
         },
         "failed": {
-          "title": "Device security not checked"
+          "title": "Genuine Check skipped"
         }
       },
       "firmwareUpdateStep": {
-        "inactive": {
-          "title": "Software check"
-        },
         "active": {
-          "title": "Checking software version"
+          "title": "Check for OS update"
         },
         "completed": {
           "updateAvailable": {
             "title": "Software version {{firmwareVersion}} available"
           },
           "noUpdateAvailable": {
-            "title": "Software version up-to-date"
+            "title": "{{productName}} is up to date"
           }
         },
         "failed": {
@@ -1849,7 +1849,8 @@
       "title": "Install blockchain apps"
     },
     "readyStep": {
-      "title": "End of setup"
+      "title": "End of setup",
+      "doneTitle": "{{productName}} is ready"
     },
     "completion": {
       "title": "Now you are in control"
@@ -3527,7 +3528,7 @@
     "stayInTheAppPlz": "Stay in the Ledger Live app and keep your Ledger nearby.",
     "allowAppPermission": "Open the {{wording}} app on your device",
     "allowAppPermissionSubtitleToken": "to manage your {{token}} tokens",
-    "allowManagerPermission": "Allow {{wording}} on your device",
+    "allowManagerPermission": "Allow {{wording}} on your {{productName}}",
     "loading": "Loading...",
     "turnOnAndUnlockDevice": "Turn on and unlock your device",
     "connectAndUnlockDevice": "Connect and unlock your device",

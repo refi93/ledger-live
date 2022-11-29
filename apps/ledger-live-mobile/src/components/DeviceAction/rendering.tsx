@@ -418,15 +418,20 @@ export function renderAllowManager({
 }) {
   // TODO: disable gesture, modal close, hide header buttons
   return (
-    <Wrapper>
+    <Wrapper pb={6} pt={6}>
+      <Flex>
+        <Text fontWeight="semiBold" fontSize={24} textAlign="center" mb={10}>
+          {t("DeviceAction.allowManagerPermission", {
+            wording,
+            productName: getDeviceModel(device.modelId)?.productName,
+          })}
+        </Text>
+      </Flex>
       <AnimationContainer>
         <Animation
           source={getDeviceAnimation({ device, key: "allowManager", theme })}
         />
       </AnimationContainer>
-      <CenteredText>
-        {t("DeviceAction.allowManagerPermission", { wording })}
-      </CenteredText>
     </Wrapper>
   );
 }
