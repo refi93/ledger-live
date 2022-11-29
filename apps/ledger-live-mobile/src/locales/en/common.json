@@ -1105,7 +1105,7 @@
   "onboarding": {
     "stepWelcome": {
       "title": "Welcome to Ledger",
-      "subtitle": "We make digital ownership secure and simple.",
+      "subtitle": "We make digital ownership secure and simple",
       "start": "Get started",
       "noDevice": "No device?",
       "buy": "Buy a {{fullDeviceName}}",
