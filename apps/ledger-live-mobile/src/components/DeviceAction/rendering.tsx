@@ -70,6 +70,7 @@ import {
 import FramedImageWithLottie, {
   FramedImageWithLottieWithContext,
 } from "../CustomImage/FramedImageWithLottie";
+
 const confirmLockscreen = require("../animations/nanoFTS/customimage/confirmLockscreen.json"); // eslint-disable-line @typescript-eslint/no-var-requires, import/no-unresolved
 const allowConnection = require("../animations/nanoFTS/customimage/allowConnection.json"); // eslint-disable-line @typescript-eslint/no-var-requires, import/no-unresolved
 
