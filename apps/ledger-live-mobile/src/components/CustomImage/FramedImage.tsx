@@ -3,7 +3,6 @@ import { Box, Flex } from "@ledgerhq/native-ui";
 import React, { ComponentProps, useContext } from "react";
 import { Image, ImageProps, StyleSheet } from "react-native";
 import styled from "styled-components/native";
-// import { targetDimensions } from "../../screens/CustomImage/shared";
 import ForceTheme from "../theme/ForceTheme";
 // import { scaleDimensions } from "./imageUtils";
 import transferBackground from "./assets/transferBackground.png";
@@ -59,13 +58,13 @@ export const transferLottieConfig: FrameConfig = {
 };
 
 export const previewConfig: FrameConfig = {
-  frameHeight: 321.36,
-  frameWidth: 204,
-  innerWidth: 185,
-  innerHeight: 303,
-  innerRight: 8.2,
-  innerTop: 8.7,
-  borderRightRadius: 15.6,
+  frameHeight: 320.62,
+  frameWidth: 202.5,
+  innerWidth: 180,
+  innerHeight: 302.4,
+  innerRight: 8.96,
+  innerTop: 9.2,
+  borderRightRadius: 14.4,
   backgroundSource: previewBackground,
   resizeMode: "cover",
 };
