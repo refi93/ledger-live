@@ -29,6 +29,19 @@ export interface DeviceModel {
 }
 
 /**
+ * Series of flags to represent the health status of the Ledger hardware wallet battery.
+ */
+export interface BatteryStatusFlags {
+  isCharging: boolean;
+  isUsbOn: boolean;
+  isBleOn: boolean;
+  isUsbPowered: boolean;
+  hasChargingIssue: boolean;
+  hasTemperatureIssue: boolean;
+  hasBatteryIssue: boolean;
+}
+
+/**
  *
  */
 export interface BluetoothInfos {
