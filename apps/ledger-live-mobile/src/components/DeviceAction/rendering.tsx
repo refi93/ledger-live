@@ -70,8 +70,8 @@ import {
 import FramedImageWithLottie, {
   FramedImageWithLottieWithContext,
 } from "../CustomImage/FramedImageWithLottie";
-import confirmLockscreen from "../animations/nanoFTS/customimage/confirmLockscreen.json";
-import allowConnection from "../animations/nanoFTS/customimage/allowConnection.json";
+const confirmLockscreen = require("../animations/nanoFTS/customimage/confirmLockscreen.json"); // eslint-disable-line @typescript-eslint/no-var-requires, import/no-unresolved
+const allowConnection = require("../animations/nanoFTS/customimage/allowConnection.json"); // eslint-disable-line @typescript-eslint/no-var-requires, import/no-unresolved
 
 const Wrapper = styled(Flex).attrs({
   flex: 1,

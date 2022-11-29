@@ -26,28 +26,24 @@ import ChoiceCard from "./ChoiceCard";
 
 const nanoX = {
   SvgDevice: nanoXSvg,
-  source: require("../../../../assets/images/devices/NanoX.png"),
   source: require("../../../../assets/images/devices/NanoXCropped.png"),
   id: DeviceModelId.nanoX,
   setupTime: 600000,
 };
 const nanoS = {
   SvgDevice: nanoSSvg,
-  source: require("../../../../assets/images/devices/NanoS.png"),
   source: require("../../../../assets/images/devices/NanoSCropped.png"),
   id: DeviceModelId.nanoS,
   setupTime: 600000,
 };
 const nanoSP = {
   SvgDevice: nanoSPSvg,
-  source: require("../../../../assets/images/devices/NanoSP.png"),
   source: require("../../../../assets/images/devices/NanoSPCropped.png"),
   id: DeviceModelId.nanoSP,
   setupTime: 600000,
 };
 const nanoFTS = {
   SvgDevice: nanoXSvg,
-  source: require("../../../../assets/images/devices/Stax.png"),
   source: require("../../../../assets/images/devices/StaxCropped.png"),
   id: DeviceModelId.nanoFTS,
   setupTime: 300000,
