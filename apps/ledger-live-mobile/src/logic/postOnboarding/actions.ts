@@ -7,7 +7,7 @@ import { NavigatorName, ScreenName } from "../../const";
 
 export const customImageAction: PostOnboardingAction = {
   id: PostOnboardingActionId.customImage,
-  Icon: Icons.BracketsMedium,
+  Icon: Icons.PhotographMedium,
   featureFlagId: "customImage",
   title: "postOnboarding.actions.customImage.title",
   titleCompleted: "postOnboarding.actions.customImage.titleCompleted",
