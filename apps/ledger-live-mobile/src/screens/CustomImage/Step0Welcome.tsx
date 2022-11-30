@@ -7,6 +7,7 @@ import CustomImageBottomModal from "../../components/CustomImage/CustomImageBott
 import BottomButtonsContainer from "../../components/CustomImage/BottomButtonsContainer";
 import { ScreenName } from "../../const";
 import { CustomImageNavigatorParamList } from "../../components/RootNavigator/types/CustomImageNavigator";
+import { Dimensions, Image, useWindowDimensions } from "react-native";
 
 const Step0Welcome: React.FC<
   StackScreenProps<
@@ -29,25 +30,28 @@ const Step0Welcome: React.FC<
     setModalOpened(false);
   }, [setModalOpened]);
 
+  const { width } = useWindowDimensions();
+
   return (
     <SafeAreaView style={{ flex: 1 }} edges={["bottom"]}>
       <Flex flex={1}>
-        <Flex
-          backgroundColor="neutral.c40"
-          alignItems="center"
-          justifyContent="center"
-          height={250}
-          width="100%"
-        >
-          <Text>illustration placeholder</Text>
-        </Flex>
+        <Image
+          source={require("./assets/welcome.png")}
+          resizeMode="contain"
+          style={{ width, height: (256 / 375) * width }} // (image height / image width) * screen width
+        />
         <Flex flex={1} px={7}>
-          <Text variant="h4" fontWeight="semiBold" mt={7} textAlign="center">
+          <Text variant="h4" fontWeight="semiBold" mt={8} textAlign="center">
             {t("customImage.landingPage.title")}
           </Text>
         </Flex>
         <BottomButtonsContainer>
-          <Button size="large" type="main" onPress={openModal}>
+          <Button
+            alignSelf="stretch"
+            size="large"
+            type="main"
+            onPress={openModal}
+          >
             {t("customImage.landingPage.choosePicture")}
           </Button>
         </BottomButtonsContainer>

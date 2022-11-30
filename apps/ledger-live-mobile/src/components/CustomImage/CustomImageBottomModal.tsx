@@ -58,9 +58,6 @@ const CustomImageBottomModal: React.FC<Props> = props => {
 
   return (
     <BottomModal isOpened={isOpened} onClose={onClose}>
-      <Text variant="h4" fontWeight="semiBold" pb={5}>
-        {t("customImage.drawer.title")}
-      </Text>
       {isLoading ? (
         <Flex m={10}>
           <InfiniteLoader />
@@ -70,13 +67,14 @@ const CustomImageBottomModal: React.FC<Props> = props => {
           <ModalChoice
             onPress={handleUploadFromPhone}
             title={t("customImage.drawer.options.uploadFromPhone")}
-            iconName={"ArrowFromBottom"}
+            iconName={"Upload"}
             event=""
           />
+          <Flex mt={6} />
           <ModalChoice
             onPress={handleSelectFromNFTGallery}
             title={t("customImage.drawer.options.selectFromNFTGallery")}
-            iconName={"Brackets"}
+            iconName={"Ticket"}
             event=""
           />
         </>
