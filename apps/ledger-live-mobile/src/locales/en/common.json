@@ -5469,7 +5469,6 @@
     "title": "Lock screen picture",
     "replace": "Replace",
     "drawer": {
-      "title": "Choose an image to set as your Stax lockscreen",
       "options": {
         "uploadFromPhone": "Choose from my picture gallery",
         "selectFromNFTGallery": "Choose from NFT gallery"
