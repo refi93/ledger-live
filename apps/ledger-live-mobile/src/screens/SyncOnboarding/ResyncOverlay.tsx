@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Flex, InfiniteLoader, Text } from "@ledgerhq/native-ui";
+import { Flex, Icons, InfiniteLoader, Text } from "@ledgerhq/native-ui";
 import { useTheme } from "styled-components/native";
 import { useTranslation } from "react-i18next";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
@@ -92,24 +92,25 @@ const ResyncOverlay = ({ isOpen, delay = 0, productName }: Props) => {
       <Flex position="absolute" width="100%" bottom={0} padding={4}>
         <Flex
           width="100%"
-          backgroundColor="warning.c100"
+          backgroundColor="neutral.c100"
           borderRadius={radii[2]}
           p={6}
           flexDirection="row"
-          flexWrap="wrap"
-          justifyContent="space-between"
+          alignItems="center"
+          rowGap={4}
         >
-          <Text variant="body" textBreakStrategy="balanced" flexBasis="90%">
+          <Flex mr={4}>
+            <Icons.WarningSolidMedium color="warning.c80" size={20} />
+          </Flex>
+          <Text
+            variant="body"
+            flex={1}
+            textBreakStrategy="balanced"
+            color="neutral.c00"
+          >
             {t("syncOnboarding.resyncOverlay.content", { productName })}
           </Text>
-          <Flex
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="center"
-            flexBasis="10%"
-          >
-            <InfiniteLoader color="black" size={24} />
-          </Flex>
+          <InfiniteLoader color="neutral.c00" size={24} />
         </Flex>
       </Flex>
     </Flex>

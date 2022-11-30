@@ -1764,13 +1764,13 @@
       "cancelCta": "Cancel"
     },
     "desyncDrawer": {
-      "title": "We could not connect to your {{productName}}",
-      "description": "Please make sure your {{productName}} is nearby and unlocked. Check to see if Bluetooth is enabled on your mobile phone",
-      "retryCta": "Try again",
+      "title": "Couldn't connect to {{productName}}",
+      "description": "Make sure your mobile phone is close to your {{productName}} and try connecting again.",
+      "retryCta": "Try connecting again",
       "helpCta": "Get help"
     },
     "resyncOverlay": {
-      "content": "It looks like your connection to your {{productName}} was lost. Reconnecting"
+      "content": "Connection with {{productName}} lost. Trying to reconnect..."
     },
     "helpDrawer": {
       "title": "Need some help with your setup manual?",
