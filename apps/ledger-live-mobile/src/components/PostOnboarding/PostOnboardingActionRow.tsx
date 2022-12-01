@@ -28,6 +28,7 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
     startEvent,
     startEventProperties,
     completed,
+    disabled,
   } = props;
   const { t } = useTranslation();
   const navigation =
@@ -45,7 +46,10 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
   }, [navigationParams, navigation, startEvent, startEventProperties]);
 
   return (
-    <Touchable onPress={completed ? undefined : handlePress}>
+    <Touchable
+      disabled={disabled}
+      onPress={completed ? undefined : handlePress}
+    >
       <Flex
         flexDirection="row"
         alignItems="center"
@@ -83,11 +87,6 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
           flexGrow={1}
           pl={6}
         >
-          {tagLabel ? (
-            <Tag mr={6} size="medium" type="color" uppercase={false}>
-              {tagLabel}
-            </Tag>
-          ) : null}
           {completed ? (
             <Icons.CheckAloneMedium color="success.c100" size={20} />
           ) : (
