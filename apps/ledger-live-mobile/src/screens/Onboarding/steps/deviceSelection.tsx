@@ -123,7 +123,7 @@ function OnboardingStepDeviceSelection() {
     <DeviceSetupView hasBackButton>
       <ScrollListContainer flex={1} mx={6}>
         <TrackScreen category="Onboarding" name="SelectDevice" />
-        <Text variant="h4" mb={3} fontWeight="semiBold">
+        <Text variant="h4" mb={7} fontWeight="semiBold">
           {t("syncOnboarding.deviceSelection.title")}
         </Text>
         {devices.map(device => (

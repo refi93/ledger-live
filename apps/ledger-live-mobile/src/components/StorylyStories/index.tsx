@@ -61,7 +61,7 @@ const AnimatedStoryGroupWrapper = Animated.createAnimatedComponent<
 >(
   styled(Flex).attrs<StoryGroupItemWrapperProps>(p => ({
     mr: p.isLast || p.vertical ? 0 : 5,
-    mb: p.isLast || !p.vertical ? 0 : 7,
+    mb: p.isLast || !p.vertical ? 0 : 16,
   }))``,
 );
 

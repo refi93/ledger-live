@@ -3701,9 +3701,9 @@
       "addNewCTA": "Add new",
       "otgBanner": "To use Ledger Nano S or Ledger Nano S Plus, connect with the USB cable.",
       "connectExistingLedger": "Connect an existing Ledger",
-      "connectExistingLedgerDescription": "Already have a Ledger that is set up? Pair it with bluetooth",
+      "connectExistingLedgerDescription": "If your Ledger is already set up",
       "setUpNewLedger": "Set up a new Ledger",
-      "setUpNewLedgerDescription": "Bought a new Ledger? Click here to set it up",
+      "setUpNewLedgerDescription": "If your Ledger is not set up yet",
       "buyDeviceCTA": "<0>Need a new Ledger? </0><1>Buy now</1>",
       "item": {
         "usb": "Connected with USB",

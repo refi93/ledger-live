@@ -266,7 +266,7 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
               py={7}
               borderRadius={8}
             >
-              <Flex flexDirection="row">
+              <Flex flexDirection="row" justifyContent="space-between">
                 <Flex flexShrink={1}>
                   <Text variant="large" fontWeight="semiBold" mb={3}>
                     {t("manager.selectDevice.setUpNewLedger")}
@@ -278,7 +278,7 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
                 <Flex justifyContent="center" alignItems="center" ml={5} mr={2}>
                   <Flex
                     borderRadius="9999px"
-                    backgroundColor="primary.c20"
+                    backgroundColor="neutral.c40"
                     p={4}
                   >
                     <Icons.PlusMedium color="primary.c80" size={24} />
@@ -289,7 +289,7 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
           </Touchable>
           <Touchable onPress={onPairDevices}>
             <Flex backgroundColor="neutral.c30" px={6} py={7} borderRadius={8}>
-              <Flex flexDirection="row">
+              <Flex flexDirection="row" justifyContent="space-between">
                 <Flex flexShrink={1}>
                   <Text variant="large" fontWeight="semiBold" mb={3}>
                     {t("manager.selectDevice.connectExistingLedger")}
@@ -301,7 +301,7 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
                 <Flex justifyContent="center" alignItems="center" ml={5} mr={2}>
                   <Flex
                     borderRadius="9999px"
-                    backgroundColor="primary.c20"
+                    backgroundColor="neutral.c40"
                     p={4}
                   >
                     <Icons.BluetoothMedium color="primary.c80" size={24} />
