@@ -62,7 +62,6 @@ import {
 } from "@ledgerhq/live-common/platform/react";
 import trackingWrapper from "@ledgerhq/live-common/platform/tracking";
 import { useTheme } from "styled-components/native";
-import { CryptoCurrency } from "@ledgerhq/types-cryptoassets";
 import { TypedMessageData } from "@ledgerhq/live-common/families/ethereum/types";
 import BigNumber from "bignumber.js";
 import { NavigatorName, ScreenName } from "../../const";
@@ -186,7 +185,7 @@ const WebPlatformPlayer = ({ manifest, inputs }: Props) => {
         const cryptoCurrencyIds =
           currencyIds && currencyIds.length > 0
             ? currencyIds
-            : allCurrencies.map(currency => (currency as CryptoCurrency).id);
+            : allCurrencies.map(currency => currency.id);
 
         const foundAccounts = cryptoCurrencyIds?.length
           ? accounts.filter(a =>

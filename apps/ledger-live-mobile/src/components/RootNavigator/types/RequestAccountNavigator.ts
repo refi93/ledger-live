@@ -1,6 +1,5 @@
 import type {
   CryptoOrTokenCurrency,
-  Currency,
   TokenCurrency,
 } from "@ledgerhq/types-cryptoassets";
 
@@ -11,14 +10,14 @@ import { AddAccountsNavigatorParamList } from "./AddAccountsNavigator";
 
 export type RequestAccountNavigatorParamList = {
   [ScreenName.RequestAccountsSelectCrypto]: {
-    currencies: Currency[];
+    currencies: CryptoOrTokenCurrency[];
     allowAddAccount?: boolean;
     onSuccess?: (account: AccountLike, parentAccount?: Account) => void;
     onError?: (_: Error) => void;
   };
   [ScreenName.RequestAccountsSelectAccount]: {
-    currencies: Currency[];
-    currency: Currency;
+    currencies: CryptoOrTokenCurrency[];
+    currency: CryptoOrTokenCurrency;
     allowAddAccount?: boolean;
     onSuccess?: (account: AccountLike, parentAccount?: Account) => void;
     onError?: (_: Error) => void;

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 import counterValueFormatter from "@ledgerhq/live-common/market/utils/countervalueFormatter";
-import { CryptoCurrency } from "@ledgerhq/types-cryptoassets";
+import { TokenCurrency, CryptoCurrency } from "@ledgerhq/types-cryptoassets";
 import { SingleCoinProviderData } from "@ledgerhq/live-common/market/MarketDataProvider";
 import { withDiscreetMode } from "../../context/DiscreetModeContext";
 import { ScreenName } from "../../const";
@@ -13,7 +13,7 @@ import DeltaVariation from "../Market/DeltaVariation";
 import Touchable from "../../components/Touchable";
 
 type Props = {
-  currency: CryptoCurrency;
+  currency: TokenCurrency | CryptoCurrency;
   selectedCoinData: SingleCoinProviderData["selectedCoinData"];
   counterCurrency: string | undefined;
 };

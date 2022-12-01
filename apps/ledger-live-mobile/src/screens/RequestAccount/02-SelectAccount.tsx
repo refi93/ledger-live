@@ -10,10 +10,7 @@ import { Trans } from "react-i18next";
 import type { Account, AccountLike, SubAccount } from "@ledgerhq/types-live";
 import { useSelector } from "react-redux";
 import { CompositeScreenProps, useTheme } from "@react-navigation/native";
-import {
-  CryptoCurrency,
-  CryptoOrTokenCurrency,
-} from "@ledgerhq/types-cryptoassets";
+import { CryptoOrTokenCurrency } from "@ledgerhq/types-cryptoassets";
 import { accountsByCryptoCurrencyScreenSelector } from "../../reducers/accounts";
 import { TrackScreen } from "../../analytics";
 import LText from "../../components/LText";
@@ -106,7 +103,7 @@ function SelectAccount({ navigation, route }: Props) {
   const { colors } = useTheme();
   const { currency, allowAddAccount, onSuccess, onError } = route.params;
   const accounts = useSelector(
-    accountsByCryptoCurrencyScreenSelector(currency as CryptoCurrency),
+    accountsByCryptoCurrencyScreenSelector(currency),
   ) as { account: AccountLike; subAccount: SubAccount | null }[];
   const onSelect = useCallback(
     (account: AccountLike, parentAccount?: Account) => {
