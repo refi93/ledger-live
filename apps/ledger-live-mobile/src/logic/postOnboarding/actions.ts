@@ -30,6 +30,7 @@ export const claimNftAction: PostOnboardingAction = {
   disabled: true,
   Icon: Icons.GiftCardMedium,
   title: "postOnboarding.actions.claimNft.title",
+  titleCompleted: "postOnboarding.actions.claimNft.titleCompleted",
   description: "postOnboarding.actions.claimNft.description",
   tagLabel: "postOnboarding.actions.claimNft.tagLabel",
   actionCompletedPopupLabel: "postOnboarding.actions.claimNft.popupLabel",
@@ -42,6 +43,7 @@ export const assetsTransferAction: PostOnboardingAction = {
   disabled: true,
   Icon: Icons.LockClosedMedium,
   title: "postOnboarding.actions.assetsTransfer.title",
+  titleCompleted: "postOnboarding.actions.assetsTransfer.titleCompleted",
   description: "postOnboarding.actions.assetsTransfer.description",
   actionCompletedPopupLabel: "postOnboarding.actions.assetsTransfer.popupLabel",
   actionCompletedHubTitle:
