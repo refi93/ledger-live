@@ -5092,7 +5092,7 @@
   },
   "ValidateOnDevice": {
     "title": {
-      "send": "Please confirm the operation on your {{productName}} to send it",
+      "send": "Please confirm transaction on your {{productName}}",
       "freeze": "On your device, please confirm to finalize the operation",
       "unfreeze": "On your device, please confirm to finalize the operation",
       "claimReward": "On your device, please confirm to finalize the operation",
@@ -5101,7 +5101,7 @@
       "redelegate": "On your device, please confirm to finalize the operation",
       "undelegate": "On your device, please confirm to finalize the operation"
     },
-    "warning": "Always verify the address displayed your device exactly matches the one given to you by the {{recipientWording}}",
+    "warning": "Make sure the address displayed on your Ledger matches the {{recipientWording}}'s address",
     "recipientWording": {
       "send": "Always verify the address displayed your device exactly matches the one given to you by the recipient",
       "delegate": "Always verify that your device displays the address exactly as provided by the validator",
