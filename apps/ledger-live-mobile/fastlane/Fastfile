@@ -303,22 +303,21 @@ platform :ios do
       end
 
     elsif (options[:testflight_no_submission])
-      begin
-        pilot(
-          skip_submission: true,
-          distribute_external: false,
-          app_identifier: "com.ledger.live",
-          skip_waiting_for_build_processing: true,
-          # wait_processing_timeout_duration: 1800, # 30mn
-          notify_external_testers: false,
-          ipa: IPA_DIRECTORY,
-          changelog: "Custom Build v#{package['version']} (#{build_number})",
-          beta_app_review_info: {
-            contact_email: "team-live@ledger.fr",
-            contact_first_name: "Ledger Live",
-            notes: "Custom build"
-          }
-        )
+      pilot(
+        skip_submission: true,
+        distribute_external: false,
+        app_identifier: "com.ledger.live",
+        skip_waiting_for_build_processing: true,
+        # wait_processing_timeout_duration: 1800, # 30mn
+        notify_external_testers: false,
+        ipa: IPA_DIRECTORY,
+        changelog: "Custom Build v#{package['version']} (#{build_number})",
+        beta_app_review_info: {
+          contact_email: "team-live@ledger.fr",
+          contact_first_name: "Ledger Live",
+          notes: "Custom build"
+        }
+      )
     else
       pilot(
         skip_submission: true,
