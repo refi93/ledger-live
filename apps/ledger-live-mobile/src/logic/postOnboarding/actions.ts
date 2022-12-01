@@ -36,3 +36,14 @@ export const claimNftAction: PostOnboardingAction = {
   actionCompletedHubTitle:
     "postOnboarding.actions.claimNft.hubTitleAfterAction",
 };
+
+export const assetsTransferAction: PostOnboardingAction = {
+  id: PostOnboardingActionId.assetsTransfer,
+  disabled: true,
+  Icon: Icons.LockClosedMedium,
+  title: "postOnboarding.actions.assetsTransfer.title",
+  description: "postOnboarding.actions.assetsTransfer.description",
+  actionCompletedPopupLabel: "postOnboarding.actions.assetsTransfer.popupLabel",
+  actionCompletedHubTitle:
+    "postOnboarding.actions.assetsTransfer.hubTitleAfterAction",
+};

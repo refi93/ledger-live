@@ -10,6 +10,7 @@ export enum PostOnboardingActionId {
   personalizeMock = "personalizeMock",
   customImage = "customImage",
   claimNft = "claimNft",
+  assetsTransfer = "assetsTransfer",
 }
 
 export type WithNavigationParams = {

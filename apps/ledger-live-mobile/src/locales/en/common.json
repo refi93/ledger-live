@@ -5510,9 +5510,9 @@
       "done": "You've just secured your future"
     },
     "entryPointCard": {
-      "title": "There’s more to do with your {{productName}}",
-      "description": "From security tips to third party dApps, learn more about the power of your Ledger.",
-      "buttonLabel": "View actions"
+      "title": "What's next for your {{productName}}?",
+      "description": "Claim the Infinity NFT, customize its lock screen, or transfer your assets from other exchanges.",
+      "buttonLabel": "See what's next"
     },
     "actions": {
       "customImage": {
