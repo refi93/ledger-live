@@ -28,6 +28,7 @@ import {
 import { ManagerNavigatorStackParamList } from "../../components/RootNavigator/types/ManagerNavigator";
 import BuyDeviceCTA from "../../components/BuyDeviceCTA";
 import { TAB_BAR_SAFE_HEIGHT } from "../../components/TabBar/shared";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const action = createAction(connectManager);
 
@@ -91,40 +92,15 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
 
   if (!isFocused) return null;
 
+  const insets = useSafeAreaInsets();
+
   return (
-    <Flex flex={1} pb={TAB_BAR_SAFE_HEIGHT}>
+    <Flex flex={1} pb={insets.bottom + TAB_BAR_SAFE_HEIGHT}>
       <TrackScreen category="Manager" name="ChooseDevice" />
       <Flex mt={100} px={16} mb={8}>
         <Text fontWeight="semiBold" variant="h4">
           <Trans i18nKey="manager.title" />
         </Text>
-        {newDeviceSelectionFeatureFlag?.enabled ? (
-          <SelectDevice2 onSelect={onSelectDevice} stopBleScanning={!!device} />
-        ) : (
-          <>
-            <SelectDevice
-              usbOnly={params?.firmwareUpdate}
-              autoSelectOnAdd
-              onSelect={onSelectDevice}
-              onBluetoothDeviceAction={onShowMenu}
-            />
-            {chosenDevice ? (
-              <RemoveDeviceMenu
-                open={showMenu}
-                device={chosenDevice as Device}
-                onHideMenu={onHideMenu}
-              />
-            ) : null}
-          </>
-        )}
-        <DeviceActionModal
-          onClose={() => onSelectDevice()}
-          device={device}
-          onResult={onSelect}
-          onModalHide={onModalHide}
-          action={action}
-          request={null}
-        />
       </Flex>
       <NavigationScrollView
         style={[styles.root]}
@@ -132,7 +108,10 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
       >
         <Flex>
           {newDeviceSelectionFeatureFlag?.enabled ? (
-            <SelectDevice2 onSelect={onSelectDevice} />
+            <SelectDevice2
+              onSelect={onSelectDevice}
+              stopBleScanning={!!device}
+            />
           ) : (
             <>
               <SelectDevice
