@@ -55,13 +55,20 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
         <Flex flexDirection="row" alignItems="center" flexShrink={1}>
           <Icon size={24} color={completed ? "neutral.c70" : "primary.c80"} />
           <Flex ml={6} flexDirection="column" justifyContent="center" flex={1}>
-            <Text
-              variant="largeLineHeight"
-              fontWeight="medium"
-              color={completed ? "neutral.c70" : "neutral.c100"}
-            >
-              {t(completed ? titleCompleted : title)}
-            </Text>
+            <Flex flexDirection="row" alignItems="center">
+              <Text
+                variant="largeLineHeight"
+                fontWeight="medium"
+                color={completed ? "neutral.c70" : "neutral.c100"}
+              >
+                {t(completed ? titleCompleted : title)}
+              </Text>
+              {tagLabel ? (
+                <Tag size="small" ml={3} type="color" uppercase={false}>
+                  {t(tagLabel)}
+                </Tag>
+              ) : null}
+            </Flex>
             {completed ? null : (
               <Text variant="body" fontWeight="medium" color="neutral.c70">
                 {t(description)}
