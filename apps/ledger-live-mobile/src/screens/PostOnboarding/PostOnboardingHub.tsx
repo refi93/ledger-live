@@ -181,7 +181,7 @@ const PostOnboardingHub = ({ navigation }: NavigationProps) => {
               fontWeight="semiBold"
               alignSelf="center"
               onPress={navigateToMainScreen}
-              color="primary.c80"
+              color="neutral.c100"
             >
               {t("postOnboarding.hub.skip")}
             </Text>

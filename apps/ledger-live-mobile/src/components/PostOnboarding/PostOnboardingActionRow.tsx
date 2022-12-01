@@ -82,9 +82,9 @@ const PostOnboardingActionRow: React.FC<Props> = props => {
             </Tag>
           ) : null}
           {completed ? (
-            <Icons.CheckAloneMedium color="success.c100" size={16} />
+            <Icons.CheckAloneMedium color="success.c100" size={20} />
           ) : (
-            <Icons.ChevronRightMedium color="primary.c80" size={16} />
+            <Icons.ChevronRightMedium color="neutral.c70" size={24} />
           )}
         </Flex>
       </Flex>

@@ -9,6 +9,7 @@ export enum PostOnboardingActionId {
   migrateAssetsMock = "migrateAssetsMock",
   personalizeMock = "personalizeMock",
   customImage = "customImage",
+  claimNft = "claimNft",
 }
 
 export type WithNavigationParams = {
@@ -35,6 +36,11 @@ type WithStartActionFunction = {
  */
 export type PostOnboardingAction = {
   id: PostOnboardingActionId;
+
+  /**
+   * Allow to display the action without letting the user access its flow
+   */
+  disabled?: boolean;
 
   /**
    * If this action is linked to a feature that is enabled by a feature flag,
