@@ -10,7 +10,6 @@ import { Box, Flex, Button, Icons } from "@ledgerhq/native-ui";
 
 import { Currency } from "@ledgerhq/types-cryptoassets";
 import { useTheme } from "styled-components/native";
-import { usePostOnboardingEntryPointVisibleOnWallet } from "@ledgerhq/live-common/postOnboarding/hooks/index";
 import useEnv from "@ledgerhq/live-common/hooks/useEnv";
 import {
   useDistribution,
@@ -39,7 +38,6 @@ import SectionContainer from "../WalletCentricSections/SectionContainer";
 import AllocationsSection from "../WalletCentricSections/Allocations";
 import OperationsHistorySection from "../WalletCentricSections/OperationsHistory";
 import { track } from "../../analytics";
-import PostOnboardingEntryPointCard from "../../components/PostOnboarding/PostOnboardingEntryPointCard";
 import {
   BaseComposite,
   BaseNavigation,
@@ -135,8 +133,6 @@ function PortfolioScreen({ navigation }: NavigationProps) {
     ],
     [distribution, blacklistedTokenIds],
   );
-
-  const postOnboardingVisible = usePostOnboardingEntryPointVisibleOnWallet();
 
   const data = useMemo(
     () => [
