@@ -25,25 +25,24 @@ const PostOnboardingEntryPointCard: React.FC<Record<string, never>> = () => {
   return (
     <Flex
       flexDirection="column"
-      backgroundColor="neutral.c20"
+      backgroundColor="neutral.c30"
       borderRadius={2}
       p={6}
     >
       <Flex flexDirection="row" justifyContent="flex-end" alignItems="center">
         <Touchable onPress={dismissCard}>
-          <Flex borderRadius={9999} p={3} backgroundColor="neutral.c30">
+          <Flex p={2}>
             <Icons.CloseMedium size={20} />
           </Flex>
         </Touchable>
       </Flex>
-      <Flex flexDirection="column" justifyContent="center" alignItems="center">
-        <Text variant="h5" fontWeight="semiBold" my={3} textAlign="center">
+      <Flex flexDirection="column" justifyContent="center">
+        <Text variant="h5" fontWeight="semiBold" my={3}>
           {t("postOnboarding.entryPointCard.title", { productName })}
         </Text>
         <Text
           variant="paragraph"
           fontWeight="medium"
-          textAlign="center"
           color="neutral.c80"
           mb={6}
         >

@@ -4,9 +4,10 @@ import { Trans, useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { discoverDevices } from "@ledgerhq/live-common/hw/index";
 import { CompositeScreenProps, useNavigation } from "@react-navigation/native";
-import { Text, Flex, Icons, BottomDrawer } from "@ledgerhq/native-ui";
+import { Text, Flex, Icons, BottomDrawer, Box } from "@ledgerhq/native-ui";
 import { Device } from "@ledgerhq/live-common/hw/actions/types";
 import { useBleDevicesScanning } from "@ledgerhq/live-common/ble/hooks/useBleDevicesScanning";
+import { usePostOnboardingEntryPointVisibleOnWallet } from "@ledgerhq/live-common/postOnboarding/hooks/usePostOnboardingEntryPointVisibleOnWallet";
 
 import TransportBLE from "../../react-native-hw-transport-ble";
 import { track } from "../../analytics";
@@ -27,6 +28,7 @@ import {
 import { ManagerNavigatorStackParamList } from "../RootNavigator/types/ManagerNavigator";
 import { MainNavigatorParamList } from "../RootNavigator/types/MainNavigator";
 import { NavigateInput } from "../RootNavigator/types/BaseNavigator";
+import PostOnboardingEntryPointCard from "../PostOnboarding/PostOnboardingEntryPointCard";
 
 type Navigation = BaseComposite<
   CompositeScreenProps<
@@ -51,6 +53,8 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
   const dispatch = useDispatch();
 
   const [isAddNewDrawerOpen, setIsAddNewDrawerOpen] = useState<boolean>(false);
+
+  const postOnboardingVisible = usePostOnboardingEntryPointVisibleOnWallet();
 
   const { t } = useTranslation();
 
@@ -182,6 +186,11 @@ export default function SelectDevice({ onSelect, stopBleScanning }: Props) {
 
   return (
     <Flex>
+      {postOnboardingVisible && (
+        <Box mb={8}>
+          <PostOnboardingEntryPointCard />
+        </Box>
+      )}
       <Flex
         flexDirection="row"
         justifyContent="space-between"

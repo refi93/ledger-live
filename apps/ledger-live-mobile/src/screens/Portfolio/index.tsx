@@ -141,11 +141,6 @@ function PortfolioScreen({ navigation }: NavigationProps) {
   const data = useMemo(
     () => [
       <FirmwareUpdateBanner />,
-      postOnboardingVisible && (
-        <Box m={6}>
-          <PostOnboardingEntryPointCard />
-        </Box>
-      ),
       <Box mt={3} onLayout={onPortfolioCardLayout}>
         <GraphCardContainer
           counterValueCurrency={counterValueCurrency}
@@ -235,7 +230,6 @@ function PortfolioScreen({ navigation }: NavigationProps) {
       isAWalletCardDisplayed,
       accounts,
       goToAssets,
-      postOnboardingVisible,
     ],
   );
 

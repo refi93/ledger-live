@@ -4,6 +4,7 @@ import { StackScreenProps } from "@react-navigation/stack";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import Video from "react-native-video";
 import { useStartPostOnboardingCallback } from "@ledgerhq/live-common/postOnboarding/hooks/useStartPostOnboardingCallback";
+import { useTheme } from "styled-components/native";
 
 import { NavigatorName, ScreenName } from "../../const";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/types/SyncOnboardingNavigator";
@@ -13,7 +14,8 @@ import {
 } from "../../components/RootNavigator/types/helpers";
 import useIsAppInBackground from "../../components/useIsAppInBackground";
 
-const source = require("../../../assets/videos/onboardingTransition.mp4"); // eslint-disable-line @typescript-eslint/no-var-requires
+const sourceLight = require("../../../assets/videos/onboardingTransitionLight.mp4"); // eslint-disable-line @typescript-eslint/no-var-requires
+const sourceDark = require("../../../assets/videos/onboardingTransitionDark.mp4"); // eslint-disable-line @typescript-eslint/no-var-requires
 
 const redirectDelay = 5000;
 
@@ -38,6 +40,9 @@ const CompletionScreen = ({ navigation, route }: Props) => {
   const { device } = route.params;
   const startPostOnboarding = useStartPostOnboardingCallback();
   const videoMounted = !useIsAppInBackground();
+  const { theme } = useTheme();
+
+  const videoSource = theme === "light" ? sourceLight : sourceDark;
 
   const redirectToPostOnboarding = useCallback(() => {
     // Resets the navigation stack to avoid allowing to go back to the onboarding welcome screen
@@ -95,7 +100,7 @@ const CompletionScreen = ({ navigation, route }: Props) => {
         {videoMounted && (
           <Video
             disableFocus
-            source={source}
+            source={videoSource}
             style={absoluteStyle}
             muted
             repeat
