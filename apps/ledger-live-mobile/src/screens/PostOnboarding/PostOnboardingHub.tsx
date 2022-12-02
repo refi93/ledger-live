@@ -2,8 +2,6 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { Divider, Flex, Icons, Log, Text } from "@ledgerhq/native-ui";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import styled from "styled-components/native";
 import { useFocusEffect } from "@react-navigation/native";
 import Animated, {
   cancelAnimation,
@@ -29,12 +27,7 @@ import {
   StackNavigatorProps,
 } from "../../components/RootNavigator/types/helpers";
 import { PostOnboardingNavigatorParamList } from "../../components/RootNavigator/types/PostOnboardingNavigator";
-
-const SafeContainer = styled(SafeAreaView).attrs({
-  edges: ["left", "bottom", "right"],
-})`
-  flex: 1;
-`;
+import DeviceSetupView from "../../components/DeviceSetupView";
 
 const AnimatedFlex = Animated.createAnimatedComponent(Flex);
 
@@ -157,7 +150,7 @@ const PostOnboardingHub = ({ navigation }: NavigationProps) => {
   )?.productName;
 
   return (
-    <SafeContainer>
+    <DeviceSetupView hasCloseButton>
       <Flex px={6} py={7} justifyContent="space-between" flex={1}>
         <Text variant="h1Inter" fontWeight="semiBold" mb={8}>
           {allDone
@@ -208,7 +201,7 @@ const PostOnboardingHub = ({ navigation }: NavigationProps) => {
           </AnimatedFlex>
         </AnimatedFlex>
       )}
-    </SafeContainer>
+    </DeviceSetupView>
   );
 };
 
