@@ -97,7 +97,7 @@ function OnboardingStepDeviceSelection() {
         screen: ScreenName.BleDevicePairingFlow,
         params: {
           // TODO: for now we remove this
-          // filterByDeviceModelId: DeviceModelId.nanoFTS,
+          filterByDeviceModelId: DeviceModelId.nanoFTS,
           areKnownDevicesDisplayed: true,
           onSuccessAddToKnownDevices: false,
           onSuccessNavigateToConfig: {

@@ -67,7 +67,7 @@ const BleDeviceItem = ({ deviceMeta, onSelect }: Props) => {
           <Text flex={1} ml={4} variant="large" fontWeight="semiBold">
             {deviceName}
           </Text>
-          <ChevronRightMedium size={20} color="primary.c80" />
+          <ChevronRightMedium size={20} color="neutral.c70" />
         </Flex>
       </TouchableOpacity>
     </Flex>

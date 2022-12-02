@@ -1698,14 +1698,14 @@
   },
   "blePairingFlow": {
     "scanning": {
+      "cantSeeDevice": "Can't see your {{productName}}?",
       "withProductName": {
-        "title": "Looking for your {{productName}}",
-        "description": "Please make sure your {{productName}} is unlocked and Bluetooth is enabled"
+        "title": "Looking for {{productName}}..."
       },
       "withoutProductName": {
-        "title": "Looking for devices",
-        "description": "Please make sure your device is switched on, unlocked, and bluetooth is enabled"
+        "title": "Looking for devices"
       },
+      "description": "Make sure your Ledger is unlocked and close to the mobile phone you want to pair with.",
       "alreadyPaired": "Already paired"
     },
     "pairing": {
@@ -1713,7 +1713,7 @@
         "title": "Paired with {{deviceName}}"
       },
       "loading": {
-        "title": "Pairing with {{deviceName}}",
+        "title": "Pairing with {{deviceName}}...",
         "subtitle": "Confirm the code on your {{productName}}"
       },
       "error": {
