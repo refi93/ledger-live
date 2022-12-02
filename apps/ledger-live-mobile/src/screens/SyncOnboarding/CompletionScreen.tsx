@@ -2,19 +2,28 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { Flex } from "@ledgerhq/native-ui";
 import { StackScreenProps } from "@react-navigation/stack";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import Video from "react-native-video";
 import { useStartPostOnboardingCallback } from "@ledgerhq/live-common/postOnboarding/hooks/useStartPostOnboardingCallback";
 
 import { NavigatorName, ScreenName } from "../../const";
-import Illustration from "../../images/illustration/Illustration";
-import DeviceDark from "../../images/illustration/Dark/_000_PLACEHOLDER.png";
-import DeviceLight from "../../images/illustration/Light/_000_PLACEHOLDER.png";
 import { SyncOnboardingStackParamList } from "../../components/RootNavigator/types/SyncOnboardingNavigator";
 import {
   BaseComposite,
   RootNavigation,
 } from "../../components/RootNavigator/types/helpers";
+import useIsAppInBackground from "../../components/useIsAppInBackground";
+
+const source = require("../../../assets/videos/onboardingTransition.mp4"); // eslint-disable-line @typescript-eslint/no-var-requires
 
 const redirectDelay = 5000;
+
+const absoluteStyle = {
+  position: "absolute" as const,
+  bottom: 0,
+  left: 0,
+  top: 0,
+  right: 0,
+};
 
 type Props = BaseComposite<
   StackScreenProps<
@@ -28,6 +37,7 @@ const CompletionScreen = ({ navigation, route }: Props) => {
 
   const { device } = route.params;
   const startPostOnboarding = useStartPostOnboardingCallback();
+  const videoMounted = !useIsAppInBackground();
 
   const redirectToPostOnboarding = useCallback(() => {
     // Resets the navigation stack to avoid allowing to go back to the onboarding welcome screen
@@ -82,11 +92,16 @@ const CompletionScreen = ({ navigation, route }: Props) => {
         alignItems="center"
         justifyContent="center"
       >
-        <Illustration
-          lightSource={DeviceLight}
-          darkSource={DeviceDark}
-          size={300}
-        />
+        {videoMounted && (
+          <Video
+            disableFocus
+            source={source}
+            style={absoluteStyle}
+            muted
+            repeat
+            resizeMode={"cover"}
+          />
+        )}
       </Flex>
     </TouchableWithoutFeedback>
   );
