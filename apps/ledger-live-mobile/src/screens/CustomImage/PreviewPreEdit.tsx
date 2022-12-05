@@ -68,7 +68,7 @@ const PreviewPreEdit = ({ navigation, route }: NavigationProps) => {
   const handleError = useCallback(
     (error: Error) => {
       console.error(error);
-      navigation.navigate(ScreenName.CustomImageErrorScreen, { error, device });
+      navigation.replace(ScreenName.CustomImageErrorScreen, { error, device });
     },
     [navigation, device],
   );
@@ -88,7 +88,7 @@ const PreviewPreEdit = ({ navigation, route }: NavigationProps) => {
   useEffect(() => {
     if (isNftMetadata && ["nodata", "error"].includes(status)) {
       console.error("Nft metadata loading status", status);
-      navigation.navigate(ScreenName.CustomImageErrorScreen, {
+      navigation.replace(ScreenName.CustomImageErrorScreen, {
         device,
         error: new ImageMetadataLoadingError(status),
       });
