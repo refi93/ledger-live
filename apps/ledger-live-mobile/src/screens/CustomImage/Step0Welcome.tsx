@@ -3,11 +3,11 @@ import { StackScreenProps } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Flex, Text } from "@ledgerhq/native-ui";
 import { useTranslation } from "react-i18next";
+import { Dimensions, Image, useWindowDimensions } from "react-native";
 import CustomImageBottomModal from "../../components/CustomImage/CustomImageBottomModal";
 import BottomButtonsContainer from "../../components/CustomImage/BottomButtonsContainer";
 import { ScreenName } from "../../const";
 import { CustomImageNavigatorParamList } from "../../components/RootNavigator/types/CustomImageNavigator";
-import { Dimensions, Image, useWindowDimensions } from "react-native";
 
 const Step0Welcome: React.FC<
   StackScreenProps<
