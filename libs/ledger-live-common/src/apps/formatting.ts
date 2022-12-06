@@ -16,14 +16,14 @@ export const formatSize = (
   const bytes = Math.ceil(value / blockSize) * blockSize;
   const i = Math.floor(Math.log(bytes) / Math.log(k)) || 1; // Nb Byte units were removed from UI
   const rawSize = bytes / Math.pow(k, i);
-  const dm = rawSize < 1 ? 1 : i > 1 ? Math.max(0, 2) : 0;
+  const roundingPrecision = rawSize < 1 ? 1 : i > 1 ? 2 : 0;
 
-  const divider = Math.pow(10, dm);
+  const divider = Math.pow(10, roundingPrecision);
   const toFormat = rawSize * divider;
   let formattedSize = floor ? Math.floor(toFormat) : Math.ceil(toFormat);
   formattedSize /= divider;
 
-  return [formattedSize.toFixed(dm), units[i]];
+  return [formattedSize.toFixed(roundingPrecision), units[i]];
 };
 
 export const prettyActionPlan = (ops: AppOp[]): string =>
