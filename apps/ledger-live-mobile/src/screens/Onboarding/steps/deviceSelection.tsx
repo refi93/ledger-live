@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { Image } from "react-native";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { Text, ScrollListContainer } from "@ledgerhq/native-ui";
 import { getDeviceModel } from "@ledgerhq/devices/index";
