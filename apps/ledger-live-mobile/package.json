@@ -25,7 +25,6 @@
     "ios:ci:adhoc": "bundle exec fastlane ios ci_adhoc --env ios.staging",
     "preios:ci:nightly": "bundle install",
     "ios:ci:nightly": "bundle exec fastlane ios ci_nightly --env ios.nightly",
-    "ios:ci:testflight_no_submission": "bundle exec fastlane ios ci_nightly --env ios.staging",
     "ios:device:add": "bundle exec fastlane ios add_ios_device",
     "ios:sync:profiles": "bundle exec fastlane ios sync_ios_profiles",
     "preandroid:apk": "bundle install",

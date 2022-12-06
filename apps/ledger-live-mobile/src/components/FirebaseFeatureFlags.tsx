@@ -34,7 +34,7 @@ const checkFeatureFlagVersion = (feature: Feature | undefined) => {
 
 type Props = PropsWithChildren<unknown>;
 
-const getFeatureBase = (args: {
+const getFeature = (args: {
   key: FeatureId;
   appLanguage: string;
   localOverrides?: { [key in FeatureId]?: Feature };
@@ -83,30 +83,6 @@ const getFeatureBase = (args: {
     console.error(`Failed to retrieve feature "${key}"`);
     return null;
   }
-};
-
-/** TODO: remove this before merging to public repo, this is only to hardcode the activation of flags for Op3n builds. */
-const getFeature = (args: {
-  key: FeatureId;
-  appLanguage: string;
-  localOverrides?: { [key in FeatureId]?: Feature };
-  allowOverride?: boolean;
-}) => {
-  const realVal = getFeatureBase(args);
-  if (realVal === null) return null;
-  if (
-    [
-      "customImage",
-      "deviceInitialApps",
-      "syncOnboarding",
-      "llmNewDeviceSelection",
-    ].includes(args.key)
-  )
-    return {
-      ...realVal,
-      enabled: true,
-    };
-  return realVal;
 };
 
 /**
