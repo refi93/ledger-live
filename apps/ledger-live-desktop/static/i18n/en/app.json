@@ -5396,8 +5396,7 @@
     "postOnboarding": {
       "title": "Personalize my device",
       "description": "By customizing the screen",
-      "actionCompletedPopupLabel": "Device personalized",
-      "actionCompletedHubTitle": "That screen is looking neat."
+      "actionCompletedPopupLabel": "Device personalized"
     },
     "customImageSet": "Custom image set",
     "finishCTA": "Finish"

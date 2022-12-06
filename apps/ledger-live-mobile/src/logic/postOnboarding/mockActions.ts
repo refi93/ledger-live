@@ -14,7 +14,6 @@ export const claimMock: PostOnboardingAction = {
   description: "A special NFT for you.",
   tagLabel: "Free",
   actionCompletedPopupLabel: "NFT claimed",
-  actionCompletedHubTitle: "Kickstart your Web3 journey.",
   navigationParams: [
     NavigatorName.PostOnboarding,
     {
@@ -35,7 +34,6 @@ export const personalizeMock: PostOnboardingAction = {
   titleCompleted: `Device personalized`,
   description: "By customizing the screen.",
   actionCompletedPopupLabel: "Device personalized",
-  actionCompletedHubTitle: "That screen is looking neat.",
   navigationParams: [
     NavigatorName.PostOnboarding,
     {
@@ -55,7 +53,6 @@ export const migrateAssetsMock: PostOnboardingAction = {
   titleCompleted: "Assets transfered",
   description: "Easily secure assets from coinbase or another exchange.",
   actionCompletedPopupLabel: "Assets transfered",
-  actionCompletedHubTitle: "Something about being a crypto pro.",
   navigationParams: [
     NavigatorName.PostOnboarding,
     {

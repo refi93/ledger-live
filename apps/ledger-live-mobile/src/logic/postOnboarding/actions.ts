@@ -13,7 +13,6 @@ export const customImageAction: PostOnboardingAction = {
   titleCompleted: "postOnboarding.actions.customImage.titleCompleted",
   description: "postOnboarding.actions.customImage.description",
   actionCompletedPopupLabel: "postOnboarding.actions.customImage.popupLabel",
-  actionCompletedHubTitle: "", // TODO: deprecated, to remove
   navigationParams: [
     NavigatorName.CustomImage,
     {
@@ -34,8 +33,6 @@ export const claimNftAction: PostOnboardingAction = {
   description: "postOnboarding.actions.claimNft.description",
   tagLabel: "postOnboarding.actions.claimNft.tagLabel",
   actionCompletedPopupLabel: "postOnboarding.actions.claimNft.popupLabel",
-  actionCompletedHubTitle:
-    "postOnboarding.actions.claimNft.hubTitleAfterAction",
 };
 
 export const assetsTransferAction: PostOnboardingAction = {
@@ -46,6 +43,4 @@ export const assetsTransferAction: PostOnboardingAction = {
   titleCompleted: "postOnboarding.actions.assetsTransfer.titleCompleted",
   description: "postOnboarding.actions.assetsTransfer.description",
   actionCompletedPopupLabel: "postOnboarding.actions.assetsTransfer.popupLabel",
-  actionCompletedHubTitle:
-    "postOnboarding.actions.assetsTransfer.hubTitleAfterAction",
 };

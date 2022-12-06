@@ -41,9 +41,7 @@ type NavigationProps = BaseComposite<
 const PostOnboardingHub = ({ navigation }: NavigationProps) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { lastActionCompleted, actionsState, deviceModelId } =
-    usePostOnboardingHubState();
-  const { actionCompletedHubTitle } = lastActionCompleted || {};
+  const { actionsState, deviceModelId } = usePostOnboardingHubState();
 
   const clearLastActionCompleted = useCallback(() => {
     dispatch(clearPostOnboardingLastActionCompleted());
