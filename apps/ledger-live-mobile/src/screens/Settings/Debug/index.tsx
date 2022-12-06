@@ -135,6 +135,7 @@ export default function DebugSettings({
         "deviceInitialApps",
         "syncOnboarding",
         "llmNewDeviceSelection",
+        "staxWelcomeScreen",
       ] as FeatureId[]
     ).forEach(featureId =>
       overrideFeature(featureId, { ...getFeature(featureId), enabled: true }),

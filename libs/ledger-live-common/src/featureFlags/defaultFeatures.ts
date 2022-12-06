@@ -170,6 +170,6 @@ export const defaultFeatures: DefaultFeatures = {
     enabled: false,
   },
   staxWelcomeScreen: {
-    enabled: true, // TODO: put this to false before merging in public repo & setup the flag on Firebase envs
+    enabled: false,
   },
 };
