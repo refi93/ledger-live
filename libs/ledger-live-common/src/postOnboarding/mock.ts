@@ -18,7 +18,6 @@ export const claimTestMock: PostOnboardingAction = {
   description: "A special NFT for you.",
   tagLabel: "Free",
   actionCompletedPopupLabel: "NFT claimed",
-  actionCompletedHubTitle: "Kickstart your Web3 journey.",
   navigationParams: [],
 };
 
@@ -30,7 +29,6 @@ export const personalizeTestMock: PostOnboardingAction = {
   titleCompleted: `Personalize my device`,
   description: "By customizing the screen.",
   actionCompletedPopupLabel: "Device personalized",
-  actionCompletedHubTitle: "That screen is looking neat.",
   navigationParams: [],
 };
 
@@ -41,7 +39,6 @@ export const migrateAssetsTestMock: PostOnboardingAction = {
   titleCompleted: "Transfer assets to my Ledger",
   description: "Easily secure assets from coinbase or another exchange.",
   actionCompletedPopupLabel: "Assets transfered",
-  actionCompletedHubTitle: "Something about being a crypto pro.",
   navigationParams: [],
 };
 
