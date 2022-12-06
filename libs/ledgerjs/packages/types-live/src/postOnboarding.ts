@@ -82,12 +82,6 @@ export type PostOnboardingAction = {
   actionCompletedPopupLabel: string;
 
   /**
-   * Will be used as a title success alert at the bottom of the post-onboarding
-   * hub after completing this action.
-   * */
-  actionCompletedHubTitle: string;
-
-  /**
    * Event that will be dispatched when starting this action.
    */
   startEvent?: string;
