@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LayoutChangeEvent, StyleSheet } from "react-native";
 import {
-  Box,
   Button,
   Divider,
   Flex,

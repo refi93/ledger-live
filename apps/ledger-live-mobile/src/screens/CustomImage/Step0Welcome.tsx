@@ -3,7 +3,7 @@ import { StackScreenProps } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Flex, Text } from "@ledgerhq/native-ui";
 import { useTranslation } from "react-i18next";
-import { Dimensions, Image, useWindowDimensions } from "react-native";
+import { Image, useWindowDimensions } from "react-native";
 import CustomImageBottomModal from "../../components/CustomImage/CustomImageBottomModal";
 import BottomButtonsContainer from "../../components/CustomImage/BottomButtonsContainer";
 import { ScreenName } from "../../const";

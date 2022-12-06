@@ -3,7 +3,7 @@ import { Image } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { Text, ScrollListContainer, Flex } from "@ledgerhq/native-ui";
+import { Text, ScrollListContainer } from "@ledgerhq/native-ui";
 import { getDeviceModel } from "@ledgerhq/devices/index";
 import useFeature from "@ledgerhq/live-common/featureFlags/useFeature";
 import { DeviceModelId } from "@ledgerhq/types-devices";
@@ -61,7 +61,6 @@ type NavigationProp = RootNavigationComposite<
 function OnboardingStepDeviceSelection() {
   const navigation = useNavigation<NavigationProp>();
   const { t } = useTranslation();
-  const { colors } = useTheme();
   const syncOnboarding = useFeature("syncOnboarding" as const);
 
   const devices = useMemo(() => {

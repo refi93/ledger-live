@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Flex, InfiniteLoader, Text } from "@ledgerhq/native-ui";
+import { Flex, InfiniteLoader } from "@ledgerhq/native-ui";
 import { Device } from "@ledgerhq/types-devices";
 import { NavigatorName, ScreenName } from "../../const";
 import BottomModal, { Props as BottomModalProps } from "../BottomModal";

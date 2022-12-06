@@ -13,6 +13,7 @@ import { createAction, Result } from "@ledgerhq/live-common/hw/actions/manager";
 import { useFeature } from "@ledgerhq/live-common/featureFlags/index";
 import { Flex, Text } from "@ledgerhq/native-ui";
 
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ScreenName } from "../../const";
 import SelectDevice2 from "../../components/SelectDevice2";
 import SelectDevice from "../../components/SelectDevice";
@@ -28,7 +29,6 @@ import {
 import { ManagerNavigatorStackParamList } from "../../components/RootNavigator/types/ManagerNavigator";
 import BuyDeviceCTA from "../../components/BuyDeviceCTA";
 import { TAB_BAR_SAFE_HEIGHT } from "../../components/TabBar/shared";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const action = createAction(connectManager);
 
@@ -90,9 +90,9 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
     setDevice(params?.device);
   }, [params]);
 
-  if (!isFocused) return null;
-
   const insets = useSafeAreaInsets();
+
+  if (!isFocused) return null;
 
   return (
     <Flex flex={1} pb={insets.bottom + TAB_BAR_SAFE_HEIGHT}>
