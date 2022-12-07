@@ -37,6 +37,8 @@ export type FeatureId =
   | "ethStakingProviders"
   | "storyly"
   | "staxWelcomeScreen"
+  | "postOnboardingClaimNft"
+  | "postOnboardingAssetsTransfer"
   | "firebaseEnvironmentReadOnly";
 
 /**  We use objects instead of direct booleans for potential future improvements

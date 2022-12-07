@@ -172,4 +172,13 @@ export const defaultFeatures: DefaultFeatures = {
   staxWelcomeScreen: {
     enabled: false,
   },
+  customImage: {
+    enabled: false,
+  },
+  postOnboardingClaimNft: {
+    enabled: false,
+  },
+  postOnboardingAssetsTransfer: {
+    enabled: false,
+  },
 };
