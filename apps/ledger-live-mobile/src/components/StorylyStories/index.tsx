@@ -142,7 +142,7 @@ const Stories: React.FC<Props> = props => {
             storyGroup.stories[0]?.id;
           return (
             <AnimatedStoryGroupWrapper
-              key={storyGroup.id}
+              key={storyGroup.id ?? index}
               layout={Layout.easing(Easing.inOut(Easing.quad)).duration(300)}
               isLast={index === arr.length - 1}
               vertical={vertical}
