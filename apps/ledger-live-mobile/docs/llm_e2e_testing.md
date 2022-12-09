@@ -3,6 +3,7 @@
 This project uses [Detox](https://github.com/wix/Detox) and [Jest](https://jestjs.io/) for end-to-end testing the LLM application. Detox is a mobile end-to-end testing tool developed by Wix, and is specifically built for React Native applications. Please refer to the documentation of those projects for the specifics. In this readme you will find the key setup and workflow steps for testing a flow in Ledger Live Mobile.
 
 ---
+
 ---
 
 ## Full script to install iOS and Android debug versions from scratch
@@ -22,6 +23,7 @@ pnpm mobile e2e:build -c ios.sim.debug
 ```
 
 ---
+
 ---
 
 ## Local Environment Setup
@@ -35,6 +37,7 @@ Detox also has good documentation for [Android](https://wix.github.io/Detox/docs
 Make sure to install Wix's `applesimutils` (info found [here](https://wix.github.io/Detox/docs/introduction/ios-dev-env)).
 
 ---
+
 ---
 
 ## Test Setup and Execution
@@ -70,6 +73,8 @@ Verify you have an emulator [installed](https://developer.android.com/studio/run
   - Debug: First, run `pnpm mobile start` to run Metro bundler, then in a separate terminal window run `pnpm mobile e2e:test -c android.emu.debug`
   - Release: `pnpm mobile e2e:test -c android.emu.release`
 
+> If you get an error for Android debug tests complaining that the emulator cannot find the bundled JS script, run `adb reverse tcp:8081 tcp:8081` before starting the tests (but make sure the emulator is already started). This makes it possible for the emulator to access the Metro bundler on your local machine.
+
 ### iOS
 
 Make sure you have the correct iPhone simulator that is listed in `detox.config.js` installed (currently 'iPhone 13'). You can check if you do with `applesimutils --list`. Also make sure you have an iOS version installed for simulators by going to Xcode > Preferences > Components. You can try whichever version you like, but iOS 13.0 is known to work locally.
@@ -82,6 +87,7 @@ Make sure you have the correct iPhone simulator that is listed in `detox.config.
   - Release: `pnpm mobile e2e:test -c ios.sim.release`
 
 ---
+
 ---
 
 ## Project Structure
@@ -89,6 +95,7 @@ Make sure you have the correct iPhone simulator that is listed in `detox.config.
 Most files for the tests are in the `/e2e` LLM app folder.
 
 - `/bridge`: This contains the code to setup a websocket which allows communication between the test process and the LLM app. This allows us to:
+
   - create different conditions for testing the app by setting the user data.
   - perform mock device actions.
   - do quick navigations around the app (useful for setting up tests).
@@ -114,6 +121,7 @@ Most files for the tests are in the `/e2e` LLM app folder.
 - `.github/workflows/test-mobile.yml`: The workflow file to kick off tests in the Github servers.
 
 ---
+
 ---
 
 ## Development workflow
@@ -179,25 +187,26 @@ describe("Onboarding", () => {
     onboardingSteps = new OnboardingSteps();
     onboardingSteps = new PortfolioPage();
   })
-  
+
   it("onboarding step should be visible", async () => {
      // test assertions
     await expect(onboardingSteps.getSomeElement()).toBeVisible();
   });
-  
+
   it("should be able to start onboarding", async () => {
     // test actions (tap on some element)
     await onboardingSteps.startOnboarding();
   });
-  
+
   it("should do some other stuffs", async () => {
     await onboardingSteps.DoIOwnDevice(true);
     // ...
-  }) 
-   
+  })
+
 ```
 
 ---
+
 ---
 
 ## Tools and Features
@@ -211,8 +220,9 @@ Coming soon... :construction:
 ### Screenshot Comparison
 
 ---
+
 ---
 
 ## CI
 
-> :warning: Android and iOS tests are currently switched **off** on the CI due to issues installing the app on the emulators and general flakiness with the runners.
+> :warning: Android and iOS tests are currently switched **off** on the CI for PRs due to issues installing the app on the emulators and general flakiness with the runners. However the tests are running at [midday and midnight daily](https://github.com/LedgerHQ/ledger-live/actions/workflows/test-mobile-e2e.yml)
