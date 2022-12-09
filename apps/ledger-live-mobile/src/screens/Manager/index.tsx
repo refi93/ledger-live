@@ -97,48 +97,41 @@ const ChooseDevice: React.FC<ChooseDeviceProps> = ({ isFocused }) => {
   return (
     <Flex flex={1} pb={insets.bottom + TAB_BAR_SAFE_HEIGHT}>
       <TrackScreen category="Manager" name="ChooseDevice" />
-      <Flex mt={100} px={16} mb={8}>
+      <Flex  px={16} mb={8}>
         <Text fontWeight="semiBold" variant="h4">
           <Trans i18nKey="manager.title" />
         </Text>
       </Flex>
-      <NavigationScrollView
-        style={[styles.root]}
-        contentContainerStyle={styles.scrollContainer}
-      >
-        <Flex>
-          {newDeviceSelectionFeatureFlag?.enabled ? (
-            <SelectDevice2
-              onSelect={onSelectDevice}
-              stopBleScanning={!!device}
-            />
-          ) : (
-            <>
-              <SelectDevice
-                usbOnly={params?.firmwareUpdate}
-                autoSelectOnAdd
-                onSelect={onSelectDevice}
-                onBluetoothDeviceAction={onShowMenu}
-              />
-              {chosenDevice ? (
-                <RemoveDeviceMenu
-                  open={showMenu}
-                  device={chosenDevice as Device}
-                  onHideMenu={onHideMenu}
-                />
-              ) : null}
-            </>
-          )}
-          <DeviceActionModal
-            onClose={() => onSelectDevice()}
-            device={device}
-            onResult={onSelect}
-            onModalHide={onModalHide}
-            action={action}
-            request={null}
+      {newDeviceSelectionFeatureFlag?.enabled ? (
+        <SelectDevice2 onSelect={onSelectDevice} stopBleScanning={!!device} />
+      ) : (
+        <NavigationScrollView
+          style={[styles.root]}
+          contentContainerStyle={styles.scrollContainer}
+        >
+          <SelectDevice
+            usbOnly={params?.firmwareUpdate}
+            autoSelectOnAdd
+            onSelect={onSelectDevice}
+            onBluetoothDeviceAction={onShowMenu}
           />
-        </Flex>
-      </NavigationScrollView>
+          {chosenDevice ? (
+            <RemoveDeviceMenu
+              open={showMenu}
+              device={chosenDevice as Device}
+              onHideMenu={onHideMenu}
+            />
+          ) : null}
+        </NavigationScrollView>
+      )}
+      <DeviceActionModal
+        onClose={() => onSelectDevice()}
+        device={device}
+        onResult={onSelect}
+        onModalHide={onModalHide}
+        action={action}
+        request={null}
+      />
       <BuyDeviceCTA />
     </Flex>
   );

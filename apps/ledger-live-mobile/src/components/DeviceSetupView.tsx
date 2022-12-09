@@ -40,6 +40,7 @@ const DeviceSetupView = ({
       <Flex
         px={6}
         pt={8}
+        backgroundColor="red"
         mb={7}
         height={64}
         flexDirection="row"

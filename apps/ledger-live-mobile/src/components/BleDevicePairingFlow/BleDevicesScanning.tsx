@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { ScrollView, Linking } from "react-native";
-import { Flex, ScrollListContainer, Text } from "@ledgerhq/native-ui";
+import { Flex, Text } from "@ledgerhq/native-ui";
 import { useBleDevicesScanning } from "@ledgerhq/live-common/ble/hooks/useBleDevicesScanning";
 import { HwTransportErrorType } from "@ledgerhq/errors";
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,6 @@ import TransportBLE from "../../react-native-hw-transport-ble";
 import { knownDevicesSelector } from "../../reducers/ble";
 import LocationRequired from "../LocationRequired/index";
 import Animation from "../Animation";
-import DeviceSetupView from "../DeviceSetupView";
 import BleDeviceItem from "./BleDeviceItem";
 import lottie from "./assets/bluetooth.json";
 import { urls } from "../../config/urls";
@@ -32,13 +31,11 @@ export type BleDevicesScanningProps = {
  * @param onDeviceSelect Function called when the user selects a scanned device
  * @param filterByDeviceModelId The only model of the devices that will be scanned
  * @param areKnownDevicesDisplayed Choose to display seen devices that are already known by LLM
- * @param onGoBack If this function is set, a back arrow is displayed that calls this function if pressed
  */
 const BleDevicesScanning = ({
   onDeviceSelect,
   filterByDeviceModelId = null,
   areKnownDevicesDisplayed,
-  onGoBack,
 }: BleDevicesScanningProps) => {
   const { t } = useTranslation();
 
@@ -133,8 +130,8 @@ const BleDevicesScanning = ({
   }
 
   return (
-    <DeviceSetupView onBack={onGoBack}>
-      <ScrollListContainer display="flex" flex={1} px={4}>
+    <>
+      <Flex flex={1} px={4}>
         <Flex height={180} alignItems="center" justifyContent="center">
           <Animation source={lottie} />
         </Flex>
@@ -192,7 +189,7 @@ const BleDevicesScanning = ({
             </Flex>
           </ScrollView>
         </Flex>
-      </ScrollListContainer>
+      </Flex>
       {productName !== null && isCantSeeDeviceShown && (
         <Text
           textAlign="center"
@@ -204,7 +201,7 @@ const BleDevicesScanning = ({
           {t("blePairingFlow.scanning.cantSeeDevice", { productName })}
         </Text>
       )}
-    </DeviceSetupView>
+    </>
   );
 };
 
