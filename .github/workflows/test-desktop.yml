@@ -321,7 +321,7 @@ jobs:
           platform: windows
           login: ${{ secrets.ALLURE_LOGIN }}
           password: ${{ secrets.ALLURE_PASSWORD }}
-          path: /runner/_work/ledger-live/ledger-live/allure-results-windows
+          path: allure-results-windows
       - name: Send Results and Generate Allure Report - MacOS
         uses: ./tools/actions/composites/upload-allure-report
         if: always()
@@ -329,7 +329,7 @@ jobs:
           platform: macos
           login: ${{ secrets.ALLURE_LOGIN }}
           password: ${{ secrets.ALLURE_PASSWORD }}
-          path: /runner/_work/ledger-live/ledger-live/allure-results-macos
+          path: allure-results-macos
       - name: Send Results and Generate Allure Report - Linux
         uses: ./tools/actions/composites/upload-allure-report
         if: always()
@@ -337,4 +337,4 @@ jobs:
           platform: linux
           login: ${{ secrets.ALLURE_LOGIN }}
           password: ${{ secrets.ALLURE_PASSWORD }}
-          path: /runner/_work/ledger-live/ledger-live/allure-results-linux
+          path: allure-results-linux
