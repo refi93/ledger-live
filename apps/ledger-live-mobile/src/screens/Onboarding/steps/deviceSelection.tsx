@@ -65,7 +65,7 @@ function OnboardingStepDeviceSelection() {
     getDeviceModel(modelId)?.productName || modelId;
 
   const next = (deviceModelId: DeviceModelId) => {
-    // Add NanoX.id, NanoSP.id etc, to the array whené supported
+    // Add NanoX.id, NanoSP.id etc, to the array when supported
     if ([nanoFTS.id].includes(deviceModelId)) {
       const navigateInput: NavigateInput<RootStackParamList> = {
         name: NavigatorName.BaseOnboarding,
@@ -99,9 +99,6 @@ function OnboardingStepDeviceSelection() {
         },
       });
     } else {
-      // TODO: FIX @react-navigation/native using Typescript
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore next-line
       navigation.navigate(ScreenName.OnboardingUseCase, {
         deviceModelId,
       });
