@@ -8,18 +8,12 @@ import CustomImageBottomModal from "../../components/CustomImage/CustomImageBott
 import BottomButtonsContainer from "../../components/CustomImage/BottomButtonsContainer";
 import { ScreenName } from "../../const";
 import { CustomImageNavigatorParamList } from "../../components/RootNavigator/types/CustomImageNavigator";
-import { loadImageSizeAsync } from "../../components/CustomImage/imageUtils";
 import imageSource from "./assets/welcome.png";
-import { ImageDimensions } from "../../components/CustomImage/types";
 
-let imageDimensions: ImageDimensions | null = null;
-loadImageSizeAsync(Image.resolveAssetSource(imageSource).uri)
-  .then(res => {
-    imageDimensions = res;
-  })
-  .catch(e => {
-    console.error(e);
-  });
+const imageDimensions = {
+  height: Image.resolveAssetSource(imageSource).height,
+  width: Image.resolveAssetSource(imageSource).width,
+};
 
 const Step0Welcome: React.FC<
   StackScreenProps<
