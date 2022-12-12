@@ -4,17 +4,7 @@ import { BaseTextProps } from "@ledgerhq/native-ui/components/Text";
 import { FlexBoxProps } from "@ledgerhq/native-ui/components/Layout/Flex";
 import Touchable from "../../../components/Touchable";
 
-const ChoiceCard = ({
-  title,
-  titleProps,
-  subtitleElement,
-  labelBadge,
-  onPress,
-  Image,
-  disabled,
-  imageContainerProps,
-  ...props
-}: {
+export type Props = {
   title: string;
   titleProps?: Partial<BaseTextProps>;
   labelBadge?: string;
@@ -26,7 +16,19 @@ const ChoiceCard = ({
   eventProperties?: Record<string, unknown>;
   testID?: string;
   imageContainerProps?: Partial<FlexBoxProps>;
-}) => (
+};
+
+const ChoiceCard = ({
+  title,
+  titleProps,
+  subtitleElement,
+  labelBadge,
+  onPress,
+  Image,
+  disabled,
+  imageContainerProps,
+  ...props
+}: Props) => (
   <Touchable onPress={onPress} disabled={disabled} {...props}>
     <Flex
       flexDirection={"row"}

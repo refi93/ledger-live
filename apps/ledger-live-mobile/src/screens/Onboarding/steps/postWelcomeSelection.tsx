@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Text, ScrollListContainer } from "@ledgerhq/native-ui";
 import { useNavigation } from "@react-navigation/native";
@@ -9,7 +9,9 @@ import useFeature from "@ledgerhq/live-common/featureFlags/useFeature";
 import { TrackScreen } from "../../../analytics";
 import { NavigatorName, ScreenName } from "../../../const";
 import StyledStatusBar from "../../../components/StyledStatusBar";
-import Illustration from "../../../images/illustration/Illustration";
+import Illustration, {
+  Props as IllustrationProps,
+} from "../../../images/illustration/Illustration";
 import { setHasOrderedNano } from "../../../actions/settings";
 import DeviceSetupView from "../../../components/DeviceSetupView";
 import { OnboardingNavigatorParamList } from "../../../components/RootNavigator/types/OnboardingNavigator";
@@ -19,7 +21,7 @@ import {
 } from "../../../components/RootNavigator/types/helpers";
 import { BaseNavigatorStackParamList } from "../../../components/RootNavigator/types/BaseNavigator";
 import Touchable from "../../../components/Touchable";
-import ChoiceCard from "./ChoiceCard";
+import ChoiceCard, { Props as ChoiceCardProps } from "./ChoiceCard";
 
 const images = {
   light: {
@@ -50,10 +52,8 @@ type PostWelcomeChoiceCardProps = {
     light: ImageSourcePropType;
     dark: ImageSourcePropType;
   };
-  imageContainerProps?: React.ComponentProps<
-    typeof ChoiceCard
-  >["imageContainerProps"];
-  imageProps?: Partial<React.ComponentProps<typeof Illustration>>;
+  imageContainerProps?: ChoiceCardProps["imageContainerProps"];
+  imageProps?: Partial<IllustrationProps>;
 };
 
 const PostWelcomeDiscoverCard = ({
@@ -138,9 +138,14 @@ function PostWelcomeSelection({ route }: NavigationProps) {
     dark: images.dark[key],
   });
 
-  const setupLedgerImageSource = useFeature("staxWelcomeScreen")?.enabled
-    ? getSourceImageObj("setupLedgerStaxImg")
-    : getSourceImageObj("setupLedgerImg");
+  const staxWelcomeScreenEnabled = useFeature("staxWelcomeScreen")?.enabled;
+  const setupLedgerImageSource = useMemo(
+    () =>
+      staxWelcomeScreenEnabled
+        ? getSourceImageObj("setupLedgerStaxImg")
+        : getSourceImageObj("setupLedgerImg"),
+    [staxWelcomeScreenEnabled],
+  );
 
   return (
     <DeviceSetupView hasBackButton>

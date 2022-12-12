@@ -62,6 +62,11 @@ const contrasts = [
   },
 ];
 
+const previewDimensions = {
+  height: 406,
+  width: 252,
+};
+
 type NavigationProps = BaseComposite<
   StackNavigatorProps<
     CustomImageNavigatorParamList,
@@ -202,13 +207,15 @@ const Step2Preview = ({ navigation, route }: NavigationProps) => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height={406}
+        height={previewDimensions.height}
       >
         {processorPreviewImage?.imageBase64DataUri ? (
           <Image
             style={{
-              width: 252,
-              height: (targetDimensions.height / targetDimensions.width) * 252,
+              width: previewDimensions.width,
+              height:
+                (targetDimensions.height / targetDimensions.width) *
+                previewDimensions.width,
             }}
             resizeMode="contain"
             onError={handlePreviewImageError}

@@ -67,7 +67,8 @@ import {
   FramedImageWithContext,
   transferConfig,
 } from "../CustomImage/FramedImage";
-import FramedImageWithLottie, {
+import {
+  Props as FramedImageWithLottieProps,
   FramedImageWithLottieWithContext,
 } from "../CustomImage/FramedImageWithLottie";
 
@@ -1101,9 +1102,7 @@ const ImageLoadingGeneric: React.FC<{
   title: string;
   children?: React.ReactNode | undefined;
   progress?: number;
-  lottieSource?: React.ComponentProps<
-    typeof FramedImageWithLottie
-  >["lottieSource"];
+  lottieSource?: FramedImageWithLottieProps["lottieSource"];
 }> = ({ title, children, progress, lottieSource }) => {
   return (
     <Flex
@@ -1193,7 +1192,7 @@ export const renderImageCommitRequested = ({
           device.deviceName || getDeviceModel(device.modelId)?.productName,
       })}
       lottieSource={confirmLockscreen}
-      progress={0.89}
+      progress={0.89} // hardcoded value to not have the image overflowing the "confirm button" in the lottie
     />
   );
 };

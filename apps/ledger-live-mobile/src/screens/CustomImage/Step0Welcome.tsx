@@ -8,6 +8,18 @@ import CustomImageBottomModal from "../../components/CustomImage/CustomImageBott
 import BottomButtonsContainer from "../../components/CustomImage/BottomButtonsContainer";
 import { ScreenName } from "../../const";
 import { CustomImageNavigatorParamList } from "../../components/RootNavigator/types/CustomImageNavigator";
+import { loadImageSizeAsync } from "../../components/CustomImage/imageUtils";
+import imageSource from "./assets/welcome.png";
+import { ImageDimensions } from "../../components/CustomImage/types";
+
+let imageDimensions: ImageDimensions | null = null;
+loadImageSizeAsync(Image.resolveAssetSource(imageSource).uri)
+  .then(res => {
+    imageDimensions = res;
+  })
+  .catch(e => {
+    console.error(e);
+  });
 
 const Step0Welcome: React.FC<
   StackScreenProps<
@@ -30,16 +42,22 @@ const Step0Welcome: React.FC<
     setModalOpened(false);
   }, [setModalOpened]);
 
-  const { width } = useWindowDimensions();
+  const { width: screenWidth } = useWindowDimensions();
 
   return (
     <SafeAreaView style={{ flex: 1 }} edges={["bottom"]}>
       <Flex flex={1}>
-        <Image
-          source={require("./assets/welcome.png")}
-          resizeMode="contain"
-          style={{ width, height: (256 / 375) * width }} // (image height / image width) * screen width
-        />
+        {imageDimensions ? (
+          <Image
+            source={imageSource}
+            resizeMode="contain"
+            style={{
+              width: screenWidth,
+              height:
+                (imageDimensions.height / imageDimensions.width) * screenWidth,
+            }}
+          />
+        ) : null}
         <Flex flex={1} px={7}>
           <Text variant="h4" fontWeight="semiBold" mt={8} textAlign="center">
             {t("customImage.landingPage.title")}

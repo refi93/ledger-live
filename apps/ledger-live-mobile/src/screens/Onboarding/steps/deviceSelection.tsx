@@ -14,35 +14,27 @@ import {
   RootNavigationComposite,
   StackNavigatorNavigation,
 } from "../../../components/RootNavigator/types/helpers";
-
-import nanoSSvg from "../assets/nanoS";
-import nanoSPSvg from "../assets/nanoSP";
-import nanoXSvg from "../assets/nanoX";
 import DeviceSetupView from "../../../components/DeviceSetupView";
 import { RootStackParamList } from "../../../components/RootNavigator/types/RootNavigator";
 import { NavigateInput } from "../../../components/RootNavigator/types/BaseNavigator";
 import ChoiceCard from "./ChoiceCard";
 
 const nanoX = {
-  SvgDevice: nanoXSvg,
   source: require("../../../../assets/images/devices/NanoXCropped.png"),
   id: DeviceModelId.nanoX,
   setupTime: 600000,
 };
 const nanoS = {
-  SvgDevice: nanoSSvg,
   source: require("../../../../assets/images/devices/NanoSCropped.png"),
   id: DeviceModelId.nanoS,
   setupTime: 600000,
 };
 const nanoSP = {
-  SvgDevice: nanoSPSvg,
   source: require("../../../../assets/images/devices/NanoSPCropped.png"),
   id: DeviceModelId.nanoSP,
   setupTime: 600000,
 };
 const nanoFTS = {
-  SvgDevice: nanoXSvg,
   source: require("../../../../assets/images/devices/StaxCropped.png"),
   id: DeviceModelId.nanoFTS,
   setupTime: 300000,
@@ -73,7 +65,7 @@ function OnboardingStepDeviceSelection() {
     getDeviceModel(modelId)?.productName || modelId;
 
   const next = (deviceModelId: DeviceModelId) => {
-    // Add NanoX.id, NanoSP.id etc, to the array when supported
+    // Add NanoX.id, NanoSP.id etc, to the array whené supported
     if ([nanoFTS.id].includes(deviceModelId)) {
       const navigateInput: NavigateInput<RootStackParamList> = {
         name: NavigatorName.BaseOnboarding,
@@ -94,7 +86,6 @@ function OnboardingStepDeviceSelection() {
       navigation.push(NavigatorName.Base, {
         screen: ScreenName.BleDevicePairingFlow,
         params: {
-          // TODO: for now we remove this
           filterByDeviceModelId: DeviceModelId.nanoFTS,
           areKnownDevicesDisplayed: true,
           onSuccessAddToKnownDevices: false,

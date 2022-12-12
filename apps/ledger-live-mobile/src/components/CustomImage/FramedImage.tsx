@@ -1,13 +1,15 @@
 import { Box, Flex } from "@ledgerhq/native-ui";
-// import { space } from "@ledgerhq/native-ui/styles/theme";
 import React, { ComponentProps, useContext } from "react";
 import { Image, ImageProps, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import ForceTheme from "../theme/ForceTheme";
-// import { scaleDimensions } from "./imageUtils";
 import transferBackground from "./assets/transferBackground.png";
 import previewBackground from "./assets/previewBackground.png";
 
+/**
+ * Set this to true to have visual indicators of how the foreground image (the content)
+ * and the background image (the frame) will be positioned.
+ * */
 const DEBUG = false;
 
 type FrameConfig = {

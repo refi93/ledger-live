@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { LayoutChangeEvent, StyleSheet } from "react-native";
+import { Image, LayoutChangeEvent, StyleSheet } from "react-native";
 import {
   Button,
   Divider,
@@ -33,9 +33,7 @@ import {
   renderImageLoadRequested,
   renderLoadingImage,
 } from "../components/DeviceAction/rendering";
-
-const imageUrl =
-  "https://images.unsplash.com/photo-1612988952181-c995680479a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3085&q=80";
+import imageSource from "../components/CustomImage/assets/examplePicture.webp";
 
 const device = {
   deviceId: "",
@@ -54,7 +52,7 @@ export default function DebugCustomImageGraphics() {
 
   useEffect(() => {
     downloadImageToFile({
-      imageUrl,
+      imageUrl: Image.resolveAssetSource(imageSource)?.uri,
     }).resultPromise.then(val => setImageToCrop(val));
   }, []);
 
@@ -156,6 +154,7 @@ export default function DebugCustomImageGraphics() {
               <Flex mt={3} flexDirection={"row"}>
                 {["confirmLoad", "loading", "confirmCommit"].map(val => (
                   <Button
+                    key={val}
                     type="main"
                     size="small"
                     onPress={() => setDeviceActionStep(val)}
